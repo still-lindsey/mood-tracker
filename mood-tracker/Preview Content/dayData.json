@@ -1,0 +1,38 @@
+{
+    "date": "20220729",
+    "day_id": 12,
+    "entries": [
+        {
+            "activities": [
+                "sleep"
+            ],
+            "emotions": [
+                "okay"
+            ],
+            "entry_id": 11,
+            "memo": "Need to get to bed by 9pm",
+            "mood_score": 5.0,
+            "time_stamp": "Fri, 29 Jul 2022 17:06:43 GMT",
+            "title": "Sleepy"
+        },
+        {
+            "activities": [
+                "food",
+                "relationship",
+                "date"
+            ],
+            "emotions": [
+                "happy",
+                "lucky"
+            ],
+            "entry_id": 12,
+            "memo": "I have been working on my capstone like crazy and my boyfriend decided to make a fancy Italian dinner for me. He made carpaccio, bruschetta, and carbonara. It was amazing and I am so lucky to have him.",
+            "mood_score": 10.0,
+            "time_stamp": "Fri, 29 Jul 2022 18:47:09 GMT",
+            "title": "My lovely mans cooked me dinner"
+        }
+    ],
+    "quote": "Where the willingness is great, the difficulties cannot be great.",
+    "quote_author": "Niccolo Machiavelli",
+    "status": "already created"
+}

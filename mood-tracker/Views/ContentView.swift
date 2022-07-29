@@ -13,8 +13,8 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 20) {
             if let day = day {
-                WelcomeView()
-                QuoteOfTheDayView(day: day)
+                DailyCheckIn()
+                QuoteOfTheDay(day: day)
             }else {
                 LoadingView()
                     .task {

@@ -1,5 +1,5 @@
 //
-//  DailyCheckInView.swift
+//  DailyCheckIn.swift
 //  mood-tracker
 //
 //  Created by Lindsey M Still on 7/29/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DailyCheckInView: View {
+struct DailyCheckIn: View {
     var body: some View {
         VStack() {
             VStack {
@@ -22,15 +22,15 @@ struct DailyCheckInView: View {
                 .frame(maxWidth: .infinity, alignment: .center)
             }
             .padding()
-            .frame(maxWidth: .infinity, alignment: .center)
+            .frame(maxWidth: .infinity, minHeight: 175, alignment: .center)
         }
-        .background(Color(.white)).cornerRadius(20)
+        .background(Color(.white.withAlphaComponent(0.8))).cornerRadius(20)
         .frame(maxWidth: 350)
         }
 }
 
-struct DailyCheckInView_Previews: PreviewProvider {
+struct DailyCheckIn_Previews: PreviewProvider {
     static var previews: some View {
-        DailyCheckInView()
+        DailyCheckIn()
     }
 }

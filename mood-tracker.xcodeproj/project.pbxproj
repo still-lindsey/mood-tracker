@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2A5EF0D22893CCEF0093AA2F /* AllDaysManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0D12893CCEF0093AA2F /* AllDaysManager.swift */; };
-		2A5EF0D42893DEF10093AA2F /* QuoteOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0D32893DEF10093AA2F /* QuoteOfTheDayView.swift */; };
 		2A5EF0D62893E3100093AA2F /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0D52893E3100093AA2F /* ModelData.swift */; };
 		2A5EF0D82893E3370093AA2F /* dayData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A5EF0D72893E3370093AA2F /* dayData.json */; };
 		2A5EF0DA2893E8E50093AA2F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0D92893E8E50093AA2F /* Extensions.swift */; };
-		2A5EF0DC2893F4320093AA2F /* DailyCheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0DB2893F4320093AA2F /* DailyCheckInView.swift */; };
+		2A5EF0DF28940ADE0093AA2F /* QuoteOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0DE28940ADE0093AA2F /* QuoteOfTheDay.swift */; };
+		2A5EF0E128940B5C0093AA2F /* DailyCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0E028940B5C0093AA2F /* DailyCheckIn.swift */; };
 		2A8B4CB22893A7B2000E6598 /* mood_trackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CB12893A7B2000E6598 /* mood_trackerApp.swift */; };
 		2A8B4CB42893A7B2000E6598 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CB32893A7B2000E6598 /* ContentView.swift */; };
 		2A8B4CB62893A7B4000E6598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A8B4CB52893A7B4000E6598 /* Assets.xcassets */; };
@@ -20,7 +20,6 @@
 		2A8B4CC32893A7B4000E6598 /* mood_trackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CC22893A7B4000E6598 /* mood_trackerTests.swift */; };
 		2A8B4CCD2893A7B4000E6598 /* mood_trackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CCC2893A7B4000E6598 /* mood_trackerUITests.swift */; };
 		2A8B4CCF2893A7B4000E6598 /* mood_trackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CCE2893A7B4000E6598 /* mood_trackerUITestsLaunchTests.swift */; };
-		2A8B4CE02893B0FF000E6598 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CDF2893B0FF000E6598 /* WelcomeView.swift */; };
 		2A8B4CE42893B842000E6598 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CE32893B842000E6598 /* LoadingView.swift */; };
 		2A8B4CE62893BB1C000E6598 /* DayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CE52893BB1C000E6598 /* DayManager.swift */; };
 		2A8B4CE82893BB2C000E6598 /* EntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CE72893BB2C000E6598 /* EntryManager.swift */; };
@@ -47,11 +46,11 @@
 
 /* Begin PBXFileReference section */
 		2A5EF0D12893CCEF0093AA2F /* AllDaysManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDaysManager.swift; sourceTree = "<group>"; };
-		2A5EF0D32893DEF10093AA2F /* QuoteOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteOfTheDayView.swift; sourceTree = "<group>"; };
 		2A5EF0D52893E3100093AA2F /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		2A5EF0D72893E3370093AA2F /* dayData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dayData.json; sourceTree = "<group>"; };
 		2A5EF0D92893E8E50093AA2F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		2A5EF0DB2893F4320093AA2F /* DailyCheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckInView.swift; sourceTree = "<group>"; };
+		2A5EF0DE28940ADE0093AA2F /* QuoteOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteOfTheDay.swift; sourceTree = "<group>"; };
+		2A5EF0E028940B5C0093AA2F /* DailyCheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckIn.swift; sourceTree = "<group>"; };
 		2A8B4CAE2893A7B2000E6598 /* mood-tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mood-tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8B4CB12893A7B2000E6598 /* mood_trackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mood_trackerApp.swift; sourceTree = "<group>"; };
 		2A8B4CB32893A7B2000E6598 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,7 +61,6 @@
 		2A8B4CC82893A7B4000E6598 /* mood-trackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mood-trackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8B4CCC2893A7B4000E6598 /* mood_trackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mood_trackerUITests.swift; sourceTree = "<group>"; };
 		2A8B4CCE2893A7B4000E6598 /* mood_trackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mood_trackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2A8B4CDF2893B0FF000E6598 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		2A8B4CE32893B842000E6598 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2A8B4CE52893BB1C000E6598 /* DayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayManager.swift; sourceTree = "<group>"; };
 		2A8B4CE72893BB2C000E6598 /* EntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryManager.swift; sourceTree = "<group>"; };
@@ -95,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A5EF0DD28940A420093AA2F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2A5EF0DE28940ADE0093AA2F /* QuoteOfTheDay.swift */,
+				2A5EF0E028940B5C0093AA2F /* DailyCheckIn.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		2A8B4CA52893A7B2000E6598 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +126,7 @@
 		2A8B4CB02893A7B2000E6598 /* mood-tracker */ = {
 			isa = PBXGroup;
 			children = (
+				2A5EF0DD28940A420093AA2F /* Components */,
 				2A8B4CB12893A7B2000E6598 /* mood_trackerApp.swift */,
 				2A8B4CDE2893B063000E6598 /* Views */,
 				2A8B4CDB2893AF08000E6598 /* Managers */,
@@ -171,10 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				2A8B4CB32893A7B2000E6598 /* ContentView.swift */,
-				2A5EF0DB2893F4320093AA2F /* DailyCheckInView.swift */,
-				2A5EF0D32893DEF10093AA2F /* QuoteOfTheDayView.swift */,
 				2A8B4CE32893B842000E6598 /* LoadingView.swift */,
-				2A8B4CDF2893B0FF000E6598 /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,19 +315,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5EF0DF28940ADE0093AA2F /* QuoteOfTheDay.swift in Sources */,
 				2A8B4CE82893BB2C000E6598 /* EntryManager.swift in Sources */,
 				2A8B4CB42893A7B2000E6598 /* ContentView.swift in Sources */,
 				2A8B4CB22893A7B2000E6598 /* mood_trackerApp.swift in Sources */,
 				2A8B4CEA2893BB43000E6598 /* QuoteManager.swift in Sources */,
 				2A8B4CEC2893BB56000E6598 /* AnalyticsManager.swift in Sources */,
 				2A5EF0D22893CCEF0093AA2F /* AllDaysManager.swift in Sources */,
+				2A5EF0E128940B5C0093AA2F /* DailyCheckIn.swift in Sources */,
 				2A8B4CE42893B842000E6598 /* LoadingView.swift in Sources */,
 				2A5EF0DA2893E8E50093AA2F /* Extensions.swift in Sources */,
 				2A5EF0D62893E3100093AA2F /* ModelData.swift in Sources */,
-				2A5EF0D42893DEF10093AA2F /* QuoteOfTheDayView.swift in Sources */,
-				2A5EF0DC2893F4320093AA2F /* DailyCheckInView.swift in Sources */,
 				2A8B4CE62893BB1C000E6598 /* DayManager.swift in Sources */,
-				2A8B4CE02893B0FF000E6598 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

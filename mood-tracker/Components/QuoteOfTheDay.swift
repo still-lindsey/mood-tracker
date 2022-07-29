@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuoteOfTheDayView: View {
+struct QuoteOfTheDay: View {
     var day: ResponseBody
     var body: some View {
         VStack() {
@@ -25,16 +25,16 @@ struct QuoteOfTheDayView: View {
                 .multilineTextAlignment(.center)
             }
             .padding()
-            .frame(maxWidth: .infinity, alignment: .center)
+            .frame(maxWidth: .infinity, maxHeight: 175, alignment: .center)
         }
-        .background(Color(.white)).cornerRadius(20)
+        .background(Color(.white.withAlphaComponent(0.8))).cornerRadius(20)
         .frame(maxWidth: 350)
         Spacer()
         }
 }
 
-struct QuoteOfTheDayView_Previews: PreviewProvider {
+struct QuoteOfTheDay_Previews: PreviewProvider {
     static var previews: some View {
-        QuoteOfTheDayView(day: previewDay)
+        QuoteOfTheDay(day: previewDay)
     }
 }

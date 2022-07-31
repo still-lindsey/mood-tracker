@@ -11,7 +11,7 @@ import Foundation
 func getDayOfMonth(date: String) -> String {
     var result = ""
     if date[6] == "0" {
-        result = date[-1]
+        result = date[7]
     }else {
         result = "\(date[6])\(date[7])"
     }

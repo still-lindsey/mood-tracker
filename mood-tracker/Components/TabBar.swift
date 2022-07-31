@@ -19,7 +19,7 @@ struct TabBar: View {
                 case .quotes:
                     ContentView()
                 case .addEntry:
-                    ContentView()
+                    AddEntryView()
                 case .analytics:
                     ContentView()
                 case .allDays:

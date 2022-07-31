@@ -24,6 +24,7 @@
 		2A83C4652896812800FFAF0D /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C4642896812800FFAF0D /* AddEntryView.swift */; };
 		2A83C4672896813600FFAF0D /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C4662896813600FFAF0D /* AnalyticsView.swift */; };
 		2A83C4692896816000FFAF0D /* AllDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C4682896816000FFAF0D /* AllDaysView.swift */; };
+		2A83C46B2896C79400FFAF0D /* GetDayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C46A2896C79400FFAF0D /* GetDayManager.swift */; };
 		2A8B4CB22893A7B2000E6598 /* mood_trackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CB12893A7B2000E6598 /* mood_trackerApp.swift */; };
 		2A8B4CB42893A7B2000E6598 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CB32893A7B2000E6598 /* ContentView.swift */; };
 		2A8B4CB62893A7B4000E6598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A8B4CB52893A7B4000E6598 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		2A83C4642896812800FFAF0D /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
 		2A83C4662896813600FFAF0D /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
 		2A83C4682896816000FFAF0D /* AllDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDaysView.swift; sourceTree = "<group>"; };
+		2A83C46A2896C79400FFAF0D /* GetDayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDayManager.swift; sourceTree = "<group>"; };
 		2A8B4CAE2893A7B2000E6598 /* mood-tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mood-tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8B4CB12893A7B2000E6598 /* mood_trackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mood_trackerApp.swift; sourceTree = "<group>"; };
 		2A8B4CB32893A7B2000E6598 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				2A8B4CE52893BB1C000E6598 /* DayManager.swift */,
+				2A83C46A2896C79400FFAF0D /* GetDayManager.swift */,
 				2A8B4CE72893BB2C000E6598 /* EntryManager.swift */,
 				2A8B4CE92893BB43000E6598 /* QuoteManager.swift */,
 				2A8B4CEB2893BB56000E6598 /* AnalyticsManager.swift */,
@@ -355,6 +358,7 @@
 				2A8B4CB22893A7B2000E6598 /* mood_trackerApp.swift in Sources */,
 				2A83C4672896813600FFAF0D /* AnalyticsView.swift in Sources */,
 				2A8B4CEA2893BB43000E6598 /* QuoteManager.swift in Sources */,
+				2A83C46B2896C79400FFAF0D /* GetDayManager.swift in Sources */,
 				2A8B4CEC2893BB56000E6598 /* AnalyticsManager.swift in Sources */,
 				2A83C45D2896773F00FFAF0D /* TabBar.swift in Sources */,
 				2A83C45528965EAB00FFAF0D /* DayMood.swift in Sources */,

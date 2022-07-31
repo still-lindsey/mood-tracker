@@ -47,7 +47,7 @@ import SwiftUI
 
 struct HomeView: View {
     var dayManager = DayManager()
-    @State var day: DayResponseBody?
+    @State var day: NewDayResponseBody?
     var body: some View {
         VStack(spacing: 20) {
             if let day = day {

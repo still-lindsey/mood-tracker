@@ -1,27 +1,26 @@
 //
-//  DayManager.swift
+//  GetDayManager.swift
 //  mood-tracker
 //
-//  Created by Lindsey M Still on 7/29/22.
+//  Created by Lindsey M Still on 7/31/22.
 //
 
-import SwiftUI
 import Foundation
+import SwiftUI
 
-class DayManager {
-    func postNewDay() async throws -> NewDayResponseBody{
-        guard let url = URL(string: "http://127.0.0.1:5000/days") else {fatalError("Missing URL.")}
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
+class GetDayManager {
+    func getDay(dayId: Int)async throws -> GetDayResponseBody{
+        guard let url = URL(string: "http://127.0.0.1:5000/days/\(dayId)") else {fatalError("Missing URL.")}
+        let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         guard (response as? HTTPURLResponse)?.statusCode == 201 else {fatalError("Error creating day.")}
         
-        let decodedData = try JSONDecoder().decode(NewDayResponseBody.self, from: data)
+        let decodedData = try JSONDecoder().decode(GetDayResponseBody.self, from: data)
         return decodedData
     }
 }
 
-struct NewDayResponseBody: Decodable {
+struct GetDayResponseBody: Decodable {
     var date: String
     var day_of_week: String
     var month: String
@@ -41,4 +40,3 @@ struct NewDayResponseBody: Decodable {
         var time_stamp: String
     }
 }
-

@@ -9,20 +9,22 @@ import SwiftUI
 import Foundation
 
 class DayManager {
-    func postNewDay() async throws -> ResponseBody{
+    func postNewDay() async throws -> DayResponseBody{
         guard let url = URL(string: "http://127.0.0.1:5000/days") else {fatalError("Missing URL.")}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         guard (response as? HTTPURLResponse)?.statusCode == 201 else {fatalError("Error creating day.")}
         
-        let decodedData = try JSONDecoder().decode(ResponseBody.self, from: data)
+        let decodedData = try JSONDecoder().decode(DayResponseBody.self, from: data)
         return decodedData
     }
 }
 
-struct ResponseBody: Decodable {
+struct DayResponseBody: Decodable {
     var date: String
+    var day_of_week: String
+    var month: String
     var day_id: Int
     var entries: [EntryResponse]
     var quote: String

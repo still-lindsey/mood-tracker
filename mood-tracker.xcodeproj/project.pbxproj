@@ -13,6 +13,17 @@
 		2A5EF0DA2893E8E50093AA2F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0D92893E8E50093AA2F /* Extensions.swift */; };
 		2A5EF0DF28940ADE0093AA2F /* QuoteOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0DE28940ADE0093AA2F /* QuoteOfTheDay.swift */; };
 		2A5EF0E128940B5C0093AA2F /* DailyCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0E028940B5C0093AA2F /* DailyCheckIn.swift */; };
+		2A83C451289645E200FFAF0D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C450289645E200FFAF0D /* Date.swift */; };
+		2A83C4532896539200FFAF0D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C4522896539200FFAF0D /* Helpers.swift */; };
+		2A83C45528965EAB00FFAF0D /* DayMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C45428965EAB00FFAF0D /* DayMood.swift */; };
+		2A83C4592896647E00FFAF0D /* PreviousDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C4582896647E00FFAF0D /* PreviousDates.swift */; };
+		2A83C45D2896773F00FFAF0D /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C45C2896773F00FFAF0D /* TabBar.swift */; };
+		2A83C45F289678F700FFAF0D /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C45E289678F700FFAF0D /* Tab.swift */; };
+		2A83C461289680D800FFAF0D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C460289680D800FFAF0D /* HomeView.swift */; };
+		2A83C4632896811400FFAF0D /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C4622896811400FFAF0D /* QuotesView.swift */; };
+		2A83C4652896812800FFAF0D /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C4642896812800FFAF0D /* AddEntryView.swift */; };
+		2A83C4672896813600FFAF0D /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C4662896813600FFAF0D /* AnalyticsView.swift */; };
+		2A83C4692896816000FFAF0D /* AllDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C4682896816000FFAF0D /* AllDaysView.swift */; };
 		2A8B4CB22893A7B2000E6598 /* mood_trackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CB12893A7B2000E6598 /* mood_trackerApp.swift */; };
 		2A8B4CB42893A7B2000E6598 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CB32893A7B2000E6598 /* ContentView.swift */; };
 		2A8B4CB62893A7B4000E6598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A8B4CB52893A7B4000E6598 /* Assets.xcassets */; };
@@ -51,6 +62,17 @@
 		2A5EF0D92893E8E50093AA2F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2A5EF0DE28940ADE0093AA2F /* QuoteOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteOfTheDay.swift; sourceTree = "<group>"; };
 		2A5EF0E028940B5C0093AA2F /* DailyCheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckIn.swift; sourceTree = "<group>"; };
+		2A83C450289645E200FFAF0D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		2A83C4522896539200FFAF0D /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		2A83C45428965EAB00FFAF0D /* DayMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayMood.swift; sourceTree = "<group>"; };
+		2A83C4582896647E00FFAF0D /* PreviousDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousDates.swift; sourceTree = "<group>"; };
+		2A83C45C2896773F00FFAF0D /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		2A83C45E289678F700FFAF0D /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		2A83C460289680D800FFAF0D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2A83C4622896811400FFAF0D /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
+		2A83C4642896812800FFAF0D /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
+		2A83C4662896813600FFAF0D /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
+		2A83C4682896816000FFAF0D /* AllDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDaysView.swift; sourceTree = "<group>"; };
 		2A8B4CAE2893A7B2000E6598 /* mood-tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mood-tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8B4CB12893A7B2000E6598 /* mood_trackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mood_trackerApp.swift; sourceTree = "<group>"; };
 		2A8B4CB32893A7B2000E6598 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,8 +118,13 @@
 		2A5EF0DD28940A420093AA2F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2A83C450289645E200FFAF0D /* Date.swift */,
 				2A5EF0DE28940ADE0093AA2F /* QuoteOfTheDay.swift */,
 				2A5EF0E028940B5C0093AA2F /* DailyCheckIn.swift */,
+				2A83C45428965EAB00FFAF0D /* DayMood.swift */,
+				2A83C4582896647E00FFAF0D /* PreviousDates.swift */,
+				2A83C45C2896773F00FFAF0D /* TabBar.swift */,
+				2A83C45E289678F700FFAF0D /* Tab.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -107,6 +134,7 @@
 			children = (
 				2A8B4CB02893A7B2000E6598 /* mood-tracker */,
 				2A5EF0D92893E8E50093AA2F /* Extensions.swift */,
+				2A83C4522896539200FFAF0D /* Helpers.swift */,
 				2A8B4CC12893A7B4000E6598 /* mood-trackerTests */,
 				2A8B4CCB2893A7B4000E6598 /* mood-trackerUITests */,
 				2A8B4CAF2893A7B2000E6598 /* Products */,
@@ -126,6 +154,7 @@
 		2A8B4CB02893A7B2000E6598 /* mood-tracker */ = {
 			isa = PBXGroup;
 			children = (
+				2A8B4CB32893A7B2000E6598 /* ContentView.swift */,
 				2A5EF0DD28940A420093AA2F /* Components */,
 				2A8B4CB12893A7B2000E6598 /* mood_trackerApp.swift */,
 				2A8B4CDE2893B063000E6598 /* Views */,
@@ -178,7 +207,11 @@
 		2A8B4CDE2893B063000E6598 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2A8B4CB32893A7B2000E6598 /* ContentView.swift */,
+				2A83C460289680D800FFAF0D /* HomeView.swift */,
+				2A83C4622896811400FFAF0D /* QuotesView.swift */,
+				2A83C4642896812800FFAF0D /* AddEntryView.swift */,
+				2A83C4662896813600FFAF0D /* AnalyticsView.swift */,
+				2A83C4682896816000FFAF0D /* AllDaysView.swift */,
 				2A8B4CE32893B842000E6598 /* LoadingView.swift */,
 			);
 			path = Views;
@@ -316,17 +349,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A5EF0DF28940ADE0093AA2F /* QuoteOfTheDay.swift in Sources */,
+				2A83C4532896539200FFAF0D /* Helpers.swift in Sources */,
 				2A8B4CE82893BB2C000E6598 /* EntryManager.swift in Sources */,
 				2A8B4CB42893A7B2000E6598 /* ContentView.swift in Sources */,
 				2A8B4CB22893A7B2000E6598 /* mood_trackerApp.swift in Sources */,
+				2A83C4672896813600FFAF0D /* AnalyticsView.swift in Sources */,
 				2A8B4CEA2893BB43000E6598 /* QuoteManager.swift in Sources */,
 				2A8B4CEC2893BB56000E6598 /* AnalyticsManager.swift in Sources */,
+				2A83C45D2896773F00FFAF0D /* TabBar.swift in Sources */,
+				2A83C45528965EAB00FFAF0D /* DayMood.swift in Sources */,
+				2A83C4652896812800FFAF0D /* AddEntryView.swift in Sources */,
 				2A5EF0D22893CCEF0093AA2F /* AllDaysManager.swift in Sources */,
 				2A5EF0E128940B5C0093AA2F /* DailyCheckIn.swift in Sources */,
 				2A8B4CE42893B842000E6598 /* LoadingView.swift in Sources */,
 				2A5EF0DA2893E8E50093AA2F /* Extensions.swift in Sources */,
+				2A83C4592896647E00FFAF0D /* PreviousDates.swift in Sources */,
 				2A5EF0D62893E3100093AA2F /* ModelData.swift in Sources */,
+				2A83C45F289678F700FFAF0D /* Tab.swift in Sources */,
+				2A83C451289645E200FFAF0D /* Date.swift in Sources */,
+				2A83C4692896816000FFAF0D /* AllDaysView.swift in Sources */,
 				2A8B4CE62893BB1C000E6598 /* DayManager.swift in Sources */,
+				2A83C461289680D800FFAF0D /* HomeView.swift in Sources */,
+				2A83C4632896811400FFAF0D /* QuotesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

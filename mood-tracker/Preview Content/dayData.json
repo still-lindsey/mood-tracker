@@ -1,38 +1,25 @@
 {
-    "date": "20220729",
-    "day_id": 12,
+    "date": "20220731",
+    "day_id": 2,
+    "day_of_week": "Sunday",
     "entries": [
         {
             "activities": [
-                "sleep"
+                "work",
+                "school"
             ],
             "emotions": [
-                "okay"
+                "happy"
             ],
-            "entry_id": 11,
-            "memo": "Need to get to bed by 9pm",
-            "mood_score": 5.0,
-            "time_stamp": "Fri, 29 Jul 2022 17:06:43 GMT",
-            "title": "Sleepy"
-        },
-        {
-            "activities": [
-                "food",
-                "relationship",
-                "date"
-            ],
-            "emotions": [
-                "happy",
-                "lucky"
-            ],
-            "entry_id": 12,
-            "memo": "I have been working on my capstone like crazy and my boyfriend decided to make a fancy Italian dinner for me. He made carpaccio, bruschetta, and carbonara. It was amazing and I am so lucky to have him.",
-            "mood_score": 10.0,
-            "time_stamp": "Fri, 29 Jul 2022 18:47:09 GMT",
-            "title": "My lovely mans cooked me dinner"
+            "entry_id": 2,
+            "memo": "Wash able to code my first components and get them to render in Xcode so that feels amazing. On my way to being trilingual",
+            "mood_score": 9.0,
+            "time_stamp": "Sun, 31 Jul 2022 14:52:37 GMT",
+            "title": "Feeling accomplished"
         }
     ],
-    "quote": "Where the willingness is great, the difficulties cannot be great.",
-    "quote_author": "Niccolo Machiavelli",
+    "month": "July",
+    "quote": "Life comes at us in waves. We can't predict or control those waves, but we can learn to surf.",
+    "quote_author": "Dan Millman",
     "status": "already created"
 }

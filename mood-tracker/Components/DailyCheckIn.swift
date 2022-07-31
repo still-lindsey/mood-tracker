@@ -9,11 +9,11 @@ import SwiftUI
 
 struct DailyCheckIn: View {
     var body: some View {
-        VStack() {
+        ZStack() {
             VStack {
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("Daily Check-in")
-                        .bold().font(.title).frame(maxWidth: .infinity, alignment: .center)
+                    Text("DAILY CHECK-IN")
+                        .bold().font(.title2).frame(maxWidth: .infinity, alignment: .center)
                     Spacer()
                         .frame(height: 2)
                     Text("How are you feeling today?")
@@ -22,10 +22,11 @@ struct DailyCheckIn: View {
                 .frame(maxWidth: .infinity, alignment: .center)
             }
             .padding()
-            .frame(maxWidth: .infinity, minHeight: 175, alignment: .center)
+            .frame(maxWidth: .infinity, minHeight: 200, alignment: .center)
         }
         .background(Color(.white.withAlphaComponent(0.8))).cornerRadius(20)
         .frame(maxWidth: 350)
+        .offset(y: -50)
         }
 }
 

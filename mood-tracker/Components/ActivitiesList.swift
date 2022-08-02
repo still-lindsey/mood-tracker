@@ -41,12 +41,15 @@ struct ActivitiesList: View {
                             .padding(.top)
                             .padding(.bottom)
                             .foregroundColor(.white)
+                            .disabled(true)
                              .background(
                                  RoundedRectangle(cornerRadius: 25)
                                     .fill(Color(.clear))
                              )
                              .buttonStyle(PlainButtonStyle())
+                            
                         }
+                        .disabled(activityItems[i!].isSelected)
                     }
                 }
                 HStack(spacing: 20) {
@@ -84,6 +87,7 @@ struct ActivitiesList: View {
                              )
                              .buttonStyle(PlainButtonStyle())
                         }
+                        .disabled(activityItems[i!].isSelected)
                     }
                 }
                 HStack(spacing: 20) {
@@ -122,17 +126,18 @@ struct ActivitiesList: View {
                              )
                              .buttonStyle(PlainButtonStyle())
                         }
+                        .disabled(activityItems[i!].isSelected)
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 //to check if state update and remove is working
-//                ForEach(selectedActivities, id: \.self) { item in
-//                  Text(item)
+                ForEach(selectedActivities, id: \.self) { item in
+                  Text(item)
                 }
             }
         }
     }
-
+}
 
 struct ActivitiesList_Previews: PreviewProvider {
     static var previews: some View {

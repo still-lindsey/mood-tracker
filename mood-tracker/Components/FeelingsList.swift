@@ -14,9 +14,19 @@ struct FeelingsList: View {
             VStack{
                 HStack(spacing: 20) {
                     ForEach(feelingItems[..<5]) { item in
+                        let i = feelingItems.firstIndex(of: item)
                         Button {
                             withAnimation(.spring(response: 0.3, dampingFraction: 0.7)){
-                                selectedFeelings.append(item.text)
+                                let updatedSelect = !item.isSelected
+                                let newVal = FeelingItem(id: item.id, text: item.text, icon: item.icon,emoji:item.emoji, isSelected: updatedSelect)
+                                feelingItems[i!] = newVal
+                                print(feelingItems[i!].isSelected)
+                                if feelingItems[i!].isSelected {
+                                    selectedFeelings.append(item.text)
+                                }else{
+                                    let modifiedArray = selectedFeelings.filter { $0 != feelingItems[i!].text }
+                                    selectedFeelings = modifiedArray
+                                }
                             }
                         }label: {
                             VStack(spacing: 0){
@@ -42,9 +52,19 @@ struct FeelingsList: View {
                 }
                 HStack(spacing: 20) {
                     ForEach(feelingItems[5...]) { item in
+                        let i = feelingItems.firstIndex(of: item)
                         Button {
                             withAnimation(.spring(response: 0.3, dampingFraction: 0.7)){
-                                selectedFeelings.append(item.text)
+                                let updatedSelect = !item.isSelected
+                                let newVal = FeelingItem(id: item.id, text: item.text, icon: item.icon,emoji:item.emoji, isSelected: updatedSelect)
+                                feelingItems[i!] = newVal
+                                print(feelingItems[i!].isSelected)
+                                if feelingItems[i!].isSelected {
+                                    selectedFeelings.append(item.text)
+                                }else{
+                                    let modifiedArray = selectedFeelings.filter { $0 != feelingItems[i!].text }
+                                    selectedFeelings = modifiedArray
+                                }
                             }
                         }label: {
                             VStack(spacing: 0){
@@ -67,6 +87,9 @@ struct FeelingsList: View {
                              .buttonStyle(PlainButtonStyle())
                         }
                     }
+                }
+                ForEach(selectedFeelings, id: \.self) { item in
+                  Text(item)
                 }
             }
         }

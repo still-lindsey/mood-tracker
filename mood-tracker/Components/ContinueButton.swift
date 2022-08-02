@@ -23,6 +23,7 @@ struct ContinueButton: View {
                     .fill(Color(hue: 1.0, saturation: 0.01, brightness: 0.79))
              )
              .buttonStyle(PlainButtonStyle())
+             
         }
         
     }

@@ -44,7 +44,7 @@ struct FeelingsList: View {
                             .foregroundColor(.gray)
                              .background(
                                  RoundedRectangle(cornerRadius: 25)
-                                    .fill(Color(.clear))
+                                    .fill(Color(.black).opacity(feelingItems[i!].isSelected ? 0.2 : 0.0))
                              )
                              .buttonStyle(PlainButtonStyle())
                         }
@@ -82,14 +82,18 @@ struct FeelingsList: View {
                             .foregroundColor(.gray)
                              .background(
                                  RoundedRectangle(cornerRadius: 25)
-                                    .fill(Color(.clear))
+                                    .fill(Color(.black).opacity(feelingItems[i!].isSelected ? 0.2 : 0.0))
                              )
                              .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
+                HStack{
                 ForEach(selectedFeelings, id: \.self) { item in
-                  Text(item)
+                        Text(".")
+                            .foregroundColor(.clear)
+                            .font(.body)
+                }
                 }
             }
         }

@@ -44,12 +44,11 @@ struct ActivitiesList: View {
                             .disabled(true)
                              .background(
                                  RoundedRectangle(cornerRadius: 25)
-                                    .fill(Color(.clear))
+                                    .fill(Color(.black).opacity(activityItems[i!].isSelected ? 0.2 : 0.0))
                              )
                              .buttonStyle(PlainButtonStyle())
                             
                         }
-                        .disabled(activityItems[i!].isSelected)
                     }
                 }
                 HStack(spacing: 20) {
@@ -83,11 +82,10 @@ struct ActivitiesList: View {
                             .foregroundColor(.white)
                              .background(
                                  RoundedRectangle(cornerRadius: 25)
-                                    .fill(Color(.clear))
+                                    .fill(Color(.black).opacity(activityItems[i!].isSelected ? 0.2 : 0.0))
                              )
                              .buttonStyle(PlainButtonStyle())
                         }
-                        .disabled(activityItems[i!].isSelected)
                     }
                 }
                 HStack(spacing: 20) {
@@ -122,17 +120,20 @@ struct ActivitiesList: View {
                             .foregroundColor(.white)
                              .background(
                                  RoundedRectangle(cornerRadius: 25)
-                                    .fill(Color(.clear))
+                                    .fill(Color(.black).opacity(activityItems[i!].isSelected ? 0.2 : 0.0))
                              )
                              .buttonStyle(PlainButtonStyle())
                         }
-                        .disabled(activityItems[i!].isSelected)
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 //to check if state update and remove is working
+                HStack{
                 ForEach(selectedActivities, id: \.self) { item in
-                  Text(item)
+                        Text(".")
+                            .foregroundColor(.clear)
+                            .font(.body)
+                }
                 }
             }
         }

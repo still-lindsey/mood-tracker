@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 func getDayOfMonth(date: String) -> String {
@@ -32,3 +33,27 @@ func getListOfPreviousDates(date: Int) -> Array<Int> {
     }
     return result
 }
+
+func getMoodDescriptionandIcon(moodScore: Double) -> (String, UIImage?) {
+    var resultDes: String
+    var resultIcon: UIImage?
+    if moodScore < 2 {
+        resultDes = "really terrible"
+        resultIcon = UIImage(named: "crying")
+    }else if moodScore >= 2 && moodScore < 4{
+        resultDes = "somewhat bad"
+        resultIcon = UIImage(named: "sad")
+    }else if moodScore >= 4 && moodScore < 6 {
+        resultDes = "completely okay"
+        resultIcon = UIImage(named: "neutral")
+    }else if moodScore >= 6 && moodScore < 8{
+        resultDes = "pretty good"
+        resultIcon = UIImage(named: "smile")
+    }else{
+        resultDes = "super awesome"
+        resultIcon = UIImage(named: "happy")
+    }
+    return (resultDes, resultIcon)
+}
+
+

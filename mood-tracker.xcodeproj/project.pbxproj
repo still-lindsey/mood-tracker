@@ -20,6 +20,7 @@
 		2A8353BB28990B1A00DA665F /* WrappingStack in Frameworks */ = {isa = PBXBuildFile; productRef = 2A8353BA28990B1A00DA665F /* WrappingStack */; };
 		2A8353BD289912C100DA665F /* Feelings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8353BC289912C100DA665F /* Feelings.swift */; };
 		2A8353BF289913A400DA665F /* FeelingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8353BE289913A400DA665F /* FeelingsList.swift */; };
+		2A8353C128996FAA00DA665F /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8353C028996FAA00DA665F /* SubmitButton.swift */; };
 		2A83C451289645E200FFAF0D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C450289645E200FFAF0D /* Date.swift */; };
 		2A83C4532896539200FFAF0D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C4522896539200FFAF0D /* Helpers.swift */; };
 		2A83C45528965EAB00FFAF0D /* DayMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C45428965EAB00FFAF0D /* DayMood.swift */; };
@@ -79,6 +80,7 @@
 		2A5EF0E028940B5C0093AA2F /* DailyCheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckIn.swift; sourceTree = "<group>"; };
 		2A8353BC289912C100DA665F /* Feelings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feelings.swift; sourceTree = "<group>"; };
 		2A8353BE289913A400DA665F /* FeelingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsList.swift; sourceTree = "<group>"; };
+		2A8353C028996FAA00DA665F /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		2A83C450289645E200FFAF0D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		2A83C4522896539200FFAF0D /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		2A83C45428965EAB00FFAF0D /* DayMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayMood.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				2A066E1B2898FD800031ABF4 /* ActivitiesList.swift */,
 				2A8353BC289912C100DA665F /* Feelings.swift */,
 				2A8353BE289913A400DA665F /* FeelingsList.swift */,
+				2A8353C028996FAA00DA665F /* SubmitButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				2A8353BF289913A400DA665F /* FeelingsList.swift in Sources */,
 				2A5EF0D62893E3100093AA2F /* ModelData.swift in Sources */,
 				2A83C45F289678F700FFAF0D /* Tab.swift in Sources */,
+				2A8353C128996FAA00DA665F /* SubmitButton.swift in Sources */,
 				2A83C451289645E200FFAF0D /* Date.swift in Sources */,
 				2A83C4692896816000FFAF0D /* AllDaysView.swift in Sources */,
 				2A8B4CE62893BB1C000E6598 /* DayManager.swift in Sources */,

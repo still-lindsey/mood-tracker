@@ -14,6 +14,8 @@ struct AddEntryView: View {
     @State var hidden: Bool = false
     @State var selectedActivities: [String] = []
     @State var selectedFeelings: [String] = []
+    @State var title: String = ""
+    @State var memo: String = ""
     var body: some View {
         if !hidden {
             if pageNum == 0 {
@@ -89,15 +91,46 @@ struct AddEntryView: View {
                 VStack{
                     //Bug in Cancel button
     //                CancelButton(hidden: $hidden)
-                    Text("...and how are you feeling about this?")
-                        .font(.title)
+                    Text(NSDate.now.formatted(date: .long, time: .shortened))
+                        .font(.title3)
                         .foregroundColor(.white)
                         .padding()
-                    Text("SELECT UP TO 3 FEELINGS")
+                        .textCase(.uppercase)
+                    Text("ACTIVITIES")
                         .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
+                        .font(.system(size: 45))
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity, maxHeight: 50, alignment: .leading)
+                        .padding(.leading, 40)
+                    Text("FEELINGS")
+                        .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
+                        .font(.system(size: 45))
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity, maxHeight: 50, alignment: .leading)
+                        .padding(.leading, 40)
+                    TextField(
+                        "Title...",
+                        text: $title
+                    )
+                    .textFieldStyle(.roundedBorder)
+                    
+                    .frame(maxWidth: 320, maxHeight: 50, alignment: .leading)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+                    .padding()
+                    .foregroundColor(.black)
+                    TextEditor(
+                        text: $memo
+                    )
+                    .textFieldStyle(.roundedBorder)
+                    .frame(maxWidth: 320, maxHeight: 250, alignment: .leading)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color(hue: 0.471, saturation: 0.014, brightness: 0.936)))
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
                     Spacer()
                     //Activities list
-                    ContinueButton(pageNum: $pageNum)
+                    SubmitButton(moodScore: moodScore, selectedActivities: selectedActivities, selectedFeelings: selectedFeelings, title: title, memo: memo, dayId: dayId)
                     Spacer()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

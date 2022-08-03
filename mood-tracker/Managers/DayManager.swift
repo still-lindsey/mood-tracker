@@ -42,3 +42,15 @@ struct NewDayResponseBody: Decodable {
     }
 }
 
+//struct Landmark: Codable
+
+//enum CodingKeys: String, CodingKey {
+//    case date
+//    case dayOfWeek = "day_of_week"
+//    case month
+//    case dayId
+//    case entries
+//    case quote
+//    case quoteAuthor = "quote_author"
+//    case status
+//}

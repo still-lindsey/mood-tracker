@@ -3,16 +3,15 @@
 //  mood-tracker
 //
 //  Created by Lindsey M Still on 7/29/22.
-
+//FIX CONDITIONAL STYLES
 import SwiftUI
+enum MenuTabs: Int {
+    case first, second, third, fourth, fifth
+}
 
 struct ContentView: View {
     @State var entryAdded: Bool = false
-    @State var change: Bool = false
-    enum Tab: Int {
-        case first, second, third, fourth, fifth
-    }
-    @State private var selectedTab = Tab.first
+    @State var selectedTab = MenuTabs.first
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
@@ -21,34 +20,35 @@ struct ContentView: View {
                         HomeView(entryAdded: $entryAdded)
                     }
                     else if selectedTab == .second {
-                        NavigationView {
+                        
                             VStack(spacing: 0) {
                                 QuotesView(entryAdded: $entryAdded)
                             }
-                        }
+                        
                     }
                     else if selectedTab == .third {
-                        NavigationView {
+                  
                             VStack(spacing: 0) {
-                                AddEntryView(change: $change, entryAdded: $entryAdded)
+                                AddEntryView(entryAdded: $entryAdded, selectedTab: $selectedTab)
                             }
-                        }
+                        
                     }else if selectedTab == .fourth {
-                        NavigationView {
+                      
                             VStack(spacing: 0) {
                                 AnalyticsView(entryAdded: $entryAdded)
-                            }
+                       
                         }
                     }else if selectedTab == .fifth {
-                        NavigationView {
+
                             VStack(spacing: 0) {
                                 AllDaysView(entryAdded: $entryAdded)
-                            }
                         }
                     }
                 }
             }
-            tabBarView
+            if selectedTab != .third {
+                tabBarView
+            }
         }
     }
     
@@ -67,24 +67,24 @@ struct ContentView: View {
         }
         .zIndex(entryAdded == false ? 0 : 2)
         .frame(height: 50)
-        .background(selectedTab == .third && !entryAdded ? Color(red: 0.493, green: 0.921, blue: 0.795).edgesIgnoringSafeArea(.all) : Color.white.edgesIgnoringSafeArea(.all))
+        .background(Color.white.edgesIgnoringSafeArea(.all))
         .padding(.leading)
         .padding(.trailing)
     }
     
-    func tabBarItem(_ tab: Tab, title: String, icon: String, selectedIcon: String) -> some View {
+    func tabBarItem(_ tab: MenuTabs, title: String, icon: String, selectedIcon: String) -> some View {
         ZStack(alignment: .topTrailing) {
             VStack(spacing: 3) {
                 VStack {
                     Image(systemName: (selectedTab == tab ? selectedIcon : icon))
                         .font(.system(size: 24))
-                        .foregroundColor(selectedTab == .third && !entryAdded ? Color(red: 0.493, green: 0.921, blue: 0.795) : .black)
+                        .foregroundColor(.black)
                 }
                 .frame(width: 55, height: 28)
                 
                 Text(title)
                     .font(.system(size: 11))
-                    .foregroundColor(selectedTab == .third && !entryAdded ? Color(red: 0.493, green: 0.921, blue: 0.795) : .black)
+                    .foregroundColor(.black)
                 
             }
         }

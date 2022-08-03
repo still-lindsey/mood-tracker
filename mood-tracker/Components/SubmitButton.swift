@@ -16,7 +16,6 @@ struct SubmitButton: View {
     var title: String
     var memo: String
     var dayId: Int
-    @Binding var entryAdded: Bool
     @Binding var selectedTab: MenuTabs
     @ObservedObject var tabViewManager = TabViewManager()
     var body: some View {
@@ -30,7 +29,6 @@ struct SubmitButton: View {
                         Task {
                             try await self.getDayManager.getDay(dayId: dayId)
                         }
-                        entryAdded = true
                         self.selectedTab = .first
                     }, label: {
                         Text("Add Entry")})
@@ -50,6 +48,6 @@ struct SubmitButton: View {
 
 struct SubmitButton_Previews: PreviewProvider {
     static var previews: some View {
-        SubmitButton(moodScore: 5.0, selectedActivities: ["work", "exercise"], selectedFeelings: ["stressed"], title: "Work", memo: "Was so busy today!", dayId: 2, entryAdded: .constant(true), selectedTab: .constant(.first))
+        SubmitButton(moodScore: 5.0, selectedActivities: ["work", "exercise"], selectedFeelings: ["stressed"], title: "Work", memo: "Was so busy today!", dayId: 2, selectedTab: .constant(.first))
     }
 }

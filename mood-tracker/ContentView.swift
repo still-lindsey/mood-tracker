@@ -29,7 +29,7 @@ struct ContentView: View {
                     else if selectedTab == .third {
                   
                             VStack(spacing: 0) {
-                                AddEntryView(entryAdded: $entryAdded, selectedTab: $selectedTab)
+                                AddEntryView(selectedTab: $selectedTab)
                             }
                         
                     }else if selectedTab == .fourth {

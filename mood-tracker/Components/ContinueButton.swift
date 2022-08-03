@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContinueButton: View {
-//    @Binding var change: Bool
     @Binding var pageNum: Int
     var body: some View {
         VStack{

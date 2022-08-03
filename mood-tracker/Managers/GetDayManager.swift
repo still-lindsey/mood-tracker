@@ -40,3 +40,4 @@ struct GetDayResponseBody: Decodable {
         var time_stamp: String
     }
 }
+

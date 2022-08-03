@@ -30,7 +30,6 @@ struct SubmitButton: View {
                         Task {
                             try await self.getDayManager.getDay(dayId: dayId)
                         }
-                        //How to get back to home
                         pageNum += 1
                         entryAdded = true
                         
@@ -45,16 +44,6 @@ struct SubmitButton: View {
                             .fill(Color(hue: 1.0, saturation: 0.01, brightness: 0.79))
                      )
                      .buttonStyle(PlainButtonStyle())
-//            }else{
-//                LoadingView()
-//                    .task {
-//                        do {
-//                            day = try await dayManager.postNewDay()
-//                        }catch {
-//                            print("Error getting today's data: \(error)")
-//                    }
-//                }
-//            }
         }
 
     }

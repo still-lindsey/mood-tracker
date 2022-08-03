@@ -11,26 +11,6 @@ struct HomeView: View {
     var dayManager = DayManager()
     @State var day: NewDayResponseBody?
     @Binding var entryAdded: Bool
-//    var day: NewDayResponseBody
-//    struct DayData {
-//        var date: String
-//        var day_of_week: String
-//        var month: String
-//        var day_id: Int
-//        var entries: [EntryResponse]
-//        var quote: String
-//        var quote_author: String
-//        var status: String
-//    }
-//    struct EntryResponse{
-//        var activities: [String]
-//        var emotions: [String]
-//        var entry_id: Int
-//        var memo: String
-//        var title: String
-//        var mood_score: Double
-//        var time_stamp: String
-//    }
     var body: some View {
             if let day = day {
                 VStack(spacing: 20) {

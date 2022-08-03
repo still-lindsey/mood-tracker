@@ -136,6 +136,14 @@ struct ActivitiesList: View {
                 }
                 }
             }
+            .onDisappear{
+                for item in activityItems {
+                    let i = activityItems.firstIndex(of: item)
+                    let newVal = ActivityItem(id: item.id, text: item.text, icon: item.icon, isSelected: false)
+                    activityItems[i!] = newVal
+                }
+            }
+
         }
     }
 }

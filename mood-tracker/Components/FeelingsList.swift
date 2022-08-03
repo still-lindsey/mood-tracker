@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FeelingsList: View {
     @Binding var selectedFeelings: [String]
+//    var feelingsInstanceList = createFeelingsInstanceList()
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             VStack{
@@ -30,7 +31,6 @@ struct FeelingsList: View {
                             }
                         }label: {
                             VStack(spacing: 0){
-//                                Image(uiImage: item.icon!)
                                 Text(item.emoji)
                                     .font(.title)
                                 .foregroundColor(.gray)
@@ -58,7 +58,7 @@ struct FeelingsList: View {
                                 let updatedSelect = !item.isSelected
                                 let newVal = FeelingItem(id: item.id, text: item.text, icon: item.icon,emoji:item.emoji, isSelected: updatedSelect)
                                 feelingItems[i!] = newVal
-                                print(feelingItems[i!].isSelected)
+//                                print(feelingItems[i!].isSelected)
                                 if feelingItems[i!].isSelected {
                                     selectedFeelings.append(item.text)
                                 }else{
@@ -94,6 +94,13 @@ struct FeelingsList: View {
                             .foregroundColor(.clear)
                             .font(.body)
                 }
+                }
+            }
+            .onDisappear{
+                for item in feelingItems {
+                    let i = feelingItems.firstIndex(of: item)
+                    let newVal = FeelingItem(id: item.id, text: item.text, icon: item.icon,emoji:item.emoji, isSelected: false)
+                    feelingItems[i!] = newVal
                 }
             }
         }

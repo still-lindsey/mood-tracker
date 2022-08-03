@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct AllDaysView: View {
+    @Binding var entryAdded: Bool
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+        }
+        .onAppear{
+            entryAdded = false
+        }
     }
 }
 
 struct AllDaysView_Previews: PreviewProvider {
     static var previews: some View {
-        AllDaysView()
+        AllDaysView(entryAdded: .constant(true))
     }
 }

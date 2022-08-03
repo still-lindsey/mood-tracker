@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct QuotesView: View {
+    @Binding var entryAdded: Bool
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+        }
+        .onAppear{
+            entryAdded = false
+        }
     }
 }
 
 struct QuotesView_Previews: PreviewProvider {
     static var previews: some View {
-        QuotesView()
+        QuotesView(entryAdded: .constant(true))
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct AddEntryView: View {
     var dayId: Int
     @Binding var change: Bool
+    @Binding var entryAdded: Bool
     @State var pageNum: Int = 0
     @State var moodScore: Double = 5.0
     @State var selectedActivities: [String] = []
@@ -20,7 +21,7 @@ struct AddEntryView: View {
         ZStack {
             //change state is broken
 //            if change {
-                if pageNum == 0 {
+                if pageNum == 0 && !entryAdded{
                 VStack{
                     //change is broken
 //                    HStack {
@@ -83,7 +84,7 @@ struct AddEntryView: View {
                     .preferredColorScheme(.light)
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
-                }else if pageNum == 2 {
+                }else if pageNum == 2 && !entryAdded{
                     VStack{
 //                        HStack {
 //                            Button(action: {
@@ -111,7 +112,7 @@ struct AddEntryView: View {
                     .preferredColorScheme(.light)
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
-                }else if pageNum == 3 {
+                }else if pageNum == 3 && !entryAdded{
 
                     VStack{
 //                        HStack {
@@ -163,7 +164,7 @@ struct AddEntryView: View {
                         .disableAutocorrection(true)
                         Spacer()
                         //Activities list
-                        SubmitButton(moodScore: moodScore, selectedActivities: selectedActivities, selectedFeelings: selectedFeelings, title: title, memo: memo, dayId: dayId)
+                        SubmitButton(moodScore: moodScore, selectedActivities: selectedActivities, selectedFeelings: selectedFeelings, title: title, memo: memo, dayId: dayId, entryAdded: $entryAdded, pageNum: $pageNum)
                         Spacer()
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -171,8 +172,27 @@ struct AddEntryView: View {
                     .preferredColorScheme(.light)
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
+                }else{
+                    VStack{
+                        Text(entryAdded ? "Entry Added!" : "State not updated")
+                            .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
+                        .font(.system(size: 45))
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color(red: 0.493, green: 0.921, blue: 0.795))
+                    .onAppear {
+                        pageNum = 0
+                        moodScore = 5.0
+                        selectedActivities = []
+                        selectedFeelings = []
+                        title = ""
+                        memo = ""
+                    }
                 }
             }
+        .zIndex(1)
         }
 //        .zIndex(1)
 //        .background(Color(red: 0.493, green: 0.921, blue: 0.795))
@@ -190,6 +210,6 @@ struct AddEntryView: View {
 
 struct AddEntryView_Previews: PreviewProvider {
     static var previews: some View {
-        AddEntryView(dayId: 3, change: .constant(true))
+        AddEntryView(dayId: 3, change: .constant(true), entryAdded: .constant(true))
     }
 }

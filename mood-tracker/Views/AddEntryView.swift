@@ -1,10 +1,10 @@
+
 //
 //  AddEntryView.swift
 //  mood-tracker
 //
 //  Created by Lindsey M Still on 7/31/22.
 //
-
 import SwiftUI
 
 struct AddEntryView: View {
@@ -179,3 +179,4 @@ struct AddEntryView_Previews: PreviewProvider {
         AddEntryView(change: .constant(true), entryAdded: .constant(false))
     }
 }
+

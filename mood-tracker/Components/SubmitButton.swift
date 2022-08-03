@@ -9,12 +9,15 @@ import SwiftUI
 
 struct SubmitButton: View {
     var entryManager = EntryManager()
+    var getDayManager = GetDayManager()
+    var day: NewDayResponseBody?
     var moodScore: Double
     var selectedActivities: [String]
     var selectedFeelings: [String]
     var title: String
     var memo: String
     var dayId: Int
+    @ObservedObject var tabViewManager = TabViewManager()
     var body: some View {
         VStack{
             Button(action: {
@@ -22,6 +25,11 @@ struct SubmitButton: View {
                    try await self.entryManager.postNewEntry(dayId: dayId, moodScore: moodScore, selectedActivities: selectedActivities,
                 selectedFeelings: selectedFeelings,title: title,memo: memo)
                 }
+                Task {
+                    try await self.getDayManager.getDay(dayId: dayId)
+                }
+                //How to get back to home
+                
             }, label: {
                 Text("Add Entry")})
             .padding(15)

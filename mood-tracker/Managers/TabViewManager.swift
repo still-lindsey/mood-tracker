@@ -13,4 +13,5 @@ class TabViewManager: ObservableObject {
     init() {
         UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance.init(idiom: .unspecified)
     }
+    
 }

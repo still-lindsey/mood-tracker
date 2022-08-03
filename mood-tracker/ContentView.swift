@@ -9,7 +9,8 @@ import SwiftUI
 struct ContentView: View {
     var dayManager = DayManager()
     @State var day: NewDayResponseBody?
-    @ObservedObject private var tabViewManager = TabViewManager()
+    @ObservedObject var tabViewManager = TabViewManager()
+    @State var change: Bool = false
     var body: some View {
         ZStack {
             if let day = day {
@@ -31,8 +32,8 @@ struct ContentView: View {
                             Image(systemName: "quote.bubble")
                             
                         }
-
-                    AddEntryView(dayId: dayId)
+                    
+                    AddEntryView(dayId: dayId, change: $change)
                         .environmentObject(tabViewManager)
                         .hideTabBar(animated: false)
                         .tag(2)
@@ -69,6 +70,16 @@ struct ContentView: View {
                 }
             }
         }
+        .zIndex(0)
+        //trying to fix nav view from add entry
+//        if change {
+//            VStack {
+//                AddEntryView(dayId: dayId, change: $change)
+//            }
+//            .zIndex(1)
+//            .background(Color(red: 0.493, green: 0.921, blue: 0.795))
+//            .transition(AnyTransition.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
+//        }
     }
 }
 

@@ -204,7 +204,7 @@ extension UIView {
                      opacity: Float = 0.2,
                      corners: UIRectCorner,
                      offset: CGSize = CGSize(width: 0.0, height: 5.0),
-                     radius: CGFloat = 0.0) -> CAShapeLayer {
+                           radius: CGFloat = 0.0, cornerRadius: CGFloat) -> CAShapeLayer {
     
       let shadowLayer = CAShapeLayer()
       shadowLayer.path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)).cgPath
@@ -213,6 +213,7 @@ extension UIView {
       shadowLayer.shadowPath = shadowLayer.path
       shadowLayer.shadowOffset = offset
       shadowLayer.shadowOpacity = opacity
+      shadowLayer.cornerRadius = 20.0
       layer.mask = shadowLayer
       layer.insertSublayer(shadowLayer, at: 0)
       return shadowLayer

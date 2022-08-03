@@ -68,6 +68,8 @@ struct ContentView: View {
         .zIndex(entryAdded == false ? 0 : 2)
         .frame(height: 50)
         .background(selectedTab == .third && !entryAdded ? Color(red: 0.493, green: 0.921, blue: 0.795).edgesIgnoringSafeArea(.all) : Color.white.edgesIgnoringSafeArea(.all))
+        .padding(.leading)
+        .padding(.trailing)
     }
     
     func tabBarItem(_ tab: Tab, title: String, icon: String, selectedIcon: String) -> some View {
@@ -86,7 +88,7 @@ struct ContentView: View {
                 
             }
         }
-        .frame(width: 65, height: 42)
+        .frame(width: 62, height: 42)
         .onTapGesture {
             selectedTab = tab
         }

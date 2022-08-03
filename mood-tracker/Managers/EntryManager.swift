@@ -9,11 +9,24 @@ import SwiftUI
 import Foundation
 
 class EntryManager {
-    func postNewEntry (dayId: Int) async throws -> NewEntryResponseBody {
-        guard let url = URL(string: "http://127.0.0.1:5000/days/\(dayId)") else {
+    
+    func postNewEntry (dayId: Int, moodScore: Double, selectedActivities: [String],
+    selectedFeelings: [String],title: String,memo: String) async throws -> NewEntryResponseBody {
+        let body: [String:Any] = [
+            "title": title,
+            "memo": memo,
+            "mood_score": moodScore,
+            "activities": selectedActivities,
+            "emotions": selectedFeelings
+            ]
+        let jsonData = try? JSONSerialization.data(withJSONObject: body)
+        
+        guard let url = URL(string: "http://127.0.0.1:5000/days/\(dayId)/entries") else {
             fatalError("Missing URL.")}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = jsonData
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         guard (response as? HTTPURLResponse)?
             .statusCode == 201 else {

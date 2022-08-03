@@ -13,7 +13,7 @@ class GetDayManager {
         guard let url = URL(string: "http://127.0.0.1:5000/days/\(dayId)") else {fatalError("Missing URL.")}
         let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        guard (response as? HTTPURLResponse)?.statusCode == 201 else {fatalError("Error creating day.")}
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {fatalError("Error getting day.")}
         
         let decodedData = try JSONDecoder().decode(GetDayResponseBody.self, from: data)
         return decodedData
@@ -40,3 +40,4 @@ struct GetDayResponseBody: Decodable {
         var time_stamp: String
     }
 }
+

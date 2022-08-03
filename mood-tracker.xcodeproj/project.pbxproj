@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A066E162897E40A0031ABF4 /* MoodScoreSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A066E152897E40A0031ABF4 /* MoodScoreSlider.swift */; };
+		2A066E182898E0040031ABF4 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A066E172898E0040031ABF4 /* CancelButton.swift */; };
+		2A066E1A2898F5C90031ABF4 /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A066E192898F5C90031ABF4 /* ContinueButton.swift */; };
+		2A066E1C2898FD800031ABF4 /* ActivitiesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A066E1B2898FD800031ABF4 /* ActivitiesList.swift */; };
 		2A5EF0D22893CCEF0093AA2F /* AllDaysManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0D12893CCEF0093AA2F /* AllDaysManager.swift */; };
 		2A5EF0D62893E3100093AA2F /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0D52893E3100093AA2F /* ModelData.swift */; };
 		2A5EF0D82893E3370093AA2F /* dayData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A5EF0D72893E3370093AA2F /* dayData.json */; };
 		2A5EF0DA2893E8E50093AA2F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0D92893E8E50093AA2F /* Extensions.swift */; };
 		2A5EF0DF28940ADE0093AA2F /* QuoteOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0DE28940ADE0093AA2F /* QuoteOfTheDay.swift */; };
 		2A5EF0E128940B5C0093AA2F /* DailyCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EF0E028940B5C0093AA2F /* DailyCheckIn.swift */; };
+		2A8353BB28990B1A00DA665F /* WrappingStack in Frameworks */ = {isa = PBXBuildFile; productRef = 2A8353BA28990B1A00DA665F /* WrappingStack */; };
+		2A8353BD289912C100DA665F /* Feelings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8353BC289912C100DA665F /* Feelings.swift */; };
+		2A8353BF289913A400DA665F /* FeelingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8353BE289913A400DA665F /* FeelingsList.swift */; };
+		2A8353C128996FAA00DA665F /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8353C028996FAA00DA665F /* SubmitButton.swift */; };
 		2A83C451289645E200FFAF0D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C450289645E200FFAF0D /* Date.swift */; };
 		2A83C4532896539200FFAF0D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C4522896539200FFAF0D /* Helpers.swift */; };
 		2A83C45528965EAB00FFAF0D /* DayMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C45428965EAB00FFAF0D /* DayMood.swift */; };
@@ -26,6 +34,8 @@
 		2A83C4692896816000FFAF0D /* AllDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C4682896816000FFAF0D /* AllDaysView.swift */; };
 		2A83C46B2896C79400FFAF0D /* GetDayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C46A2896C79400FFAF0D /* GetDayManager.swift */; };
 		2A83C46D2896CA3700FFAF0D /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C46C2896CA3700FFAF0D /* Activities.swift */; };
+		2A83C4722897C7C200FFAF0D /* HidableTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 2A83C4712897C7C200FFAF0D /* HidableTabView */; };
+		2A83C47F2897CB0A00FFAF0D /* TabViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C47E2897CB0A00FFAF0D /* TabViewManager.swift */; };
 		2A8B4CB22893A7B2000E6598 /* mood_trackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CB12893A7B2000E6598 /* mood_trackerApp.swift */; };
 		2A8B4CB42893A7B2000E6598 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CB32893A7B2000E6598 /* ContentView.swift */; };
 		2A8B4CB62893A7B4000E6598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A8B4CB52893A7B4000E6598 /* Assets.xcassets */; };
@@ -58,12 +68,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A066E152897E40A0031ABF4 /* MoodScoreSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodScoreSlider.swift; sourceTree = "<group>"; };
+		2A066E172898E0040031ABF4 /* CancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
+		2A066E192898F5C90031ABF4 /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
+		2A066E1B2898FD800031ABF4 /* ActivitiesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesList.swift; sourceTree = "<group>"; };
 		2A5EF0D12893CCEF0093AA2F /* AllDaysManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDaysManager.swift; sourceTree = "<group>"; };
 		2A5EF0D52893E3100093AA2F /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		2A5EF0D72893E3370093AA2F /* dayData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dayData.json; sourceTree = "<group>"; };
 		2A5EF0D92893E8E50093AA2F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2A5EF0DE28940ADE0093AA2F /* QuoteOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteOfTheDay.swift; sourceTree = "<group>"; };
 		2A5EF0E028940B5C0093AA2F /* DailyCheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckIn.swift; sourceTree = "<group>"; };
+		2A8353BC289912C100DA665F /* Feelings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feelings.swift; sourceTree = "<group>"; };
+		2A8353BE289913A400DA665F /* FeelingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsList.swift; sourceTree = "<group>"; };
+		2A8353C028996FAA00DA665F /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		2A83C450289645E200FFAF0D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		2A83C4522896539200FFAF0D /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		2A83C45428965EAB00FFAF0D /* DayMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayMood.swift; sourceTree = "<group>"; };
@@ -72,11 +89,12 @@
 		2A83C45E289678F700FFAF0D /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		2A83C460289680D800FFAF0D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2A83C4622896811400FFAF0D /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
-		2A83C4642896812800FFAF0D /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
+		2A83C4642896812800FFAF0D /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddEntryView.swift; path = ../Views/AddEntryView.swift; sourceTree = "<group>"; };
 		2A83C4662896813600FFAF0D /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
-		2A83C4682896816000FFAF0D /* AllDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDaysView.swift; sourceTree = "<group>"; };
+		2A83C4682896816000FFAF0D /* AllDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllDaysView.swift; path = ../Views/AllDaysView.swift; sourceTree = "<group>"; };
 		2A83C46A2896C79400FFAF0D /* GetDayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDayManager.swift; sourceTree = "<group>"; };
 		2A83C46C2896CA3700FFAF0D /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
+		2A83C47E2897CB0A00FFAF0D /* TabViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewManager.swift; sourceTree = "<group>"; };
 		2A8B4CAE2893A7B2000E6598 /* mood-tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mood-tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8B4CB12893A7B2000E6598 /* mood_trackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mood_trackerApp.swift; sourceTree = "<group>"; };
 		2A8B4CB32893A7B2000E6598 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +117,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A83C4722897C7C200FFAF0D /* HidableTabView in Frameworks */,
+				2A8353BB28990B1A00DA665F /* WrappingStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,8 +150,27 @@
 				2A83C45C2896773F00FFAF0D /* TabBar.swift */,
 				2A83C45E289678F700FFAF0D /* Tab.swift */,
 				2A83C46C2896CA3700FFAF0D /* Activities.swift */,
+				2A066E152897E40A0031ABF4 /* MoodScoreSlider.swift */,
+				2A066E172898E0040031ABF4 /* CancelButton.swift */,
+				2A066E192898F5C90031ABF4 /* ContinueButton.swift */,
+				2A066E1B2898FD800031ABF4 /* ActivitiesList.swift */,
+				2A8353BC289912C100DA665F /* Feelings.swift */,
+				2A8353BE289913A400DA665F /* FeelingsList.swift */,
+				2A8353C028996FAA00DA665F /* SubmitButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		2A83C4732897C8FD00FFAF0D /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				2A83C460289680D800FFAF0D /* HomeView.swift */,
+				2A83C4622896811400FFAF0D /* QuotesView.swift */,
+				2A83C4642896812800FFAF0D /* AddEntryView.swift */,
+				2A83C4662896813600FFAF0D /* AnalyticsView.swift */,
+				2A83C4682896816000FFAF0D /* AllDaysView.swift */,
+			);
+			path = TabView;
 			sourceTree = "<group>";
 		};
 		2A8B4CA52893A7B2000E6598 = {
@@ -159,6 +198,7 @@
 		2A8B4CB02893A7B2000E6598 /* mood-tracker */ = {
 			isa = PBXGroup;
 			children = (
+				2A83C4732897C8FD00FFAF0D /* TabView */,
 				2A8B4CB32893A7B2000E6598 /* ContentView.swift */,
 				2A5EF0DD28940A420093AA2F /* Components */,
 				2A8B4CB12893A7B2000E6598 /* mood_trackerApp.swift */,
@@ -206,6 +246,7 @@
 				2A8B4CE92893BB43000E6598 /* QuoteManager.swift */,
 				2A8B4CEB2893BB56000E6598 /* AnalyticsManager.swift */,
 				2A5EF0D12893CCEF0093AA2F /* AllDaysManager.swift */,
+				2A83C47E2897CB0A00FFAF0D /* TabViewManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -213,11 +254,6 @@
 		2A8B4CDE2893B063000E6598 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2A83C460289680D800FFAF0D /* HomeView.swift */,
-				2A83C4622896811400FFAF0D /* QuotesView.swift */,
-				2A83C4642896812800FFAF0D /* AddEntryView.swift */,
-				2A83C4662896813600FFAF0D /* AnalyticsView.swift */,
-				2A83C4682896816000FFAF0D /* AllDaysView.swift */,
 				2A8B4CE32893B842000E6598 /* LoadingView.swift */,
 			);
 			path = Views;
@@ -239,6 +275,10 @@
 			dependencies = (
 			);
 			name = "mood-tracker";
+			packageProductDependencies = (
+				2A83C4712897C7C200FFAF0D /* HidableTabView */,
+				2A8353BA28990B1A00DA665F /* WrappingStack */,
+			);
 			productName = "mood-tracker";
 			productReference = 2A8B4CAE2893A7B2000E6598 /* mood-tracker.app */;
 			productType = "com.apple.product-type.application";
@@ -311,6 +351,10 @@
 				Base,
 			);
 			mainGroup = 2A8B4CA52893A7B2000E6598;
+			packageReferences = (
+				2A83C4702897C7C200FFAF0D /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */,
+				2A8353B928990B1A00DA665F /* XCRemoteSwiftPackageReference "swiftui-wrapping-stack" */,
+			);
 			productRefGroup = 2A8B4CAF2893A7B2000E6598 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -356,26 +400,34 @@
 			files = (
 				2A5EF0DF28940ADE0093AA2F /* QuoteOfTheDay.swift in Sources */,
 				2A83C4532896539200FFAF0D /* Helpers.swift in Sources */,
+				2A066E1C2898FD800031ABF4 /* ActivitiesList.swift in Sources */,
+				2A83C47F2897CB0A00FFAF0D /* TabViewManager.swift in Sources */,
 				2A8B4CE82893BB2C000E6598 /* EntryManager.swift in Sources */,
 				2A8B4CB42893A7B2000E6598 /* ContentView.swift in Sources */,
 				2A8B4CB22893A7B2000E6598 /* mood_trackerApp.swift in Sources */,
 				2A83C4672896813600FFAF0D /* AnalyticsView.swift in Sources */,
 				2A8B4CEA2893BB43000E6598 /* QuoteManager.swift in Sources */,
+				2A066E1A2898F5C90031ABF4 /* ContinueButton.swift in Sources */,
 				2A83C46B2896C79400FFAF0D /* GetDayManager.swift in Sources */,
 				2A8B4CEC2893BB56000E6598 /* AnalyticsManager.swift in Sources */,
+				2A8353BD289912C100DA665F /* Feelings.swift in Sources */,
 				2A83C45D2896773F00FFAF0D /* TabBar.swift in Sources */,
 				2A83C45528965EAB00FFAF0D /* DayMood.swift in Sources */,
 				2A83C4652896812800FFAF0D /* AddEntryView.swift in Sources */,
 				2A5EF0D22893CCEF0093AA2F /* AllDaysManager.swift in Sources */,
 				2A5EF0E128940B5C0093AA2F /* DailyCheckIn.swift in Sources */,
+				2A066E182898E0040031ABF4 /* CancelButton.swift in Sources */,
 				2A8B4CE42893B842000E6598 /* LoadingView.swift in Sources */,
 				2A5EF0DA2893E8E50093AA2F /* Extensions.swift in Sources */,
 				2A83C4592896647E00FFAF0D /* PreviousDates.swift in Sources */,
+				2A8353BF289913A400DA665F /* FeelingsList.swift in Sources */,
 				2A5EF0D62893E3100093AA2F /* ModelData.swift in Sources */,
 				2A83C45F289678F700FFAF0D /* Tab.swift in Sources */,
+				2A8353C128996FAA00DA665F /* SubmitButton.swift in Sources */,
 				2A83C451289645E200FFAF0D /* Date.swift in Sources */,
 				2A83C4692896816000FFAF0D /* AllDaysView.swift in Sources */,
 				2A8B4CE62893BB1C000E6598 /* DayManager.swift in Sources */,
+				2A066E162897E40A0031ABF4 /* MoodScoreSlider.swift in Sources */,
 				2A83C461289680D800FFAF0D /* HomeView.swift in Sources */,
 				2A83C46D2896CA3700FFAF0D /* Activities.swift in Sources */,
 				2A83C4632896811400FFAF0D /* QuotesView.swift in Sources */,
@@ -703,6 +755,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A8353B928990B1A00DA665F /* XCRemoteSwiftPackageReference "swiftui-wrapping-stack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/diniska/swiftui-wrapping-stack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		2A83C4702897C7C200FFAF0D /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliMert/HidableTabView-SwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A8353BA28990B1A00DA665F /* WrappingStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A8353B928990B1A00DA665F /* XCRemoteSwiftPackageReference "swiftui-wrapping-stack" */;
+			productName = WrappingStack;
+		};
+		2A83C4712897C7C200FFAF0D /* HidableTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A83C4702897C7C200FFAF0D /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */;
+			productName = HidableTabView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A8B4CA62893A7B2000E6598 /* Project object */;
 }

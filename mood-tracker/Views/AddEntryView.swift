@@ -137,7 +137,6 @@ struct AddEntryView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(Color(red: 0.493, green: 0.921, blue: 0.795))
                         .preferredColorScheme(.light)
-                        .frame(maxWidth: .infinity)
                         .multilineTextAlignment(.center)
                     }
                 }

@@ -48,6 +48,11 @@
 		2A8B4CE82893BB2C000E6598 /* EntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CE72893BB2C000E6598 /* EntryManager.swift */; };
 		2A8B4CEA2893BB43000E6598 /* QuoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CE92893BB43000E6598 /* QuoteManager.swift */; };
 		2A8B4CEC2893BB56000E6598 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CEB2893BB56000E6598 /* AnalyticsManager.swift */; };
+		2AEF2DD7289BC3A1008E8ED1 /* DaysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEF2DD6289BC3A1008E8ED1 /* DaysList.swift */; };
+		2AEF2DE1289BC5FF008E8ED1 /* daysData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF2DE0289BC5FF008E8ED1 /* daysData.json */; };
+		2AEF2DE3289BF1F3008E8ED1 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEF2DE2289BF1F3008E8ED1 /* Day.swift */; };
+		2AEF2DE5289C0788008E8ED1 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEF2DE4289C0788008E8ED1 /* Entry.swift */; };
+		2AEF2DE7289C143E008E8ED1 /* entriesdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF2DE6289C143E008E8ED1 /* entriesdata.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +115,11 @@
 		2A8B4CE72893BB2C000E6598 /* EntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryManager.swift; sourceTree = "<group>"; };
 		2A8B4CE92893BB43000E6598 /* QuoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteManager.swift; sourceTree = "<group>"; };
 		2A8B4CEB2893BB56000E6598 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		2AEF2DD6289BC3A1008E8ED1 /* DaysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysList.swift; sourceTree = "<group>"; };
+		2AEF2DE0289BC5FF008E8ED1 /* daysData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = daysData.json; sourceTree = "<group>"; };
+		2AEF2DE2289BF1F3008E8ED1 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		2AEF2DE4289C0788008E8ED1 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		2AEF2DE6289C143E008E8ED1 /* entriesdata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = entriesdata.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +167,9 @@
 				2A8353BC289912C100DA665F /* Feelings.swift */,
 				2A8353BE289913A400DA665F /* FeelingsList.swift */,
 				2A8353C028996FAA00DA665F /* SubmitButton.swift */,
+				2AEF2DD6289BC3A1008E8ED1 /* DaysList.swift */,
+				2AEF2DE2289BF1F3008E8ED1 /* Day.swift */,
+				2AEF2DE4289C0788008E8ED1 /* Entry.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -216,6 +229,8 @@
 				2A8B4CB82893A7B4000E6598 /* Preview Assets.xcassets */,
 				2A5EF0D52893E3100093AA2F /* ModelData.swift */,
 				2A5EF0D72893E3370093AA2F /* dayData.json */,
+				2AEF2DE0289BC5FF008E8ED1 /* daysData.json */,
+				2AEF2DE6289C143E008E8ED1 /* entriesdata.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -242,10 +257,10 @@
 			children = (
 				2A8B4CE52893BB1C000E6598 /* DayManager.swift */,
 				2A83C46A2896C79400FFAF0D /* GetDayManager.swift */,
+				2A5EF0D12893CCEF0093AA2F /* AllDaysManager.swift */,
 				2A8B4CE72893BB2C000E6598 /* EntryManager.swift */,
 				2A8B4CE92893BB43000E6598 /* QuoteManager.swift */,
 				2A8B4CEB2893BB56000E6598 /* AnalyticsManager.swift */,
-				2A5EF0D12893CCEF0093AA2F /* AllDaysManager.swift */,
 				2A83C47E2897CB0A00FFAF0D /* TabViewManager.swift */,
 			);
 			path = Managers;
@@ -371,9 +386,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AEF2DE1289BC5FF008E8ED1 /* daysData.json in Resources */,
 				2A5EF0D82893E3370093AA2F /* dayData.json in Resources */,
 				2A8B4CB92893A7B4000E6598 /* Preview Assets.xcassets in Resources */,
 				2A8B4CB62893A7B4000E6598 /* Assets.xcassets in Resources */,
+				2AEF2DE7289C143E008E8ED1 /* entriesdata.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,9 +439,12 @@
 				2A83C4592896647E00FFAF0D /* PreviousDates.swift in Sources */,
 				2A8353BF289913A400DA665F /* FeelingsList.swift in Sources */,
 				2A5EF0D62893E3100093AA2F /* ModelData.swift in Sources */,
+				2AEF2DE5289C0788008E8ED1 /* Entry.swift in Sources */,
+				2AEF2DD7289BC3A1008E8ED1 /* DaysList.swift in Sources */,
 				2A83C45F289678F700FFAF0D /* Tab.swift in Sources */,
 				2A8353C128996FAA00DA665F /* SubmitButton.swift in Sources */,
 				2A83C451289645E200FFAF0D /* Date.swift in Sources */,
+				2AEF2DE3289BF1F3008E8ED1 /* Day.swift in Sources */,
 				2A83C4692896816000FFAF0D /* AllDaysView.swift in Sources */,
 				2A8B4CE62893BB1C000E6598 /* DayManager.swift in Sources */,
 				2A066E162897E40A0031ABF4 /* MoodScoreSlider.swift in Sources */,

@@ -68,7 +68,7 @@ struct FeelingsList: View {
                             }
                         }label: {
                             VStack(spacing: 0){
-//                                Image(uiImage: item.icon!)
+//
                                 Text(item.emoji)
                                     .font(.title)
                                 .foregroundColor(.gray)
@@ -82,7 +82,7 @@ struct FeelingsList: View {
                             .foregroundColor(.gray)
                              .background(
                                  RoundedRectangle(cornerRadius: 25)
-                                    .fill(Color(.black).opacity(feelingItems[i!].isSelected ? 0.2 : 0.0))
+                                    .fill(Color(.black).opacity(feelingItems[i!].isSelected ? 0.5 : 0.0))
                              )
                              .buttonStyle(PlainButtonStyle())
                         }
@@ -95,6 +95,7 @@ struct FeelingsList: View {
                             .font(.body)
                 }
                 }
+                .frame(maxWidth: 1, maxHeight: 1, alignment: .center)
             }
             .onDisappear{
                 for item in feelingItems {

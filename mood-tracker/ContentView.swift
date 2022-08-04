@@ -22,7 +22,7 @@ struct ContentView: View {
                     else if selectedTab == .second {
                         
                             VStack(spacing: 0) {
-                                QuotesView(entryAdded: $entryAdded)
+                                QuotesView(entryAdded: $entryAdded) 
                             }
                         
                     }

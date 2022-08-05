@@ -25,31 +25,31 @@ struct AddEntryView: View {
         if let day = day {
             let dayId: Int = day.day_id
             ZStack {
-                    if pageNum == 0{
-                        VStack{
-                            CancelButton(selectedTab: $selectedTab)
-                            Text("Hey Lindsey.")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .padding(.top)
-                                .foregroundColor(.white)
-                            Text("How are you feeling today?")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                            Spacer()
-                            Image(uiImage: getMoodDescriptionandIcon(moodScore:moodScore).1!)
-                                .resizable()
-                                .frame(width: 100.0, height: 100.0)
-                            Text(getMoodDescriptionandIcon(moodScore:moodScore).0)
-                                .textCase(.uppercase)
-                                .font(.title2)
-                                .foregroundColor(.white)
-                            MoodScoreSlider(moodScore: $moodScore, moodScoreDidChange: $moodScoreDidChange)
-                            ContinueButton(pageNum: $pageNum)
-                                .disabled(!moodScoreDidChange)
-                            Spacer()
-                        }
+                if pageNum == 0{
+                    VStack{
+                        CancelButton(selectedTab: $selectedTab)
+                        Text("Hey Lindsey.")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.top)
+                            .foregroundColor(.white)
+                        Text("How are you feeling today?")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        Spacer()
+                        Image(uiImage: getMoodDescriptionandIcon(moodScore:moodScore).1!)
+                            .resizable()
+                            .frame(width: 100.0, height: 100.0)
+                        Text(getMoodDescriptionandIcon(moodScore:moodScore).0)
+                            .textCase(.uppercase)
+                            .font(.title2)
+                            .foregroundColor(.white)
+                        MoodScoreSlider(moodScore: $moodScore, moodScoreDidChange: $moodScoreDidChange)
+                        ContinueButton(pageNum: $pageNum)
+                            .disabled(!moodScoreDidChange)
+                        Spacer()
+                    }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color(red: 0.493, green: 0.921, blue: 0.795))
                     .preferredColorScheme(.light)
@@ -99,7 +99,6 @@ struct AddEntryView: View {
                         .frame(maxWidth: .infinity)
                         .multilineTextAlignment(.center)
                     }else if pageNum == 3{
-
                         VStack{
                             CancelButton(selectedTab: $selectedTab)
                             Text(NSDate.now.formatted(date: .long, time: .shortened))
@@ -112,20 +111,13 @@ struct AddEntryView: View {
                                 .font(.system(size: 45))
                                 .fontWeight(.bold)
                                 .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
-                            
-//                            let sA = copy(selectedActivities)
-//                            TagCloudView(tags: sA)
-                                
                             Text("FEELINGS")
                                 .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
                                 .font(.system(size: 45))
                                 .fontWeight(.bold)
                                 .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
-//                            let sF = copy(selectedFeelings)
-//                            TagCloudView(tags: sF)
-                                
                             TextField(
-                                "  Title...",
+                                "Title...",
                                 text: $title
                             )
                             .textFieldStyle(.roundedBorder)
@@ -147,7 +139,6 @@ struct AddEntryView: View {
                                                     .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
                                                     .padding(.leading, 30).padding(.trailing, 30)
                                 }
-                                
                                 TextEditor(text: $memo)
                                     .font(.body)
                                     .foregroundColor(.gray)
@@ -163,38 +154,38 @@ struct AddEntryView: View {
                                 .disabled(title == "" || memo == "")
                             Spacer()
                         }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color(red: 0.493, green: 0.921, blue: 0.795))
-                        .preferredColorScheme(.light)
-                        .multilineTextAlignment(.center)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(Color(red: 0.493, green: 0.921, blue: 0.795))
+                            .preferredColorScheme(.light)
+                            .multilineTextAlignment(.center)
+                        }
+                        .onDisappear{
+                            pageNum = 0
+                            moodScore = 5.0
+                            selectedActivities = []
+                            selectedFeelings = []
+                            title = ""
+                            memo = ""
+                            moodScoreDidChange = false
+                        }
                     }
-                }
-                .onDisappear{
-                    pageNum = 0
-                    moodScore = 5.0
-                    selectedActivities = []
-                    selectedFeelings = []
-                    title = ""
-                    memo = ""
-                    moodScoreDidChange = false
             }
-        }else{
-            LoadingView()
-                .task {
-                    do {
-                        day = try await dayManager.postNewDay()
-                    }catch {
-                        print("Error getting today's data: \(error)")
-                }
-            }
-        }
+
+                    }else{
+                        LoadingView()
+                            .task {
+                                do {
+                                    day = try await dayManager.postNewDay()
+                                }catch {
+                                    print("Error getting today's data: \(error)")
+                            }
+                        }
+                    }
     }
 }
-
 
 struct AddEntryView_Previews: PreviewProvider {
     static var previews: some View {
         AddEntryView( selectedTab: .constant(.first))
     }
 }
-

@@ -19,29 +19,27 @@ struct SubmitButton: View {
     @Binding var selectedTab: MenuTabs
     @ObservedObject var tabViewManager = TabViewManager()
     var body: some View {
-        VStack{
-//            if let day = day {
-                    Button(action: {
-                        Task {
-                           try await self.entryManager.postNewEntry(dayId: dayId, moodScore: moodScore, selectedActivities: selectedActivities,
-                        selectedFeelings: selectedFeelings,title: title,memo: memo)
-                        }
-                        Task {
-                            try await self.getDayManager.getDay(dayId: dayId)
-                        }
-                        self.selectedTab = .first
-                    }, label: {
-                        Text("Add Entry")})
-                    .padding(15)
-                    .padding(.leading, 50)
-                    .padding(.trailing, 50)
-                    .foregroundColor(.white)
-                     .background(
-                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color(hue: 1.0, saturation: 0.01, brightness: 0.79))
-                     )
-                     .buttonStyle(PlainButtonStyle())
-        }
+
+            Button(action: {
+                Task {
+                   try await self.entryManager.postNewEntry(dayId: dayId, moodScore: moodScore, selectedActivities: selectedActivities,
+                selectedFeelings: selectedFeelings,title: title,memo: memo)
+                }
+                Task {
+                    try await self.getDayManager.getDay(dayId: dayId)
+                }
+                self.selectedTab = .first
+            }, label: {
+                Text("Add Entry")})
+            .padding(15)
+            .padding(.leading, 50)
+            .padding(.trailing, 50)
+            .foregroundColor(.white)
+             .background(
+                 RoundedRectangle(cornerRadius: 25)
+                    .fill(Color(hue: 0.471, saturation: 0.034, brightness: 0.693))
+             )
+             .buttonStyle(PlainButtonStyle())
 
     }
 }

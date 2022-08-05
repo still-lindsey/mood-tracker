@@ -11,13 +11,14 @@ struct DaysList: View {
     var days: [AllDaysResponseBody]
     var body: some View {
         VStack{
-            ForEach(days, id: \.self){day in
+            ForEach(days.reversed(), id: \.self){day in
+                if day.entries.count > 0 {
                 Day(entries: day.entries, month: day.month, id: day.day_id, date: day.date, dayOfWeek: day.day_of_week)
-            }
-                
+                }
             }
         }
     }
+}
 
 struct DaysList_Previews: PreviewProvider {
     static var previews: some View {

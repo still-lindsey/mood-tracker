@@ -10,6 +10,7 @@ enum MenuTabs: Int {
 }
 
 struct ContentView: View {
+
     @State var entryAdded: Bool = false
     @State var selectedTab = MenuTabs.first
     var body: some View {
@@ -17,7 +18,7 @@ struct ContentView: View {
             ZStack {
                 ZStack {
                     if selectedTab == .first {
-                        HomeView(entryAdded: $entryAdded)
+                        HomeView(selectedTab: $selectedTab, entryAdded: $entryAdded)
                     }
                     else if selectedTab == .second {
                         

@@ -13,12 +13,12 @@ struct AllDaysView: View {
     @State var days: [AllDaysResponseBody]?
     var body: some View {
         if let days = days {
-            let numDays = days.count
-            //helper function to get num entries
-            VStack() {
+            let numDays = getNumDaysWithEntries(days: days)
+            let numEntries = getNumEntries(days: days)
+            ScrollView(.vertical, showsIndicators: false) {
                 Text("Your Entries")
                     .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
-                    .font(.system(size: 45))
+                    .font(.system(size: 55))
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
                 HStack{
@@ -26,17 +26,22 @@ struct AllDaysView: View {
                         .foregroundColor(.white)
                         .font(.title)
                         .frame(maxWidth: .infinity, maxHeight: 50, alignment: .leading)
-                        .padding(.leading, 40)
-                    Text("idk Entries")
+                        .padding(.leading, 30).padding(.top).padding(.bottom)
+
+                    Text("\(numEntries) Entries")
                         .foregroundColor(.white)
                         .font(.title)
                         .frame(maxWidth: .infinity, maxHeight: 100, alignment: .trailing)
-                        .padding(.trailing, 40)
+                        .padding(.trailing, 30)
                 }
-                .background(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
-                .cornerRadius(40)
-                .padding()
-                //Days List>Day>Entries List> Entry
+                .frame(maxWidth: .infinity, maxHeight: 100, alignment: .center)
+                .background(Color(hue: 1.0, saturation: 0.01, brightness: 0.79))
+                .cornerRadius(20)
+                .shadow(color: .black, radius: 10, x: 5, y: 5)
+                .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
+                .padding(.leading, 30).padding(.trailing, 30).padding(.bottom, 10)
+              
+                
                 DaysList(days: days)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

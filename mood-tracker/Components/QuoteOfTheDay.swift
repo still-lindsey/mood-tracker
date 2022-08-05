@@ -28,10 +28,30 @@ struct QuoteOfTheDay: View {
             .padding()
             .frame(maxWidth: .infinity, minHeight: 200, alignment: .center)
         }
-        .background(Color(.white.withAlphaComponent(0.8))).cornerRadius(20)
+        .background(.white).cornerRadius(20)
         .frame(maxWidth: 350)
+        .shadow(color: .black, radius: 10, x: 5, y: 5)
+        .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
         .offset(y: -50)
         Spacer()
+        
+//        VStack{
+//            Text("QUOTE OF THE DAY")
+//                .bold().font(.title2).frame(maxWidth: .infinity, alignment: .center)
+//            Spacer()
+//                .frame(height: 2)
+//            Text("\"\(quote)\"")
+//                .padding(.leading).padding(.trailing).padding(.top)
+//            Text("- \(quoteAuthor)")
+//                .italic().frame(maxWidth: .infinity, alignment: .trailing)
+//                .padding(.trailing)
+//        }
+//            .frame(maxWidth: .infinity, minHeight: 200, alignment: .center)
+//            .background(Color(.white)).cornerRadius(20)
+//            .frame(maxWidth: 350)
+//            .shadow(color: .black, radius: 10, x: 5, y: 5)
+//
+//            .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
         }
 }
 

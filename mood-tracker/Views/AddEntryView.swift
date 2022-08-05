@@ -15,10 +15,12 @@ struct AddEntryView: View {
     @State var cancelled: Bool = false
     @State var pageNum: Int = 0
     @State var moodScore: Double = 5.0
+    @State var moodScoreDidChange: Bool = false
     @State var selectedActivities: [String] = []
     @State var selectedFeelings: [String] = []
     @State var title: String = ""
     @State var memo: String = ""
+    @State var placeholder: String = "Memo. . ."
     var body: some View {
         if let day = day {
             let dayId: Int = day.day_id
@@ -28,10 +30,12 @@ struct AddEntryView: View {
                             CancelButton(selectedTab: $selectedTab)
                             Text("Hey Lindsey.")
                                 .font(.title)
+                                .fontWeight(.bold)
                                 .padding(.top)
                                 .foregroundColor(.white)
                             Text("How are you feeling today?")
                                 .font(.title)
+                                .fontWeight(.bold)
                                 .foregroundColor(.white)
                             Spacer()
                             Image(uiImage: getMoodDescriptionandIcon(moodScore:moodScore).1!)
@@ -41,8 +45,9 @@ struct AddEntryView: View {
                                 .textCase(.uppercase)
                                 .font(.title2)
                                 .foregroundColor(.white)
-                            MoodScoreSlider(moodScore: $moodScore)
+                            MoodScoreSlider(moodScore: $moodScore, moodScoreDidChange: $moodScoreDidChange)
                             ContinueButton(pageNum: $pageNum)
+                                .disabled(!moodScoreDidChange)
                             Spacer()
                         }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -54,14 +59,16 @@ struct AddEntryView: View {
                             CancelButton(selectedTab: $selectedTab)
                             Text("What's making your day \(getMoodDescriptionandIcon(moodScore:moodScore).0)?")
                                 .font(.title)
+                                .fontWeight(.bold)
                                 .foregroundColor(.white)
                                 .padding()
-                            Text("SELECT UP TO 3 ACTIVITIES")
+                            Text("SELECT UP TO 10 ACTIVITIES")
                                 .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
                             Spacer()
                             ActivitiesList(selectedActivities: $selectedActivities)
                             Spacer()
                             ContinueButton(pageNum: $pageNum)
+                                .disabled(selectedActivities.count == 0)
                             Spacer()
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -74,14 +81,16 @@ struct AddEntryView: View {
                             CancelButton(selectedTab: $selectedTab)
                             Text("...and how are you feeling about this?")
                                 .font(.title)
+                                .fontWeight(.bold)
                                 .foregroundColor(.white)
                                 .padding()
-                            Text("SELECT UP TO 3 FEELINGS")
+                            Text("SELECT UP TO 10 FEELINGS")
                                 .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
                             Spacer()
                             FeelingsList(selectedFeelings: $selectedFeelings)
                             Spacer()
                             ContinueButton(pageNum: $pageNum)
+                                .disabled(selectedFeelings.count == 0)
                             Spacer()
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -102,36 +111,56 @@ struct AddEntryView: View {
                                 .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
                                 .font(.system(size: 45))
                                 .fontWeight(.bold)
-                                .frame(maxWidth: .infinity, maxHeight: 50, alignment: .leading)
-                                .padding(.leading, 40)
+                                .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
+                            
+//                            let sA = copy(selectedActivities)
+//                            TagCloudView(tags: sA)
+                                
                             Text("FEELINGS")
                                 .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
                                 .font(.system(size: 45))
                                 .fontWeight(.bold)
-                                .frame(maxWidth: .infinity, maxHeight: 50, alignment: .leading)
-                                .padding(.leading, 40)
+                                .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
+//                            let sF = copy(selectedFeelings)
+//                            TagCloudView(tags: sF)
+                                
                             TextField(
-                                "Title...",
+                                "  Title...",
                                 text: $title
                             )
                             .textFieldStyle(.roundedBorder)
-                            
-                            .frame(maxWidth: 320, maxHeight: 50, alignment: .leading)
-                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                            .multilineTextAlignment(TextAlignment.leading)
+                            .font(.title3)
+                            .frame(maxWidth: .infinity, maxHeight: 70, alignment: .leading)
                             .textInputAutocapitalization(.never)
                             .disableAutocorrection(true)
-                            .padding()
-                            .foregroundColor(.black)
-                            TextEditor(
-                                text: $memo
-                            )
-                            .textFieldStyle(.roundedBorder)
-                            .frame(maxWidth: 320, maxHeight: 250, alignment: .leading)
-                            .background(RoundedRectangle(cornerRadius: 10).fill(Color(hue: 0.471, saturation: 0.014, brightness: 0.936)))
-                            .textInputAutocapitalization(.never)
-                            .disableAutocorrection(true)
+                            .padding(.leading, 30).padding(.trailing, 30)
+                            .foregroundColor(.gray)
+                            ZStack(alignment: .leading) {
+                                if self.memo.isEmpty {
+                                    TextEditor(text:$placeholder)
+                                                    .font(.body)
+                                                    .foregroundColor(.gray)
+                                                    .disabled(true)
+                                                    .padding()
+                                                    .multilineTextAlignment(TextAlignment.leading)
+                                                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                                                    .padding(.leading, 30).padding(.trailing, 30)
+                                }
+                                
+                                TextEditor(text: $memo)
+                                    .font(.body)
+                                    .foregroundColor(.gray)
+                                    
+                                    .padding()
+                                    .multilineTextAlignment(TextAlignment.leading)
+                                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                                   
+                                    .opacity(self.memo.isEmpty ? 0.25 : 1)
+                                    .padding(.leading, 30).padding(.trailing, 30)
                             Spacer()
                             SubmitButton(moodScore: moodScore, selectedActivities: selectedActivities, selectedFeelings: selectedFeelings, title: title, memo: memo, dayId: dayId, selectedTab: $selectedTab)
+                                .disabled(title == "" || memo == "")
                             Spacer()
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -147,6 +176,7 @@ struct AddEntryView: View {
                     selectedFeelings = []
                     title = ""
                     memo = ""
+                    moodScoreDidChange = false
             }
         }else{
             LoadingView()

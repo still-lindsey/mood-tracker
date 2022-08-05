@@ -41,7 +41,7 @@ struct FeelingsList: View {
                             .frame(minWidth: 90, maxWidth: .infinity, maxHeight: 50, alignment: .top)
                             .padding(.top)
                             .padding(.bottom)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.white)
                              .background(
                                  RoundedRectangle(cornerRadius: 25)
                                     .fill(Color(.black).opacity(feelingItems[i!].isSelected ? 0.2 : 0.0))
@@ -51,7 +51,7 @@ struct FeelingsList: View {
                     }
                 }
                 HStack(spacing: 20) {
-                    ForEach(feelingItems[5...]) { item in
+                    ForEach(feelingItems[5..<10]) { item in
                         let i = feelingItems.firstIndex(of: item)
                         Button {
                             withAnimation(.spring(response: 0.3, dampingFraction: 0.7)){
@@ -79,15 +79,53 @@ struct FeelingsList: View {
                             .frame(minWidth: 90, maxWidth: .infinity, maxHeight: 50, alignment: .top)
                             .padding(.top)
                             .padding(.bottom)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.white)
                              .background(
                                  RoundedRectangle(cornerRadius: 25)
-                                    .fill(Color(.black).opacity(feelingItems[i!].isSelected ? 0.5 : 0.0))
+                                    .fill(Color(.black).opacity(feelingItems[i!].isSelected ? 0.2 : 0.0))
                              )
                              .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
+                HStack(spacing: 20) {
+                    ForEach(feelingItems[10...]) { item in
+                        let i = feelingItems.firstIndex(of: item)
+                        Button {
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.7)){
+                                let updatedSelect = !item.isSelected
+                                let newVal = FeelingItem(id: item.id, text: item.text, icon: item.icon,emoji:item.emoji, isSelected: updatedSelect)
+                                feelingItems[i!] = newVal
+                                if feelingItems[i!].isSelected {
+                                    selectedFeelings.append(item.text)
+                                }else{
+                                    let modifiedArray = selectedFeelings.filter { $0 != feelingItems[i!].text }
+                                    selectedFeelings = modifiedArray
+                                }
+                            }
+                        }label: {
+                            VStack(spacing: 0){
+//
+                                Text(item.emoji)
+                                    .font(.title)
+                                .foregroundColor(.gray)
+                                Text(item.text)
+                                    .font(.body)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                            }
+                            .frame(minWidth: 90, maxWidth: .infinity, maxHeight: 50, alignment: .top)
+                            .padding(.top)
+                            .padding(.bottom)
+                            .foregroundColor(.white)
+                             .background(
+                                 RoundedRectangle(cornerRadius: 25)
+                                    .fill(Color(.black).opacity(feelingItems[i!].isSelected ? 0.2 : 0.0))
+                             )
+                             .buttonStyle(PlainButtonStyle())
+                        }
+                    }
+                }
+
                 HStack{
                 ForEach(selectedFeelings, id: \.self) { item in
                         Text(".")

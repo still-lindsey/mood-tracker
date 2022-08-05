@@ -150,15 +150,16 @@ struct AddEntryView: View {
                                     .opacity(self.memo.isEmpty ? 0.25 : 1)
                                     .padding(.leading, 30).padding(.trailing, 30)
                             Spacer()
-                            SubmitButton(moodScore: moodScore, selectedActivities: selectedActivities, selectedFeelings: selectedFeelings, title: title, memo: memo, dayId: dayId, selectedTab: $selectedTab)
-                                .disabled(title == "" || memo == "")
-                            Spacer()
                         }
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .background(Color(red: 0.493, green: 0.921, blue: 0.795))
                             .preferredColorScheme(.light)
                             .multilineTextAlignment(.center)
-                        }
+                        SubmitButton(moodScore: moodScore, selectedActivities: selectedActivities, selectedFeelings: selectedFeelings, title: title, memo: memo, dayId: dayId, selectedTab: $selectedTab)
+                                .disabled(title == "" || memo == "")
+                        Spacer()
+                    }
+                        .background(Color(red: 0.493, green: 0.921, blue: 0.795))
                         .onDisappear{
                             pageNum = 0
                             moodScore = 5.0

@@ -16,7 +16,8 @@ struct Day: View {
     var body: some View {
         let date1 = getDateObjectFromDbDateString(date: date, dayOfWeek: dayOfWeek, month: month)
         let interval = date1.timeIntervalSinceNow
-        let daysAgo = getNumDaysAgo(days: getDaysFromSeconds(seconds: interval))
+        let timeAgo: Double = getDaysFromSeconds(seconds: interval) //Time ago in rounded days
+        let timeAgoString = getTimeAgoConvertedString(timeAgo: timeAgo)
         VStack{
             HStack{
                 VStack{
@@ -37,7 +38,7 @@ struct Day: View {
                         .font(.title)
                     
                         
-                    Text("\(daysAgo)")
+                    Text("\(timeAgoString)")
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         .padding(.bottom)
                         .font(.title3)

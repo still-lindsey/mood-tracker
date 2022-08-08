@@ -101,14 +101,55 @@ func getDaysFromSeconds(seconds: Double) -> Double {
     return -seconds/86400
 }
 
-func getNumDaysAgo(days: Double) -> String {
+func getWeeksFromDays(days: Double) -> Int {
+    var result = 0
+    if days >= 7 {
+        result = Int(floor(days/7))
+    }
+    return result
+}
+
+func getMonthsFromDays(days: Double) -> Int{
+    var result = 0
+    if days >= 30 {
+        result = Int(floor(days/30))
+    }
+    return result
+}
+
+func getYearsFromDays(days: Double) -> Int {
+    var result = 0
+    if days >= 365 {
+        result = Int(floor(days/365))
+    }
+    return result
+}
+
+func getTimeAgoConvertedString(timeAgo: Double) -> String {
     var result = ""
-    if days < 1 {
-        result = "Today"
-    }else if days < 2{
-        result = "Yesterday"
+    var timeNum = 0
+    var timeMarker = ""
+    if timeAgo >= 7 && timeAgo < 30{
+        timeNum = getWeeksFromDays(days: timeAgo)
+        timeMarker = timeNum > 1 ? "Weeks Ago": "Week Ago"
+        result = "\(timeNum) \(timeMarker)"
+    }else if timeAgo >= 30 && timeAgo < 365{
+        timeNum = getMonthsFromDays(days: timeAgo)
+        timeMarker = timeNum > 1 ? "Months Ago": "Month Ago"
+        result = "\(timeNum) \(timeMarker)"
+    }else if timeAgo >= 365 {
+        timeNum = getYearsFromDays(days: timeAgo)
+        timeMarker = timeNum > 1 ? "Years Ago": "Year Ago"
+        result = "\(timeNum) \(timeMarker)"
     }else{
-        result = "\(String(Int(floor(days)))) Days Ago"
+        if timeAgo < 1{
+            result = "Today"
+        }else if timeAgo < 2 {
+            result = "Yesterday"
+        }else{
+            timeMarker = "Days Ago"
+            result = "\(Int(floor(timeAgo))) \(timeMarker)"
+        }
     }
     return result
 }

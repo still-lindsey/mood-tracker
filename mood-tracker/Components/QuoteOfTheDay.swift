@@ -28,7 +28,7 @@ struct QuoteOfTheDay: View {
             .padding()
             .frame(maxWidth: .infinity, minHeight: 200, alignment: .center)
         }
-        .background(.white).cornerRadius(20)
+        .background(Image("cherryBlossoms").overlay(Color.white.opacity(0.7))).cornerRadius(20)
         .frame(maxWidth: 350)
         .shadow(color: .black, radius: 10, x: 5, y: 5)
         .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))

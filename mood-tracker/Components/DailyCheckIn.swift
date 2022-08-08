@@ -29,6 +29,7 @@ struct DailyCheckIn: View {
 
         }
         .background(.white).cornerRadius(20)
+        .zIndex(1)
         .foregroundColor(.black)
         .frame(maxWidth: 350)
         .shadow(color: .black, radius: 10, x: 5, y: 5)
@@ -37,46 +38,6 @@ struct DailyCheckIn: View {
         .onTapGesture {
             selectedTab = .third
         }
-
-//        ZStack() {
-//            VStack {
-//                VStack(alignment: .leading, spacing: 5) {
-//                    Text("DAILY CHECK-IN")
-//                        .bold().font(.title2).frame(maxWidth: .infinity, alignment: .center)
-//                    Spacer()
-//                        .frame(height: 2)
-//                    Text("How are you feeling today?")
-//                        .frame(maxWidth: .infinity, alignment: .center)
-//                }
-//                .frame(maxWidth: .infinity, alignment: .center)
-//
-//            }
-//            .padding()
-//            .frame(maxWidth: .infinity, minHeight: 200, alignment: .center)
-//
-//
-//        }
-//        .background(.white).cornerRadius(20)
-//        .frame(maxWidth: 350)
-//        .shadow(color: .black, radius: 10, x: 5, y: 5)
-//        .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
-//        .offset(y: -50)
-    
-        
-//        VStack{
-//            Text("DAILY CHECK-IN")
-//                .bold().font(.title2).frame(maxWidth: .infinity, alignment: .center)
-//            Spacer()
-//                .frame(height: 2)
-//            Text("How are you feeling today?")
-//                .frame(maxWidth: .infinity, alignment: .center)
-//        }
-//        .frame(maxWidth: .infinity, minHeight: 200, alignment: .center)
-//        .background(Color(.white)).cornerRadius(20)
-//        .frame(maxWidth: 350)
-//        .shadow(color: .black, radius: 10, x: 5, y: 5)
-//        .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
-//
         }
 }
 

@@ -285,27 +285,26 @@ struct TagCloudView: View {
             Text(feelingIconDict[text]!)
                 .font(.title2)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                .foregroundColor(.white)
             Text(text)
                 .font(.body)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                .foregroundColor(.white)
+                .foregroundColor(Color(hex: "FF9999")!)
             }else if activityIconDict[text] != nil  {
                 Image(systemName: activityIconDict[text]!)
                     .font(.title2)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(hex: "FF9999")!)
                 Text(text)
                     .font(.body)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(hex: "FF9999")!)
             }
 
         }
         .frame(minWidth: 50, maxWidth: 102, minHeight: 30, maxHeight: 30, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 25)
-               .fill(Color(hue: 0.471, saturation: 0.034, brightness: 0.693))
+               .fill(Color(hex: "EEEFFC")!)
                 )
     }
 

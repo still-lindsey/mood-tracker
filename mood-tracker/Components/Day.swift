@@ -24,9 +24,9 @@ struct Day: View {
                     Text(date.suffix(2))
                     Text(month.prefix(3).uppercased())
                 }
-                .foregroundColor(.white)
+                .foregroundColor(Color(hex: "330000"))
                 .frame(maxWidth: 70, maxHeight: .infinity, alignment: .center)
-                .background(Color(hue: 0.471, saturation: 0.034, brightness: 0.693))
+                .background(Color(hex: "CCCDD6"))
                 .cornerRadius(20)
                 .padding()
                 VStack{
@@ -36,14 +36,15 @@ struct Day: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         .padding(.top)
                         .font(.title)
+                        .foregroundColor(Color(hex: "330000"))
                     
                         
                     Text("\(timeAgoString)")
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         .padding(.bottom)
                         .font(.title3)
+                        .foregroundColor(Color(hex: "CCCDD6"))
                 }
-                .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 
             }
@@ -55,6 +56,7 @@ struct Day: View {
             }
 
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
     }
 }
 

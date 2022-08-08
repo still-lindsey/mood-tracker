@@ -15,16 +15,27 @@ struct HomeView: View {
     var body: some View {
             if let day = day {
                 let avgMood = getAverageMood(entries: day.entries)
-                VStack(spacing: 20) {
-                    ZStack () {
-                        VStack (spacing: 20){
+                ZStack () {
+                    VStack{
+                        RoundedRectangle(cornerRadius: 90, style: .continuous)
+                            .foregroundStyle(.linearGradient(colors: [Color(hex: "FF9999")!, Color(hex:"FFCCB3")!], startPoint: .leading, endPoint: .trailing))
+                            .frame(maxWidth: .infinity, minHeight: 400, maxHeight: 500, alignment: .leading)
+                            .offset(y: -100)
+                            .cornerRadius(90, corners: [.bottomLeft, .bottomRight])
+                            .edgesIgnoringSafeArea(.top)
+                        Spacer()
+                    }
+                    VStack{
+                        VStack (spacing: 10){
                             Text("Today")
                                 .foregroundColor(.white)
+                                .fontWeight(.bold)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .font(.title)
+
                             Text("\(day.day_of_week), \(day.month) \(getDayOfMonth(date: day.date))")
                                 .textCase(.uppercase)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color(hex: "330000"))
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             Spacer()
                         }
@@ -32,19 +43,19 @@ struct HomeView: View {
                         .padding(.top)
                         .padding(.bottom)
                         .padding(.leading)
+    
+                        DayMood(avgMood: avgMood)
+                        DailyCheckIn(selectedTab: $selectedTab)
+                        Spacer(minLength: 40)
+                        QuoteOfTheDay(quoteAuthor: day.quote_author, quote: day.quote)
                     }
-                    .background(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
-                    .cornerRadius(90, corners: [.bottomLeft, .bottomRight])
-                    .edgesIgnoringSafeArea(.top)
-                    DayMood(avgMood: avgMood)
-                    DailyCheckIn(selectedTab: $selectedTab)
-                    QuoteOfTheDay(quoteAuthor: day.quote_author, quote: day.quote)
                 }
-                .background(Color(red: 0.493, green: 0.921, blue: 0.795))
+                .background(Color(hex: "EEEFFC"))
                 .preferredColorScheme(.light)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                 .onAppear{
                     entryAdded = false
+
                 }
             }else {
                 LoadingView()

@@ -16,10 +16,10 @@ struct ContinueButton: View {
         .padding(15)
         .padding(.leading, 50)
         .padding(.trailing, 50)
-        .foregroundColor(.white)
+        .foregroundStyle(.linearGradient(colors: [Color(hex: "FF9999")!, Color(hex:"FFCCB3")!], startPoint: .leading, endPoint: .trailing))
          .background(
              RoundedRectangle(cornerRadius: 25)
-                .fill(Color(hue: 0.471, saturation: 0.034, brightness: 0.693))
+                .fill(Color.white)
          )
          .buttonStyle(PlainButtonStyle())
     }

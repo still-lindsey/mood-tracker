@@ -19,7 +19,7 @@ struct DayMood: View {
             }
         }
         .frame(minWidth: 75, maxHeight: 75, alignment: .center)
-        .background(Color(hue: 0.471, saturation: 0.034, brightness: 0.693))
+        .background(Color(hex: "CCCDD6"))
         .zIndex(5)
         .cornerRadius(10)
     }

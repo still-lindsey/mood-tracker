@@ -48,11 +48,9 @@ struct AddEntryView: View {
                         MoodScoreSlider(moodScore: $moodScore, moodScoreDidChange: $moodScoreDidChange)
                         ContinueButton(pageNum: $pageNum)
                             .disabled(!moodScoreDidChange)
+                            .overlay(Color.black.opacity(moodScoreDidChange ? 0.0 : 0.4).cornerRadius(25))
                         Spacer()
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(red: 0.493, green: 0.921, blue: 0.795))
-                    .preferredColorScheme(.light)
                     .frame(maxWidth: .infinity)
                     } else if pageNum == 1 {
                         VStack{
@@ -63,18 +61,16 @@ struct AddEntryView: View {
                                 .foregroundColor(.white)
                                 .padding()
                             Text("SELECT UP TO 10 ACTIVITIES")
-                                .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
+                                .foregroundColor(Color(hex: "330000"))
                             Spacer()
                             ActivitiesList(selectedActivities: $selectedActivities)
                             Spacer()
                             ContinueButton(pageNum: $pageNum)
                                 .disabled(selectedActivities.count == 0)
+                                .overlay(Color.black.opacity(selectedActivities.count == 0 ? 0.4 : 0.0).cornerRadius(25))
                             Spacer()
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color(red: 0.493, green: 0.921, blue: 0.795))
-                        .preferredColorScheme(.light)
-                        .frame(maxWidth: .infinity)
                         .multilineTextAlignment(.center)
                     }else if pageNum == 2{
                         VStack{
@@ -85,18 +81,15 @@ struct AddEntryView: View {
                                 .foregroundColor(.white)
                                 .padding()
                             Text("SELECT UP TO 10 FEELINGS")
-                                .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
+                                .foregroundColor(Color(hex: "330000"))
                             Spacer()
                             FeelingsList(selectedFeelings: $selectedFeelings)
                             Spacer()
                             ContinueButton(pageNum: $pageNum)
                                 .disabled(selectedFeelings.count == 0)
+                                .overlay(Color.black.opacity(selectedFeelings.count == 0 ? 0.4 : 0.0).cornerRadius(25))
                             Spacer()
                         }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color(red: 0.493, green: 0.921, blue: 0.795))
-                        .preferredColorScheme(.light)
-                        .frame(maxWidth: .infinity)
                         .multilineTextAlignment(.center)
                     }else if pageNum == 3{
                         VStack{
@@ -106,16 +99,63 @@ struct AddEntryView: View {
                                 .foregroundColor(.white)
                                 .padding()
                                 .textCase(.uppercase)
-                            Text("ACTIVITIES")
-                                .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
-                                .font(.system(size: 45))
-                                .fontWeight(.bold)
-                                .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
-                            Text("FEELINGS")
-                                .foregroundColor(Color(hue: 0.471, saturation: 0.948, brightness: 0.563))
-                                .font(.system(size: 45))
-                                .fontWeight(.bold)
-                                .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
+                            ZStack{
+                                VStack{
+                                Text("ACTIVITIES")
+                                    .foregroundColor(Color(hex: "330000"))
+                                    .font(.system(size: 55))
+                                    .fontWeight(.bold)
+                                    .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
+                                Text("FEELINGS")
+                                    .foregroundColor(Color(hex: "330000"))
+                                    .font(.system(size: 55))
+                                    .fontWeight(.bold)
+                                    .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
+                                }
+                                VStack {
+                                    ScrollView(.horizontal, showsIndicators: false){
+                                        HStack(spacing: 10){
+                                        ForEach(selectedActivities, id: \.self){item in
+                                            HStack {
+                                                Image(systemName: activityIconDict[item]!)
+                                                    .font(.title2)
+                                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                                    .foregroundColor(Color(hex: "FF9999")!)
+                                                Text(item)
+                                                    .font(.body)
+                                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                                    .foregroundColor(Color(hex: "FF9999")!)
+                                            }
+                                            .frame(minWidth: 100, maxWidth: 100, minHeight: 30, maxHeight: 30, alignment: .leading)
+                                            .background(
+                                                RoundedRectangle(cornerRadius: 25)
+                                                    .fill(Color.white.opacity(0.95)))
+                                                
+                                            }
+                                        }
+                                    }
+                                    ScrollView(.horizontal, showsIndicators: false){
+                                        HStack(spacing: 10){
+                                        ForEach(selectedFeelings, id: \.self){item in
+                                            HStack {
+                                                Text(feelingIconDict[item]!)
+                                                    .font(.title2)
+                                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                                Text(item)
+                                                    .font(.body)
+                                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                                    .foregroundColor(Color(hex: "FF9999")!)
+                                            }
+                                            .frame(minWidth: 100, maxWidth: 100, minHeight: 30, maxHeight: 30, alignment: .leading)
+                                            .background(
+                                                RoundedRectangle(cornerRadius: 25)
+                                                    .fill(Color.white.opacity(0.95)))
+                                            }
+                                        }
+                                        .padding(.top, 20)
+                                    }
+                                }
+                            }
                             TextField(
                                 "Title...",
                                 text: $title
@@ -151,37 +191,35 @@ struct AddEntryView: View {
                                     .padding(.leading, 30).padding(.trailing, 30)
                             Spacer()
                         }
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .background(Color(red: 0.493, green: 0.921, blue: 0.795))
-                            .preferredColorScheme(.light)
                             .multilineTextAlignment(.center)
                         SubmitButton(moodScore: moodScore, selectedActivities: selectedActivities, selectedFeelings: selectedFeelings, title: title, memo: memo, dayId: dayId, selectedTab: $selectedTab)
                                 .disabled(title == "" || memo == "")
+                                .overlay(Color.black.opacity(title == "" || memo == "" ? 0.4 : 0.0).cornerRadius(25))
                         Spacer()
                     }
-                        .background(Color(red: 0.493, green: 0.921, blue: 0.795))
-                        .onDisappear{
-                            pageNum = 0
-                            moodScore = 5.0
-                            selectedActivities = []
-                            selectedFeelings = []
-                            title = ""
-                            memo = ""
-                            moodScoreDidChange = false
-                        }
+                    .onDisappear{
+                        pageNum = 0
+                        moodScore = 5.0
+                        selectedActivities = []
+                        selectedFeelings = []
+                        title = ""
+                        memo = ""
+                        moodScoreDidChange = false
                     }
+                }
             }
-
-                    }else{
-                        LoadingView()
-                            .task {
-                                do {
-                                    day = try await dayManager.postNewDay()
-                                }catch {
-                                    print("Error getting today's data: \(error)")
-                            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.linearGradient(colors: [Color(hex: "FF9999")!, Color(hex:"FFCCB3")!], startPoint: .leading, endPoint: .trailing))
+                }else{
+                    LoadingView()
+                        .task {
+                            do {
+                                day = try await dayManager.postNewDay()
+                            }catch {
+                                print("Error getting today's data: \(error)")
                         }
                     }
+                }
     }
 }
 

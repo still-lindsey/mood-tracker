@@ -68,12 +68,14 @@ func getNumEntries(days: [AllDaysResponseBody]) -> Int {
 }
 
 func getAverageMood(entries: [NewDayResponseBody.EntryResponse]) -> Double {
-    var avgMood = 5.0
-    
+    if entries.count == 0{
+        return 5.0
+    }
+    var avgMood: Double = 0
     for entry in entries{
         avgMood += entry.mood_score
     }
-    return avgMood/(Double(entries.count) + 1.0)
+    return avgMood/Double(entries.count)
 }
 
 func getDateObjectFromDbDateString(date: String, dayOfWeek: String, month: String) -> Date {

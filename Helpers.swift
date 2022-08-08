@@ -108,7 +108,7 @@ func getNumDaysAgo(days: Double) -> String {
     }else if days < 2{
         result = "Yesterday"
     }else{
-        result = "\(String(Int(round(days)))) Days Ago"
+        result = "\(String(Int(floor(days)))) Days Ago"
     }
     return result
 }

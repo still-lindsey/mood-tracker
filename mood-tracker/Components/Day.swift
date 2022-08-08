@@ -29,6 +29,7 @@ struct Day: View {
                 .cornerRadius(20)
                 .padding()
                 VStack{
+                    
                     Text(dayOfWeek)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)

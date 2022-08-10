@@ -29,6 +29,7 @@ struct GetDayResponseBody: Decodable {
     var quote: String
     var quote_author: String
     var status: String
+    var month_id: Int
     
     struct EntryResponse: Decodable {
         var activities: [String]

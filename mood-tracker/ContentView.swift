@@ -10,7 +10,6 @@ enum MenuTabs: Int {
 }
 
 struct ContentView: View {
-
     @State var entryAdded: Bool = false
     @State var selectedTab = MenuTabs.first
     var body: some View {

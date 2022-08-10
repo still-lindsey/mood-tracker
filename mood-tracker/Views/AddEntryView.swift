@@ -55,13 +55,13 @@ struct AddEntryView: View {
                     } else if pageNum == 1 {
                         VStack{
                             CancelButton(selectedTab: $selectedTab)
-                            Text("What's making your day \(getMoodDescriptionandIcon(moodScore:moodScore).0)?")
+                            Text("What's making your day \(getMoodDescriptionandIcon(moodScore:moodScore).0.lowercased())?")
                                 .font(.title)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                                 .padding()
                             Text("SELECT UP TO 10 ACTIVITIES")
-                                .foregroundColor(Color(hex: "330000"))
+                                .foregroundColor(Color(hex: "330000")?.opacity(0.5))
                             Spacer()
                             ActivitiesList(selectedActivities: $selectedActivities)
                             Spacer()
@@ -81,7 +81,7 @@ struct AddEntryView: View {
                                 .foregroundColor(.white)
                                 .padding()
                             Text("SELECT UP TO 10 FEELINGS")
-                                .foregroundColor(Color(hex: "330000"))
+                                .foregroundColor(Color(hex: "330000")?.opacity(0.5))
                             Spacer()
                             FeelingsList(selectedFeelings: $selectedFeelings)
                             Spacer()
@@ -102,15 +102,17 @@ struct AddEntryView: View {
                             ZStack{
                                 VStack{
                                 Text("ACTIVITIES")
-                                    .foregroundColor(Color(hex: "330000"))
+                                    .foregroundColor(Color(hex: "330000")?.opacity(0.3))
                                     .font(.system(size: 55))
                                     .fontWeight(.bold)
                                     .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
+                                    .padding(.bottom)
                                 Text("FEELINGS")
-                                    .foregroundColor(Color(hex: "330000"))
+                                        .foregroundColor(Color(hex: "330000")?.opacity(0.3))
                                     .font(.system(size: 55))
                                     .fontWeight(.bold)
                                     .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
+                                    .padding(.bottom)
                                 }
                                 VStack {
                                     ScrollView(.horizontal, showsIndicators: false){
@@ -133,7 +135,11 @@ struct AddEntryView: View {
                                                 
                                             }
                                         }
+                                        .padding(.top, 35)
+                                        
                                     }
+                                    .padding(.horizontal, 35)
+                                    
                                     ScrollView(.horizontal, showsIndicators: false){
                                         HStack(spacing: 10){
                                         ForEach(selectedFeelings, id: \.self){item in
@@ -152,8 +158,9 @@ struct AddEntryView: View {
                                                     .fill(Color.white.opacity(0.95)))
                                             }
                                         }
-                                        .padding(.top, 20)
+                                        .padding(.top, 35)
                                     }
+                                    .padding(.horizontal, 35)
                                 }
                             }
                             TextField(

@@ -31,13 +31,13 @@ struct AllDaysView: View {
                         Spacer(minLength: 100)
                         HStack{
                             Text("\(numDays) Days")
-                                .foregroundColor(Color(hex: "330000"))
+                                .foregroundColor(Color(hex: "330000")?.opacity(0.8))
                                 .font(.title)
                                 .frame(maxWidth: .infinity, maxHeight: 50, alignment: .leading)
                                 .padding(.leading, 30).padding(.top).padding(.bottom)
 
                             Text("\(numEntries) Entries")
-                                .foregroundColor(Color(hex: "330000"))
+                                .foregroundColor(Color(hex: "330000")?.opacity(0.8))
                                 .font(.title)
                                 .frame(maxWidth: .infinity, maxHeight: 100, alignment: .trailing)
                                 .padding(.trailing, 30)

@@ -47,6 +47,8 @@
 		2A8B4CE82893BB2C000E6598 /* EntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CE72893BB2C000E6598 /* EntryManager.swift */; };
 		2A8B4CEA2893BB43000E6598 /* QuoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CE92893BB43000E6598 /* QuoteManager.swift */; };
 		2A8B4CEC2893BB56000E6598 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4CEB2893BB56000E6598 /* AnalyticsManager.swift */; };
+		2ACFCF8628A2B33F0030E78C /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 2ACFCF8528A2B33F0030E78C /* SwiftUICharts */; };
+		2ACFCF8828A3965E0030E78C /* AnalyticsMonthSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFCF8728A3965E0030E78C /* AnalyticsMonthSelector.swift */; };
 		2AEF2DD7289BC3A1008E8ED1 /* DaysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEF2DD6289BC3A1008E8ED1 /* DaysList.swift */; };
 		2AEF2DE1289BC5FF008E8ED1 /* daysData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF2DE0289BC5FF008E8ED1 /* daysData.json */; };
 		2AEF2DE3289BF1F3008E8ED1 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEF2DE2289BF1F3008E8ED1 /* Day.swift */; };
@@ -98,7 +100,7 @@
 		2A83C46A2896C79400FFAF0D /* GetDayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDayManager.swift; sourceTree = "<group>"; };
 		2A83C46C2896CA3700FFAF0D /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
 		2A83C47E2897CB0A00FFAF0D /* TabViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewManager.swift; sourceTree = "<group>"; };
-		2A8B4CAE2893A7B2000E6598 /* mood-tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mood-tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A8B4CAE2893A7B2000E6598 /* bloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8B4CB12893A7B2000E6598 /* mood_trackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mood_trackerApp.swift; sourceTree = "<group>"; };
 		2A8B4CB32893A7B2000E6598 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A8B4CB52893A7B4000E6598 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		2A8B4CE72893BB2C000E6598 /* EntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryManager.swift; sourceTree = "<group>"; };
 		2A8B4CE92893BB43000E6598 /* QuoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteManager.swift; sourceTree = "<group>"; };
 		2A8B4CEB2893BB56000E6598 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		2ACFCF8728A3965E0030E78C /* AnalyticsMonthSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsMonthSelector.swift; sourceTree = "<group>"; };
 		2AEF2DD6289BC3A1008E8ED1 /* DaysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysList.swift; sourceTree = "<group>"; };
 		2AEF2DE0289BC5FF008E8ED1 /* daysData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = daysData.json; sourceTree = "<group>"; };
 		2AEF2DE2289BF1F3008E8ED1 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ACFCF8628A2B33F0030E78C /* SwiftUICharts in Frameworks */,
 				2A83C4722897C7C200FFAF0D /* HidableTabView in Frameworks */,
 				2A8353BB28990B1A00DA665F /* WrappingStack in Frameworks */,
 			);
@@ -167,6 +171,7 @@
 				2AEF2DD6289BC3A1008E8ED1 /* DaysList.swift */,
 				2AEF2DE2289BF1F3008E8ED1 /* Day.swift */,
 				2AEF2DE4289C0788008E8ED1 /* Entry.swift */,
+				2ACFCF8728A3965E0030E78C /* AnalyticsMonthSelector.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -198,7 +203,7 @@
 		2A8B4CAF2893A7B2000E6598 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A8B4CAE2893A7B2000E6598 /* mood-tracker.app */,
+				2A8B4CAE2893A7B2000E6598 /* bloom.app */,
 				2A8B4CBE2893A7B4000E6598 /* mood-trackerTests.xctest */,
 				2A8B4CC82893A7B4000E6598 /* mood-trackerUITests.xctest */,
 			);
@@ -274,9 +279,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A8B4CAD2893A7B2000E6598 /* mood-tracker */ = {
+		2A8B4CAD2893A7B2000E6598 /* mood_tracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A8B4CD22893A7B4000E6598 /* Build configuration list for PBXNativeTarget "mood-tracker" */;
+			buildConfigurationList = 2A8B4CD22893A7B4000E6598 /* Build configuration list for PBXNativeTarget "mood_tracker" */;
 			buildPhases = (
 				2A8B4CAA2893A7B2000E6598 /* Sources */,
 				2A8B4CAB2893A7B2000E6598 /* Frameworks */,
@@ -286,13 +291,14 @@
 			);
 			dependencies = (
 			);
-			name = "mood-tracker";
+			name = mood_tracker;
 			packageProductDependencies = (
 				2A83C4712897C7C200FFAF0D /* HidableTabView */,
 				2A8353BA28990B1A00DA665F /* WrappingStack */,
+				2ACFCF8528A2B33F0030E78C /* SwiftUICharts */,
 			);
 			productName = "mood-tracker";
-			productReference = 2A8B4CAE2893A7B2000E6598 /* mood-tracker.app */;
+			productReference = 2A8B4CAE2893A7B2000E6598 /* bloom.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2A8B4CBD2893A7B4000E6598 /* mood-trackerTests */ = {
@@ -366,12 +372,13 @@
 			packageReferences = (
 				2A83C4702897C7C200FFAF0D /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */,
 				2A8353B928990B1A00DA665F /* XCRemoteSwiftPackageReference "swiftui-wrapping-stack" */,
+				2ACFCF8428A2B33F0030E78C /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 2A8B4CAF2893A7B2000E6598 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A8B4CAD2893A7B2000E6598 /* mood-tracker */,
+				2A8B4CAD2893A7B2000E6598 /* mood_tracker */,
 				2A8B4CBD2893A7B4000E6598 /* mood-trackerTests */,
 				2A8B4CC72893A7B4000E6598 /* mood-trackerUITests */,
 			);
@@ -418,6 +425,7 @@
 				2A83C47F2897CB0A00FFAF0D /* TabViewManager.swift in Sources */,
 				2A8B4CE82893BB2C000E6598 /* EntryManager.swift in Sources */,
 				2A8B4CB42893A7B2000E6598 /* ContentView.swift in Sources */,
+				2ACFCF8828A3965E0030E78C /* AnalyticsMonthSelector.swift in Sources */,
 				2A8B4CB22893A7B2000E6598 /* mood_trackerApp.swift in Sources */,
 				2A83C4672896813600FFAF0D /* AnalyticsView.swift in Sources */,
 				2A8B4CEA2893BB43000E6598 /* QuoteManager.swift in Sources */,
@@ -472,12 +480,12 @@
 /* Begin PBXTargetDependency section */
 		2A8B4CC02893A7B4000E6598 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2A8B4CAD2893A7B2000E6598 /* mood-tracker */;
+			target = 2A8B4CAD2893A7B2000E6598 /* mood_tracker */;
 			targetProxy = 2A8B4CBF2893A7B4000E6598 /* PBXContainerItemProxy */;
 		};
 		2A8B4CCA2893A7B4000E6598 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2A8B4CAD2893A7B2000E6598 /* mood-tracker */;
+			target = 2A8B4CAD2893A7B2000E6598 /* mood_tracker */;
 			targetProxy = 2A8B4CC92893A7B4000E6598 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -619,7 +627,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "still-lindsey.mood-tracker";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = bloom;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -648,7 +656,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "still-lindsey.mood-tracker";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = bloom;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -743,7 +751,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A8B4CD22893A7B4000E6598 /* Build configuration list for PBXNativeTarget "mood-tracker" */ = {
+		2A8B4CD22893A7B4000E6598 /* Build configuration list for PBXNativeTarget "mood_tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A8B4CD32893A7B4000E6598 /* Debug */,
@@ -789,6 +797,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		2ACFCF8428A2B33F0030E78C /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -801,6 +817,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2A83C4702897C7C200FFAF0D /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */;
 			productName = HidableTabView;
+		};
+		2ACFCF8528A2B33F0030E78C /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2ACFCF8428A2B33F0030E78C /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

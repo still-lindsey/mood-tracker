@@ -20,10 +20,6 @@ class AllDaysManager {
     }
 }
 
-//struct AllDaysResponseBody: Codable, Identifiable {
-//    var id = UUID()
-//    let day: Day?
-//    let pagination: Pagination?
 struct AllDaysResponseBody: Codable, Sequence, IteratorProtocol, Equatable, Hashable {
     var day_of_week: String
     var month: String
@@ -32,6 +28,7 @@ struct AllDaysResponseBody: Codable, Sequence, IteratorProtocol, Equatable, Hash
     var quote: String
     var quote_author: String
     var date: String
+    var month_id: Int
     
     static func == (lhs: AllDaysResponseBody, rhs: AllDaysResponseBody) -> Bool {
         return lhs.day_id == rhs.day_id

@@ -24,7 +24,7 @@ struct Day: View {
                     Text(date.suffix(2))
                     Text(month.prefix(3).uppercased())
                 }
-                .foregroundColor(Color(hex: "330000"))
+                .foregroundColor(Color(hex: "330000")?.opacity(0.8))
                 .frame(maxWidth: 70, maxHeight: .infinity, alignment: .center)
                 .background(Color(hex: "CCCDD6"))
                 .cornerRadius(20)
@@ -36,7 +36,7 @@ struct Day: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         .padding(.top)
                         .font(.title)
-                        .foregroundColor(Color(hex: "330000"))
+                        .foregroundColor(Color(hex: "330000")?.opacity(0.8))
                     
                         
                     Text("\(timeAgoString)")

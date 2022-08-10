@@ -39,19 +39,19 @@ func getMoodDescriptionandIcon(moodScore: Double) -> (String, UIImage?) {
     var resultDes: String
     var resultIcon: UIImage?
     if moodScore < 2 {
-        resultDes = "really terrible"
+        resultDes = "Really Terrible"
         resultIcon = UIImage(named: "crying")
     }else if moodScore >= 2 && moodScore < 4{
-        resultDes = "somewhat bad"
+        resultDes = "Somewhat Bad"
         resultIcon = UIImage(named: "sad")
     }else if moodScore >= 4 && moodScore < 6 {
-        resultDes = "completely okay"
+        resultDes = "Completely Okay"
         resultIcon = UIImage(named: "neutral")
     }else if moodScore >= 6 && moodScore < 8{
-        resultDes = "pretty good"
+        resultDes = "Pretty Good"
         resultIcon = UIImage(named: "smile")
     }else{
-        resultDes = "super awesome"
+        resultDes = "Super Awesome"
         resultIcon = UIImage(named: "happy")
     }
     return (resultDes, resultIcon)
@@ -183,4 +183,94 @@ func getNumDaysWithEntries(days: [AllDaysResponseBody]) -> Int {
         }
     }
     return c
+}
+
+func getArrayOfWeeklyEntries(currentDayOfWeek: String, currentDate: String, allDays: [AllDaysResponseBody]) -> [Any]{
+    var weekOfEntriesPerDay = [[], [], [], [], [], [], []] //M - S
+    
+    var daysCount = numChartedDays[currentDayOfWeek]
+    var date: String = currentDate.copy() as! String
+    while daysCount! > 0 {
+        weekOfEntriesPerDay[daysCount! - 1] = findDaysEntries(allDays: allDays, targetDate: date)
+        var currentYear = Int(date.prefix(4))
+        var currentMonth = Int(date.suffix(4).prefix(2))
+        var currentDay = Int(date.suffix(2))
+        currentDay! -= 1
+        if currentDay! < 1{
+            currentMonth! -= 1
+            currentDay = daysInMonth[currentMonth!]
+        }
+        if currentMonth! < 1 {
+            currentYear! -= 1
+            currentDay = 31
+            currentMonth = 12
+        }
+        if currentDay! < 10 && currentMonth! < 10 {
+            date = String("\(currentYear!)0\(currentMonth!)0\(currentDay!)")
+        }else if currentDay! < 10{
+            date = String("\(currentYear!)\(currentMonth!)0\(currentDay!)")
+        }else if currentMonth! < 10 {
+            date = String("\(currentYear!)0\(currentMonth!)\(currentDay!)")
+        }else{
+            date = String("\(currentYear!)\(currentMonth!)\(currentDay!)")
+        }
+        daysCount = daysCount! - 1
+    }
+    return weekOfEntriesPerDay
+}
+
+func findDaysEntries(allDays: [AllDaysResponseBody], targetDate: String) -> [Any] {
+    var result: [Any] = []
+    for day in allDays {
+        if day.date == targetDate {
+            result = day.entries
+        }
+    }
+    return result
+}
+
+func getAverageMoodPerDay(weeklyEntries: [Any]) -> [Double]{
+    var result = [5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0]
+    
+    var count = 7
+    var avgMood = 0.0
+    while count > 0 {
+        if weeklyEntries.count != 0 {
+            for entry in weeklyEntries {
+                avgMood += (entry as! AllDaysResponseBody.EntryResponse).mood_score
+            }
+            avgMood = avgMood / Double(weeklyEntries.count)
+        }else{
+            avgMood = 5.0
+        }
+        result[-count - 1] = avgMood
+        count -= 1
+    }
+    print(result)
+    return result
+}
+
+let daysInMonth = [1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31]
+let numChartedDays = ["Monday": 1, "Tuesday": 2, "Wednesday": 3, "Thursday": 4, "Friday": 5, "Saturday": 6, "Sunday": 7]
+let daysCountDown = [1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday", 6: "Saturday", 7: "Sunday"]
+
+
+func getLineChartData(daysAverageMood: [Double]) -> [Double]{
+    var lineChartsData: [Double] = []
+    for moodScore in daysAverageMood{
+        if moodScore > 0{
+            lineChartsData.append(moodScore)
+        }
+    }
+    return lineChartsData
+}
+
+func getDaysAverageMoodsNotNull(data:[Double]) -> [Double] {
+    var result:[Double] = []
+    for score in data{
+        if score > 0{
+            result.append(score)
+        }
+    }
+    return result
 }

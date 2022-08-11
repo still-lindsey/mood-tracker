@@ -30,7 +30,7 @@ struct DailyCheckIn: View {
         .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
         .padding(.horizontal)
         .offset(y: -50)
-        .zIndex(1)
+        .zIndex(2)
         .onTapGesture {
             selectedTab = .third
         }

@@ -10,22 +10,19 @@ import SwiftUI
 struct ContinueButton: View {
     @Binding var pageNum: Int
     var body: some View {
-        VStack{
-            Button("Continue", action: {
-                self.pageNum += 1
-                })
-            .padding(15)
-            .padding(.leading, 50)
-            .padding(.trailing, 50)
-            .foregroundColor(.white)
-             .background(
-                 RoundedRectangle(cornerRadius: 25)
-                    .fill(Color(hue: 1.0, saturation: 0.01, brightness: 0.79))
-             )
-             .buttonStyle(PlainButtonStyle())
-             
-        }
-        
+        Button("Continue", action: {
+            self.pageNum += 1
+            })
+        .padding(15)
+        .padding(.leading, 50)
+        .font(.system(.title2, design: .rounded))
+        .padding(.trailing, 50)
+        .foregroundStyle(.linearGradient(colors: [Color(hex: "FF9999")!, Color(hex:"FFCCB3")!], startPoint: .leading, endPoint: .trailing))
+         .background(
+             RoundedRectangle(cornerRadius: 25)
+                .fill(Color.white)
+         )
+         .buttonStyle(PlainButtonStyle())
     }
 }
 

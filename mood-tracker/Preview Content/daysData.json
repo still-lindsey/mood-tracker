@@ -1,0 +1,329 @@
+{
+    "days": [
+        {
+            "date": "20220803",
+            "day_id": 7,
+            "day_of_week": "Wednesday",
+            "entries": [
+                {
+                    "activities": [
+                        "work",
+                        "mindfulness"
+                    ],
+                    "emotions": [
+                        "excited"
+                    ],
+                    "entry_id": 87,
+                    "memo": "Worked all day and got the navbar to change with my form. Also was able to implement a clean up function in by code using onAppear and onDisappear.",
+                    "mood_score": 5.0,
+                    "time_stamp": "Wed, 03 Aug 2022 21:50:42 GMT",
+                    "title": "Coding Madness"
+                },
+                {
+                    "activities": [],
+                    "emotions": [],
+                    "entry_id": 88,
+                    "memo": "",
+                    "mood_score": 5.0,
+                    "time_stamp": "Wed, 03 Aug 2022 22:27:05 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [],
+                    "emotions": [],
+                    "entry_id": 89,
+                    "memo": "",
+                    "mood_score": 5.0,
+                    "time_stamp": "Wed, 03 Aug 2022 22:35:47 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "work"
+                    ],
+                    "emotions": [
+                        "embarrassed"
+                    ],
+                    "entry_id": 90,
+                    "memo": "",
+                    "mood_score": 7.235649824142456,
+                    "time_stamp": "Wed, 03 Aug 2022 22:36:01 GMT",
+                    "title": ""
+                }
+            ],
+            "month": "August",
+            "quote": "Greatest success comes just one step beyond the point at which defeat overtakes you.",
+            "quote_author": "Unknown"
+        },
+        {
+            "date": "20220804",
+            "day_id": 8,
+            "day_of_week": "Thursday",
+            "entries": [
+                {
+                    "activities": [
+                        "family",
+                        "friends"
+                    ],
+                    "emotions": [
+                        "happy"
+                    ],
+                    "entry_id": 91,
+                    "memo": "Test form",
+                    "mood_score": 6.3796573877334595,
+                    "time_stamp": "Thu, 04 Aug 2022 00:41:38 GMT",
+                    "title": "Hello"
+                },
+                {
+                    "activities": [],
+                    "emotions": [],
+                    "entry_id": 92,
+                    "memo": "",
+                    "mood_score": 5.0,
+                    "time_stamp": "Thu, 04 Aug 2022 01:07:16 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "friends",
+                        "sleep"
+                    ],
+                    "emotions": [
+                        "happy"
+                    ],
+                    "entry_id": 93,
+                    "memo": "Went to office hours and got the tabs to work without having to use navigation views.",
+                    "mood_score": 6.933534741401672,
+                    "time_stamp": "Thu, 04 Aug 2022 01:10:17 GMT",
+                    "title": "Yay tabs are working!"
+                },
+                {
+                    "activities": [],
+                    "emotions": [],
+                    "entry_id": 94,
+                    "memo": "",
+                    "mood_score": 5.0,
+                    "time_stamp": "Thu, 04 Aug 2022 01:12:38 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [],
+                    "emotions": [],
+                    "entry_id": 95,
+                    "memo": "",
+                    "mood_score": 5.0,
+                    "time_stamp": "Thu, 04 Aug 2022 02:33:41 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [],
+                    "emotions": [],
+                    "entry_id": 96,
+                    "memo": "",
+                    "mood_score": 5.0,
+                    "time_stamp": "Thu, 04 Aug 2022 02:36:52 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [],
+                    "emotions": [],
+                    "entry_id": 97,
+                    "memo": "",
+                    "mood_score": 5.0,
+                    "time_stamp": "Thu, 04 Aug 2022 03:40:54 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "relaxing",
+                        "sleep",
+                        "friends"
+                    ],
+                    "emotions": [
+                        "disgusted"
+                    ],
+                    "entry_id": 98,
+                    "memo": "",
+                    "mood_score": 5.0,
+                    "time_stamp": "Thu, 04 Aug 2022 03:42:37 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "relationship"
+                    ],
+                    "emotions": [
+                        "sad"
+                    ],
+                    "entry_id": 99,
+                    "memo": "",
+                    "mood_score": 6.742194890975952,
+                    "time_stamp": "Thu, 04 Aug 2022 03:43:09 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "relaxing"
+                    ],
+                    "emotions": [
+                        "disgusted"
+                    ],
+                    "entry_id": 100,
+                    "memo": "",
+                    "mood_score": 7.134944200515747,
+                    "time_stamp": "Thu, 04 Aug 2022 03:43:50 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "traveling"
+                    ],
+                    "emotions": [
+                        "worried"
+                    ],
+                    "entry_id": 101,
+                    "memo": "",
+                    "mood_score": 7.608257532119751,
+                    "time_stamp": "Thu, 04 Aug 2022 03:44:32 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "relaxing"
+                    ],
+                    "emotions": [
+                        "angry"
+                    ],
+                    "entry_id": 102,
+                    "memo": "",
+                    "mood_score": 7.275931239128113,
+                    "time_stamp": "Thu, 04 Aug 2022 03:46:11 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "mindfulness"
+                    ],
+                    "emotions": [
+                        "disgusted"
+                    ],
+                    "entry_id": 103,
+                    "memo": "",
+                    "mood_score": 5.0,
+                    "time_stamp": "Thu, 04 Aug 2022 03:47:41 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "mindfulness"
+                    ],
+                    "emotions": [
+                        "sad"
+                    ],
+                    "entry_id": 104,
+                    "memo": "",
+                    "mood_score": 7.205438017845154,
+                    "time_stamp": "Thu, 04 Aug 2022 03:51:22 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "relaxing"
+                    ],
+                    "emotions": [],
+                    "entry_id": 105,
+                    "memo": "",
+                    "mood_score": 7.960724830627441,
+                    "time_stamp": "Thu, 04 Aug 2022 03:51:31 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "relaxing"
+                    ],
+                    "emotions": [
+                        "disgusted"
+                    ],
+                    "entry_id": 106,
+                    "memo": "",
+                    "mood_score": 5.0,
+                    "time_stamp": "Thu, 04 Aug 2022 03:53:18 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "relaxing"
+                    ],
+                    "emotions": [
+                        "disgusted"
+                    ],
+                    "entry_id": 107,
+                    "memo": "",
+                    "mood_score": 5.0,
+                    "time_stamp": "Thu, 04 Aug 2022 03:54:24 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "relaxing",
+                        "traveling",
+                        "friends",
+                        "sleep"
+                    ],
+                    "emotions": [
+                        "disgusted",
+                        "worried"
+                    ],
+                    "entry_id": 108,
+                    "memo": "",
+                    "mood_score": 7.719033360481262,
+                    "time_stamp": "Thu, 04 Aug 2022 03:55:33 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "relaxing"
+                    ],
+                    "emotions": [
+                        "angry"
+                    ],
+                    "entry_id": 109,
+                    "memo": "",
+                    "mood_score": 5.0,
+                    "time_stamp": "Thu, 04 Aug 2022 04:26:32 GMT",
+                    "title": ""
+                },
+                {
+                    "activities": [
+                        "gaming",
+                        "exercise"
+                    ],
+                    "emotions": [
+                        "angry"
+                    ],
+                    "entry_id": 110,
+                    "memo": "Lost at fortnite.",
+                    "mood_score": 1.0322252660989761,
+                    "time_stamp": "Thu, 04 Aug 2022 16:55:41 GMT",
+                    "title": "Bad day"
+                },
+                {
+                    "activities": [
+                        "music"
+                    ],
+                    "emotions": [
+                        "disgusted"
+                    ],
+                    "entry_id": 111,
+                    "memo": "not working",
+                    "mood_score": 0.0,
+                    "time_stamp": "Thu, 04 Aug 2022 17:00:44 GMT",
+                    "title": "taikichan"
+                }
+            ],
+            "month": "August",
+            "quote": "Greatest success comes just one step beyond the point at which defeat overtakes you.",
+            "quote_author": "Unknown"
+        }
+    ]
+}

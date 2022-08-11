@@ -10,7 +10,7 @@ import Foundation
 
 class DayManager {
     func postNewDay() async throws -> NewDayResponseBody{
-        guard let url = URL(string: "http://127.0.0.1:5000/days") else {fatalError("Missing URL.")}
+        guard let url = URL(string: "https://bloom-app-server.herokuapp.com/days") else {fatalError("Missing URL.")}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
@@ -30,6 +30,7 @@ struct NewDayResponseBody: Decodable {
     var quote: String
     var quote_author: String
     var status: String
+    var month_id: Int
     
     struct EntryResponse: Decodable {
         var activities: [String]
@@ -42,3 +43,15 @@ struct NewDayResponseBody: Decodable {
     }
 }
 
+//struct Landmark: Codable
+
+//enum CodingKeys: String, CodingKey {
+//    case date
+//    case dayOfWeek = "day_of_week"
+//    case month
+//    case dayId
+//    case entries
+//    case quote
+//    case quoteAuthor = "quote_author"
+//    case status
+//}

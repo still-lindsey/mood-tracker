@@ -18,11 +18,13 @@ struct ContentView: View {
                 ZStack {
                     if selectedTab == .first {
                         HomeView(selectedTab: $selectedTab, entryAdded: $entryAdded)
+                            .transition(.scale)
                     }
                     else if selectedTab == .second {
                         
                             VStack(spacing: 0) {
-                                QuotesView(entryAdded: $entryAdded) 
+                                QuotesView(entryAdded: $entryAdded)
+                                    .transition(.scale)
                             }
                         
                     }
@@ -30,18 +32,21 @@ struct ContentView: View {
                   
                             VStack(spacing: 0) {
                                 AddEntryView(selectedTab: $selectedTab)
+                                    .transition(.scale)
                             }
                         
                     }else if selectedTab == .fourth {
                       
                             VStack(spacing: 0) {
                                 AnalyticsView(entryAdded: $entryAdded)
+                                    .transition(.scale)
                        
                         }
                     }else if selectedTab == .fifth {
 
                             VStack(spacing: 0) {
                                 AllDaysView(entryAdded: $entryAdded)
+                                    .transition(.scale)
                         }
                     }
                 }
@@ -57,11 +62,11 @@ struct ContentView: View {
             Divider()
             
             HStack(spacing: 20) {
-                tabBarItem(.first, title: "Home", icon: "sun.max", selectedIcon: "sun.max")
-                tabBarItem(.second, title: "Quotes", icon: "quote.bubble", selectedIcon: "quote.bubble")
-                tabBarItem(.third, title: "Add Entry", icon: "plus", selectedIcon: "plus")
-                tabBarItem(.fourth, title: "Analytics", icon: "chart.xyaxis.line", selectedIcon: "chart.xyaxis.line")
-                tabBarItem(.fifth, title: "All Entries", icon: "square.stack.3d.down.right", selectedIcon: "square.stack.3d.down.right")
+                tabBarItem(.first, title: " ", icon: "sun.max", selectedIcon: "sun.max")
+                tabBarItem(.second, title: " ", icon: "quote.bubble", selectedIcon: "quote.bubble")
+                tabBarItem(.third, title: " ", icon: "plus", selectedIcon: "plus")
+                tabBarItem(.fourth, title: " ", icon: "chart.xyaxis.line", selectedIcon: "chart.xyaxis.line")
+                tabBarItem(.fifth, title: " ", icon: "square.stack.3d.down.right", selectedIcon: "square.stack.3d.down.right")
             }
             .padding(.top, 8)
         }
@@ -78,13 +83,13 @@ struct ContentView: View {
                 VStack {
                     Image(systemName: (selectedTab == tab ? selectedIcon : icon))
                         .font(.system(size: 24))
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
                 }
                 .frame(width: 55, height: 28)
                 
                 Text(title)
-                    .font(.system(size: 11))
-                    .foregroundColor(.black)
+                    .font(.system(size: 11, design: .rounded))
+                    .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
                 
             }
         }

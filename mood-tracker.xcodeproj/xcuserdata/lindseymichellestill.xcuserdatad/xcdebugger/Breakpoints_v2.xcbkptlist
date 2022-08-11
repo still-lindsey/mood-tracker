@@ -142,8 +142,8 @@
             filePath = "Helpers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "getArrayOfWeeklyEntries(currentDayOfWeek:currentDate:allDays:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "Helpers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "getArrayOfWeeklyEntries(currentDayOfWeek:currentDate:allDays:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "Helpers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "getArrayOfWeeklyEntries(currentDayOfWeek:currentDate:allDays:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "Helpers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "getArrayOfWeeklyEntries(currentDayOfWeek:currentDate:allDays:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -206,8 +206,8 @@
             filePath = "Helpers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "getArrayOfWeeklyEntries(currentDayOfWeek:currentDate:allDays:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -222,9 +222,9 @@
             filePath = "Extensions.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "688"
-            endingLineNumber = "688"
-            landmarkName = "init(data:month:year:title:legend:style:valueSpecifier:legendSpecifier:)"
+            startingLineNumber = "692"
+            endingLineNumber = "692"
+            landmarkName = "init(data:dataIndexes:month:year:title:legend:style:valueSpecifier:legendSpecifier:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

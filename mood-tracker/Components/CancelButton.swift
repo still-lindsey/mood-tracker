@@ -16,7 +16,7 @@ struct CancelButton: View {
                 self.selectedTab = .first
                 })
             .frame(maxWidth: .infinity, maxHeight: 10, alignment: .trailing)
-            .font(.title2)
+            .font(.system(.title2, design: .rounded))
             .padding(.trailing, 30)
             .foregroundColor(.white)
              .buttonStyle(PlainButtonStyle())

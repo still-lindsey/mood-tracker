@@ -30,13 +30,14 @@ struct Entry: View {
                 
                 VStack{
                     Text(title)
-                        .foregroundColor(Color.black)
-                        .font(.title2)
+                        .foregroundColor(Color(hex: "383D47")?.opacity(0.8))
+                        .font(.system(.title2, design: .rounded))
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                     HStack{
                         Text("\(getAMPMTimeFromGMT(GMT: String(timeStamp.suffix(12))))")
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                             .foregroundColor(Color(hex: "CCCDD6"))
+                            .font(.system(.body, design: .rounded))
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 }
@@ -48,8 +49,9 @@ struct Entry: View {
                 //add feature to only display certain preview of memo and click to expand page to see full memo
                 Text(memo)
                     .padding(20)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color(hex: "383D47")?.opacity(0.8))
                     .fixedSize(horizontal: false, vertical: true)
+                    .font(.system(.body, design: .rounded))
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             
@@ -63,7 +65,7 @@ struct Entry: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .shadow(color: .black, radius: 10, x: 5, y: 5)
         .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
-        .padding(.leading, 27).padding(.trailing, 27).padding(.bottom, 10)
+        .padding(.leading).padding(.trailing).padding(.bottom, 10)
     }
 }
 

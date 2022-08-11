@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     var dayManager = DayManager()
-    @Binding var selectedTab: MenuTabs
     @State var day: NewDayResponseBody?
+    @Binding var selectedTab: MenuTabs
     @Binding var entryAdded: Bool
     var body: some View {
             if let day = day {
@@ -25,29 +25,34 @@ struct HomeView: View {
                             .edgesIgnoringSafeArea(.top)
                         Spacer()
                     }
-                    VStack{
-                        VStack (spacing: 10){
-                            Text("Today")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.title)
+                    ScrollView{
+                        VStack{
+                            VStack (spacing: 10){
+                                Text("Today")
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .font(.system(.title, design: .rounded))
 
-                            Text("\(day.day_of_week), \(day.month) \(getDayOfMonth(date: day.date))")
-                                .textCase(.uppercase)
-                                .foregroundColor(Color(hex: "330000"))
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            Spacer()
+                                Text("\(day.day_of_week), \(day.month) \(getDayOfMonth(date: day.date))")
+                                    .fontWeight(.bold)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .font(.system(.body, design: .rounded))
+                                    .textCase(.uppercase)
+                                    .foregroundColor(Color(hex: "383D47")?.opacity(0.4))
+                                    
+                                Spacer()
+                            }
+                            .padding()
+                            .padding(.top)
+                            .padding(.bottom)
+                            .padding(.leading)
+        
+                            DayMood(avgMood: avgMood)
+                            DailyCheckIn(selectedTab: $selectedTab)
+                            Spacer(minLength: 40)
+                            QuoteOfTheDay(selectedTab: $selectedTab, quoteAuthor: day.quote_author, quote: day.quote)
                         }
-                        .padding()
-                        .padding(.top)
-                        .padding(.bottom)
-                        .padding(.leading)
-    
-                        DayMood(avgMood: avgMood)
-                        DailyCheckIn(selectedTab: $selectedTab)
-                        Spacer(minLength: 40)
-                        QuoteOfTheDay(quoteAuthor: day.quote_author, quote: day.quote)
                     }
                 }
                 .background(Color(hex: "EEEFFC"))
@@ -73,6 +78,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(selectedTab: .constant(.first), day: previewDay, entryAdded: .constant(true))
+        HomeView(day: previewDay, selectedTab: .constant(.first), entryAdded: .constant(true))
     }
 }

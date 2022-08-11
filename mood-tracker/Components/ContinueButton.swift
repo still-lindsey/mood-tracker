@@ -15,6 +15,7 @@ struct ContinueButton: View {
             })
         .padding(15)
         .padding(.leading, 50)
+        .font(.system(.title2, design: .rounded))
         .padding(.trailing, 50)
         .foregroundStyle(.linearGradient(colors: [Color(hex: "FF9999")!, Color(hex:"FFCCB3")!], startPoint: .leading, endPoint: .trailing))
          .background(

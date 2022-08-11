@@ -39,29 +39,32 @@ struct AnalyticsView: View {
                                 Text("\(viewType) Analytics")
                             }
                             .frame(minWidth: 200, maxWidth: 200, minHeight: 40, maxHeight: 40, alignment: .center)
+                            .font(.system(.body, design: .rounded))
                             .background(
                                 RoundedRectangle(cornerRadius: 25)
                                     .fill(Color.gray.opacity(0.3)))
                                 
 
                             Text(getMoodDescriptionandIcon(moodScore: self.monthlyAnalytics!.month_average_mood).0)
-                                .font(.largeTitle)
+                                .font(.system(.largeTitle, design: .rounded))
                                 .fontWeight(.bold)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                                .padding(.horizontal, 30)
+                                .padding(.horizontal)
                                 .padding(.vertical)
                                 
 
                             Text("AVERAGE MOOD: \(String(format: "%.1f", (self.monthlyAnalytics!.month_average_mood * 10)))%")
-                                .font(.title3)
+                                .font(.system(.title3, design: .rounded))
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                                .padding(.horizontal, 30)
+                                .padding(.horizontal)
                             
                             
 
-    //                        var daysAverageMoodsNotNull = getDaysAverageMoodsNotNull(data:monthlyAnalytics.days_average_moods)
+                            let daysAverageMoodsNotNull = getDaysAverageMoodsNotNull(data:monthlyAnalytics.days_average_moods)
                             
-                            LineView(data: self.monthlyAnalytics!.days_average_moods, month: String(today.month.prefix(3)), year: String(today.date.prefix(4).suffix(2)))
+                            let indexesAverageMoodsNotNull = getIndexesAverageMoodsNotNull(data:monthlyAnalytics.days_average_moods)
+                            
+                            LineView(data: daysAverageMoodsNotNull, dataIndexes: indexesAverageMoodsNotNull, month: String(today.month.prefix(3)), year: String(today.date.prefix(4).suffix(2)))
                                 .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/4)
                                 .background(Color.clear)
                                 .foregroundColor(.clear)
@@ -73,11 +76,12 @@ struct AnalyticsView: View {
                             HStack{
                                 VStack{
                                     Text("\(self.monthlyAnalytics!.num_negative_days)")
-                                        .font(.system(size: 45))
-                                        .foregroundColor(Color.gray)
+                                        .font(.system(size: 45, design: .rounded))
+                                        .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
                                     Text("negative days")
-                                        .foregroundColor(Color.gray)
+                                        .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
                                         .padding(.bottom, 10)
+                                        .font(.system(.body, design: .rounded))
                                 }
                                 .frame(maxWidth: .infinity, maxHeight: 100, alignment: .center)
                                 .background(Color.white)
@@ -86,11 +90,12 @@ struct AnalyticsView: View {
                                 .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
                                 VStack{
                                     Text("\(self.monthlyAnalytics!.num_positive_days)")
-                                        .font(.system(size: 45))
-                                        .foregroundColor(Color.gray)
+                                        .font(.system(size: 45, design: .rounded))
+                                        .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
                                     Text("positive days")
-                                        .foregroundColor(Color.gray)
+                                        .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
                                         .padding(.bottom, 10)
+                                        .font(.system(.body, design: .rounded))
                                 }
                                 .frame(maxWidth: .infinity, maxHeight: 100, alignment: .center)
                                 .background(Color.white)
@@ -98,16 +103,16 @@ struct AnalyticsView: View {
                                 .shadow(color: .black, radius: 10, x: 5, y: 5)
                                 .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
                             }
-                            .padding(.horizontal, 30)
+                            .padding(.horizontal)
                             .offset(x: 0, y: 130)
 
                             VStack{
                                 Text("What makes you shine")
                                     
-                                    .font(.title3)
+                                    .font(.system(.title3, design: .rounded))
                                     .fontWeight(.bold)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                                    .foregroundColor(Color.gray)
+                                    .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
                                     .padding(10)
                                     .padding(.bottom, 0)
                                     .multilineTextAlignment(.leading)
@@ -121,17 +126,17 @@ struct AnalyticsView: View {
                             .cornerRadius(20)
                             .shadow(color: .black, radius: 10, x: 5, y: 5)
                             .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
-                            .padding(.horizontal, 30)
+                            .padding(.horizontal)
                             .offset(x: 0, y: 140)
                             
                             
                             VStack{
                                 Text("What gets you down")
                                     
-                                    .font(.title3)
+                                    .font(.system(.title3, design: .rounded))
                                     .fontWeight(.bold)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                                    .foregroundColor(Color.gray)
+                                    .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
                                     .padding(10)
                                     .padding(.bottom, 0)
                                     .multilineTextAlignment(.leading)
@@ -144,13 +149,245 @@ struct AnalyticsView: View {
                             .cornerRadius(20)
                             .shadow(color: .black, radius: 10, x: 5, y: 5)
                             .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
-                            .padding(.horizontal, 30)
+                            .padding(.horizontal)
                             .offset(x: 0, y: 150)
                            
                             //top activities
-                            //top feelings
-                            Spacer(minLength: 170)
+                            
+                            VStack{
+                                Text("Frequent Activities")
+                                    
+                                    .font(.system(.title3, design: .rounded))
+                                    .fontWeight(.bold)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                    .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                                    .padding(10)
+                                    .padding(.bottom, 0)
+                                    .multilineTextAlignment(.leading)
+                                if self.monthlyAnalytics!.top_three_activities_freq.count == 3 {
+                                    HStack{
+                                        ZStack{
+                                            Circle()
+                                                .trim(from: 0, to: (self.monthlyAnalytics!.top_three_activities_freq[0].frequency))
+                                                .stroke(
+                                                    Color(hex: "FF9999")!,
+                                                    style: StrokeStyle(
+                                                        lineWidth: 10,
+                                                        lineCap: .round
+                                                    )
+                                                )
+                                                .rotationEffect(.degrees(-90))
+                                                .frame(width: 150, height: 150)
+                                            Circle()
+                                                .trim(from: 0, to: (self.monthlyAnalytics!.top_three_activities_freq[1].frequency))
+                                                .stroke(
+                                                    (Color(hex: "FF9999")?.opacity(0.7))!,
+                                                    style: StrokeStyle(
+                                                        lineWidth: 10,
+                                                        lineCap: .round
+                                                    )
+                                                )
+                                                .rotationEffect(.degrees(-90))
+                                                .frame(width: 120, height: 120)
+                                            Circle()
+                                                .trim(from: 0, to: (self.monthlyAnalytics!.top_three_activities_freq[2].frequency))
+                                                .stroke(
+                                                    (Color(hex: "FF9999")?.opacity(0.4))!,
+                                                    style: StrokeStyle(
+                                                        lineWidth: 10,
+                                                        lineCap: .round
+                                                    )
+                                                )
+                                                .rotationEffect(.degrees(-90))
+                                                .frame(width: 90, height: 90)
+                                        }
+                                        .frame(width: 150, height: 150)
+                                        .padding(.trailing, 40)
+                                        Spacer()
+                                        VStack{
+                                            HStack{
+                                                Circle()
+                                                    .fill(Color(hex: "FF9999")!)
+                                                    .frame(width: 10, height: 10)
+                                                VStack(alignment: .leading){
+                                                    Text("\(self.monthlyAnalytics!.top_three_activities_freq[0].activity)")
+                                            .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                                            .font(.system(.body, design: .rounded))
+                                                    Text("\(String(format: "%.0f", (self.monthlyAnalytics!.top_three_activities_freq[0].frequency * 100)))%")
+                                                        .foregroundColor(Color(hex: "FF9999"))
+                                                        .font(.system(.body, design: .rounded))
+                                                }
+                                                .multilineTextAlignment(.leading)
+                                                
+                                            }
+                                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                            HStack{
+                                                Circle()
+                                                    .fill(Color(hex: "FF9999")!.opacity(0.7))
+                                                    .frame(width: 10, height: 10)
+                                                VStack(alignment: .leading){
+                                                    Text("\(self.monthlyAnalytics!.top_three_activities_freq[1].activity)")
+                                            .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                                            .font(.system(.body, design: .rounded))
+                                                    Text("\(String(format: "%.0f", (self.monthlyAnalytics!.top_three_activities_freq[1].frequency * 100)))%")
+                                                        .foregroundColor(Color(hex: "FF9999")?.opacity(0.7))
+                                                        .font(.system(.body, design: .rounded))
+                                                }
+                                                .multilineTextAlignment(.leading)
+                                                
+                                            }
+                                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                            HStack{
+                                                Circle()
+                                                    .fill(Color(hex: "FF9999")!.opacity(0.4))
+                                                    .frame(width: 10, height: 10)
+                                                VStack(alignment: .leading){
+                                                    Text("\(self.monthlyAnalytics!.top_three_activities_freq[2].activity)")
+                                            .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                                            .font(.system(.body, design: .rounded))
+                                                    Text("\(String(format: "%.0f", (self.monthlyAnalytics!.top_three_activities_freq[2].frequency * 100)))%")
+                                                        .foregroundColor(Color(hex: "FF9999")?.opacity(0.4))
+                                                        .font(.system(.body, design: .rounded))
+                                                }
+                                                .multilineTextAlignment(.leading)
+                                                
+                                            }
+                                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                        }
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                    }
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                    .padding()
+                                }else{
+                                    Text("Not enough data to calculate. Please submit more entries.")
+                                }
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                            .background(Color.white)
+                            .cornerRadius(20)
+                            .shadow(color: .black, radius: 10, x: 5, y: 5)
+                            .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
+                            .padding(.horizontal)
+                            .offset(x: 0, y: 160)
+                            
+                            VStack{
+                                Text("Frequent Feelings")
+                                    
+                                    .font(.system(.title3, design: .rounded))
+                                    .fontWeight(.bold)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                    .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                                    .padding(10)
+                                    .padding(.bottom, 0)
+                                    .multilineTextAlignment(.leading)
+                                if self.monthlyAnalytics!.top_three_feelings_freq.count == 3 {
+                                    HStack{
+                                        ZStack{
+                                            Circle()
+                                                .trim(from: 0, to: (self.monthlyAnalytics!.top_three_feelings_freq[0].frequency))
+                                                .stroke(
+                                                    Color(hex: "FF9999")!,
+                                                    style: StrokeStyle(
+                                                        lineWidth: 10,
+                                                        lineCap: .round
+                                                    )
+                                                )
+                                                .rotationEffect(.degrees(-90))
+                                                .frame(width: 150, height: 150)
+                                            Circle()
+                                                .trim(from: 0, to: (self.monthlyAnalytics!.top_three_feelings_freq[1].frequency))
+                                                .stroke(
+                                                    (Color(hex: "FF9999")?.opacity(0.7))!,
+                                                    style: StrokeStyle(
+                                                        lineWidth: 10,
+                                                        lineCap: .round
+                                                    )
+                                                )
+                                                .rotationEffect(.degrees(-90))
+                                                .frame(width: 120, height: 120)
+                                            Circle()
+                                                .trim(from: 0, to: (self.monthlyAnalytics!.top_three_feelings_freq[2].frequency))
+                                                .stroke(
+                                                    (Color(hex: "FF9999")?.opacity(0.4))!,
+                                                    style: StrokeStyle(
+                                                        lineWidth: 10,
+                                                        lineCap: .round
+                                                    )
+                                                )
+                                                .rotationEffect(.degrees(-90))
+                                                .frame(width: 90, height: 90)
+                                        }
+                                        .frame(width: 150, height: 150)
+                                        .padding(.trailing, 40)
+                                        Spacer()
+                                        VStack{
+                                            HStack{
+                                                Circle()
+                                                    .fill(Color(hex: "FF9999")!)
+                                                    .frame(width: 10, height: 10)
+                                                VStack(alignment: .leading){
+                                                    Text("\(self.monthlyAnalytics!.top_three_feelings_freq[0].feeling)")
+                                            .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                                            .font(.system(.body, design: .rounded))
+                                                    Text("\(String(format: "%.0f", (self.monthlyAnalytics!.top_three_feelings_freq[0].frequency * 100)))%")
+                                                        .foregroundColor(Color(hex: "FF9999"))
+                                                        .font(.system(.body, design: .rounded))
+                                                }
+                                                .multilineTextAlignment(.leading)
+                                                
+                                            }
+                                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                            HStack{
+                                                Circle()
+                                                    .fill(Color(hex: "FF9999")!.opacity(0.7))
+                                                    .frame(width: 10, height: 10)
+                                                VStack(alignment: .leading){
+                                                    Text("\(self.monthlyAnalytics!.top_three_feelings_freq[1].feeling)")
+                                            .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                                            .font(.system(.body, design: .rounded))
+                                                    Text("\(String(format: "%.0f", (self.monthlyAnalytics!.top_three_feelings_freq[1].frequency * 100)))%")
+                                                        .foregroundColor(Color(hex: "FF9999")?.opacity(0.7))
+                                                        .font(.system(.body, design: .rounded))
+                                                }
+                                                .multilineTextAlignment(.leading)
+                                                
+                                            }
+                                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                            HStack{
+                                                Circle()
+                                                    .fill(Color(hex: "FF9999")!.opacity(0.4))
+                                                    .frame(width: 10, height: 10)
+                                                VStack(alignment: .leading){
+                                                    Text("\(self.monthlyAnalytics!.top_three_feelings_freq[2].feeling)")
+                                            .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                                            .font(.system(.body, design: .rounded))
+                                                    Text("\(String(format: "%.0f", (self.monthlyAnalytics!.top_three_feelings_freq[2].frequency * 100)))%")
+                                                        .foregroundColor(Color(hex: "FF9999")?.opacity(0.4))
+                                                        .font(.system(.body, design: .rounded))
+                                                }
+                                                .multilineTextAlignment(.leading)
+                                                
+                                            }
+                                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                        }
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                    }
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                    .padding()
+                            }else{
+                                Text("Not enough data to calculate. Please submit more entries.")
+                            }
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                            .background(Color.white)
+                            .cornerRadius(20)
+                            .shadow(color: .black, radius: 10, x: 5, y: 5)
+                            .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
+                            .padding(.horizontal)
+                            .offset(x: 0, y: 170)
+                            
                         }
+                        Spacer(minLength: 190)
                     }
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)

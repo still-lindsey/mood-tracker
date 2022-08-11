@@ -283,25 +283,25 @@ struct TagCloudView: View {
         HStack{
             if feelingIconDict[text] != nil {
             Text(feelingIconDict[text]!)
-                .font(.title2)
+                    .font(.system(.title2, design: .rounded))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             Text(text)
-                .font(.body)
+                .font(.system(size: 15, design: .rounded))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 .foregroundColor(Color(hex: "FF9999")!)
             }else if activityIconDict[text] != nil  {
                 Image(systemName: activityIconDict[text]!)
-                    .font(.title2)
+                    .font(.system(.title2, design: .rounded))
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                     .foregroundColor(Color(hex: "FF9999")!)
                 Text(text)
-                    .font(.body)
+                    .font(.system(size: 15, design: .rounded))
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                     .foregroundColor(Color(hex: "FF9999")!)
             }
 
         }
-        .frame(minWidth: 50, maxWidth: 102, minHeight: 30, maxHeight: 30, alignment: .leading)
+        .frame(minWidth: 50, maxWidth: 110, minHeight: 30, maxHeight: 30, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 25)
                .fill(Color(hex: "EEEFFC")!)
@@ -654,6 +654,7 @@ import SwiftUICharts
 
 public struct LineView: View {
     @ObservedObject var data: ChartData
+    var dataIndexes: [Int]
     var month: String
     var year: String
     public var title: String?
@@ -670,10 +671,12 @@ public struct LineView: View {
     @State private var closestPoint: CGPoint = .zero
     @State private var opacity:Double = 0
     @State private var currentDataNumber: Double = 0
+    @State private var currentDataIndex: Int = 0
     @State private var currentIndex: Int = 0
     @State private var hideHorizontalLines: Bool = false
     
     public init(data: [Double],
+                dataIndexes: [Int],
                 month: String,
                 year: String,
                 title: String? = nil,
@@ -683,6 +686,7 @@ public struct LineView: View {
                 legendSpecifier: String? = "%.2f") {
         
         self.data = ChartData(points: data)
+        self.dataIndexes = dataIndexes
         self.month = month
         self.year = year
         self.title = title
@@ -727,9 +731,9 @@ public struct LineView: View {
                     }
                     .frame(width: geometry.frame(in: .local).size.width, height: 240)
                     .offset(x: 0, y: 45 )
-                    MagnifierRect(currentNumber: self.$currentDataNumber, currentIndex: self.$currentIndex, currentMonth: month, currentYear: year, valueSpecifier: self.valueSpecifier)
+                    MagnifierRect(currentNumber: self.$currentDataNumber, currentDataIndex: self.$currentDataIndex, currentMonth: month, currentYear: year, valueSpecifier: self.valueSpecifier)
                         .opacity(self.currentDataNumber > 0 ? self.opacity: 0.0)
-                        .offset(x: self.dragLocation.x - geometry.frame(in: .local).size.width/2, y: 36)
+                        .offset(x: self.dragLocation.x - geometry.frame(in: .local).size.width/1.7, y: 36)
 
                 }
                 .frame(width: geometry.frame(in: .local).size.width, height: 240)
@@ -737,7 +741,7 @@ public struct LineView: View {
                 .onChanged({ value in
                     self.dragLocation = value.location
                     self.indicatorLocation = CGPoint(x: max(value.location.x-10,0), y: 32)
-                    self.opacity = 0.5
+                    self.opacity = 0.7
                     self.closestPoint = self.getClosestDataPoint(toPoint: value.location, width: geometry.frame(in: .local).size.width-30, height: 240)
                     self.hideHorizontalLines = true
                 })
@@ -763,6 +767,7 @@ public struct LineView: View {
         self.currentIndex = index
         if (index >= 0 && index < points.count){
             self.currentDataNumber = points[index]
+            self.currentDataIndex = dataIndexes[index]
             return CGPoint(x: CGFloat(index)*stepWidth, y: CGFloat(points[index])*stepHeight)
         }
         return .zero
@@ -772,9 +777,9 @@ public struct LineView: View {
 struct LineView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            LineView(data: [8,23,54,32,12,37,7,23,43], month: "Aug", year: "2022", title: "Full chart", style: Styles.lineChartStyleOne)
+            LineView(data: [8,23,54,32,12,37,7,23,43], dataIndexes: [3,4,5], month: "Aug", year: "2022", title: "Full chart", style: Styles.lineChartStyleOne)
             
-            LineView(data: [282.502, 284.495, 283.51, 285.019, 285.197, 286.118, 288.737, 288.455, 289.391, 287.691, 285.878, 286.46, 286.252, 284.652, 284.129, 284.188], month: "Aug", year: "2022", title: "Full chart", style: Styles.lineChartStyleOne)
+            LineView(data: [282.502, 284.495, 283.51, 285.019, 285.197, 286.118, 288.737, 288.455, 289.391, 287.691, 285.878, 286.46, 286.252, 284.652, 284.129, 284.188],dataIndexes: [3,4,5], month: "Aug", year: "2022", title: "Full chart", style: Styles.lineChartStyleOne)
             
         }
     }
@@ -791,7 +796,7 @@ import SwiftUI
 
 public struct MagnifierRect: View {
     @Binding var currentNumber: Double
-    @Binding var currentIndex: Int
+    @Binding var currentDataIndex: Int
     var currentMonth: String
     var currentYear: String
     var valueSpecifier:String
@@ -803,7 +808,7 @@ public struct MagnifierRect: View {
                     .font(.system(size: 18, weight: .bold))
                     .offset(x: 0, y:-110)
                     .foregroundColor(Color.white)
-                Text("\(self.currentIndex + 1) \(currentMonth), \(currentYear)")
+                Text("\(self.currentDataIndex + 1) \(currentMonth), \(currentYear)")
                     .textCase(.uppercase)
                     .font(.system(size: 12, weight: .bold))
                     .offset(x: 0, y:-110)

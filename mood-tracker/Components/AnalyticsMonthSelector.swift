@@ -14,15 +14,15 @@ struct AnalyticsMonthSelector: View {
         HStack{
             VStack{
                 Text("THIS MONTH")
-                    .font(.title3)
+                    .font(.system(.title3, design: .rounded))
                     .fontWeight(.bold)
-                    .foregroundColor(Color.gray)
-                    .padding(.horizontal, 30)
+                    .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                    .padding(.horizontal)
                 Text("\(selectedMonthName)")
                     .textCase(.uppercase)
-                    .font(.body)
-                    .foregroundColor(Color.gray.opacity(0.7))
-                    .padding(.horizontal, 30)
+                    .font(.system(.body, design: .rounded))
+                    .foregroundColor(Color(hex: "383D47")?.opacity(0.3))
+                    .padding(.horizontal)
             }
             Spacer()
             Button{
@@ -30,23 +30,23 @@ struct AnalyticsMonthSelector: View {
             }label : {
                 Image(systemName: "lessthan")
                     .frame(maxWidth: 20, maxHeight: 20, alignment: .center)
-                    .foregroundColor(Color.gray)
-                    .font(.body)
+                    .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                    .font(.system(.body, design: .rounded))
                     .buttonStyle(PlainButtonStyle())
-                    .padding(.trailing, 30)
+                    .padding(.trailing)
             }
-            .disabled(selectedMonth == 11) //when you reset db change this to 1
+            .disabled(true) //when you reset db change this to 1
             Button{
                 self.selectedMonth += 1
             }label : {
                 Image(systemName: "greaterthan")
                     .frame(maxWidth: 20, maxHeight: 20, alignment: .center)
-                    .foregroundColor(Color.gray)
-                    .font(.body)
+                    .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                    .font(.system(.body, design: .rounded))
                     .buttonStyle(PlainButtonStyle())
-                    .padding(.trailing, 30)
+                    .padding(.trailing)
             }
-            .disabled(selectedMonth == 11) //when you reset db change this to length of months
+            .disabled(true) //when you reset db change this to length of months
             
         }
         .frame(minWidth: 300, maxWidth: .infinity, minHeight: 80, maxHeight: 80, alignment: .center)
@@ -54,7 +54,7 @@ struct AnalyticsMonthSelector: View {
         .cornerRadius(20)
         .shadow(color: .black, radius: 10, x: 5, y: 5)
         .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
-        .padding(.leading, 30).padding(.trailing, 30)
+        .padding(.leading).padding(.trailing)
         .offset(x: 0, y: 120)
         
     }

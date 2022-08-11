@@ -9,7 +9,7 @@ import SwiftUI
 
 class AnalyticsManager {
     func getAnalytics(monthId: Int)async throws -> AnalyticsResponse {
-        guard let url = URL(string: "http://127.0.0.1:5000/months/\(monthId)/analytics") else {fatalError("Missing URL.")}
+        guard let url = URL(string: "https://bloom-app-server.herokuapp.com/months/\(monthId)/analytics") else {fatalError("Missing URL.")}
         let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {fatalError("Error getting analytics.")}

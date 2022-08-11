@@ -157,10 +157,16 @@ func getTimeAgoConvertedString(timeAgo: Double) -> String {
 }
 
 func getAMPMTimeFromGMT(GMT: String) -> String {
+
+//    if GMT.prefix(1) == " "{
+//        return "\(GMT.suffix(7))"
+//    }else{
+//        return "\(GMT.suffix(7))"
+//    }
     var AMPMTime = ""
     var AMOrPM = "AM"
     var hour = "0"
-    
+
     if Int(GMT.prefix(2))! > 12{
         hour = String(Int(GMT.prefix(2))! - 12)
         AMOrPM = "PM"
@@ -266,11 +272,28 @@ func getLineChartData(daysAverageMood: [Double]) -> [Double]{
 }
 
 func getDaysAverageMoodsNotNull(data:[Double]) -> [Double] {
-    var result:[Double] = []
+    var result_scores:[Double] = []
+//    var result_indexes:[Int] = []
+    var index = 0
     for score in data{
         if score > 0{
-            result.append(score)
+            result_scores.append(score)
+//            result_indexes.append(index)
         }
+        index += 1
     }
-    return result
+    return result_scores
+}
+
+func getIndexesAverageMoodsNotNull(data:[Double]) -> [Int] {
+
+    var result_indexes:[Int] = []
+    var index = 0
+    for score in data{
+        if score > 0{
+            result_indexes.append(index)
+        }
+        index += 1
+    }
+    return result_indexes
 }

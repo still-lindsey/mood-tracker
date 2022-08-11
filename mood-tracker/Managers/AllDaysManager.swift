@@ -9,7 +9,7 @@ import SwiftUI
 
 class AllDaysManager {
     func getAllDays()async throws -> [AllDaysResponseBody]{
-        guard let url = URL(string: "http://127.0.0.1:5000/days") else {fatalError("Missing URL.")}
+        guard let url = URL(string: "https://bloom-app-server.herokuapp.com/days") else {fatalError("Missing URL.")}
         let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {fatalError("Error getting all day.")}

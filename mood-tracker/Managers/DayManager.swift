@@ -10,7 +10,7 @@ import Foundation
 
 class DayManager {
     func postNewDay() async throws -> NewDayResponseBody{
-        guard let url = URL(string: "http://127.0.0.1:5000/days") else {fatalError("Missing URL.")}
+        guard let url = URL(string: "https://bloom-app-server.herokuapp.com/days") else {fatalError("Missing URL.")}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         let (data, response) = try await URLSession.shared.data(for: urlRequest)

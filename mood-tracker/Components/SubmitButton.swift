@@ -22,8 +22,7 @@ struct SubmitButton: View {
 
             Button(action: {
                 Task {
-                   try await self.entryManager.postNewEntry(dayId: dayId, moodScore: moodScore, selectedActivities: selectedActivities,
-                selectedFeelings: selectedFeelings,title: title,memo: memo)
+                   try await self.entryManager.postNewEntry(dayId: dayId, moodScore: moodScore, selectedActivities: selectedActivities,selectedFeelings: selectedFeelings,title: title,memo: memo, timeStamp: "\(NSDate.now.formatted(date: .long, time: .shortened))")
                 }
                 Task {
                     try await self.getDayManager.getDay(dayId: dayId)
@@ -32,6 +31,7 @@ struct SubmitButton: View {
             }, label: {
                 Text("Add Entry")})
             .padding(15)
+            .font(.system(.title2, design: .rounded))
             .padding(.leading, 50)
             .padding(.trailing, 50)
             .foregroundStyle(.linearGradient(colors: [Color(hex: "FF9999")!, Color(hex:"FFCCB3")!], startPoint: .leading, endPoint: .trailing))

@@ -24,12 +24,35 @@ var feelingItems = [
     FeelingItem(text: "sad", icon: UIImage(named: "sad"), emoji: "😔", isSelected: false),
     FeelingItem(text: "angry", icon: UIImage(named: "angry"), emoji: "😠", isSelected: false),
     FeelingItem(text: "shocked", icon: UIImage(named: "shocked"), emoji: "😮", isSelected: false),
+    FeelingItem(text: "bored", icon: UIImage(named: "shocked"), emoji: "😐", isSelected: false),
+    FeelingItem(text: "confused", icon: UIImage(named: "shocked"), emoji: "😣", isSelected: false),
     FeelingItem(text: "scared", icon: UIImage(named: "crying"), emoji: "😧", isSelected: false),
+    FeelingItem(text: "drained", icon: UIImage(named: "crying"), emoji: "😓", isSelected: false),
     FeelingItem(text: "excited", icon: UIImage(named: "embarrassed"), emoji: "😆", isSelected: false),
     FeelingItem(text: "disgusted", icon: UIImage(named: "digust"), emoji: "🤮", isSelected: false),
+    FeelingItem(text: "loved", icon: UIImage(named: "digust"), emoji: "🥰", isSelected: false),
     FeelingItem(text: "worried", icon: UIImage(named: "anxious"), emoji: "😟", isSelected: false),
     FeelingItem(text: "embarrassed", icon: UIImage(named: "embarrassed"), emoji: "😳", isSelected: false),
-    FeelingItem(text: "annoyed", icon: UIImage(named: "embarrassed"), emoji: "😒", isSelected: false)
+    FeelingItem(text: "suspicious", icon: UIImage(named: "embarrassed"), emoji: "🤨", isSelected: false),
+    FeelingItem(text: "irritated", icon: UIImage(named: "embarrassed"), emoji: "😒", isSelected: false)
+]
+
+var feelingIconDict = [
+    "happy": "😄",
+    "sad": "😔",
+    "angry": "😠",
+    "shocked": "😮",
+    "bored": "😐",
+    "confused": "😣",
+    "scared": "😧",
+    "drained": "😓",
+    "excited": "😆",
+    "disgusted": "🤮",
+    "loved": "🥰",
+    "worried": "😟",
+    "embarrassed": "😳",
+    "suspicious": "🤨",
+    "irritated": "😒"
 ]
 
 class Feeling {
@@ -54,27 +77,3 @@ class Feeling {
     
 }
 
-//var happy = Feeling(text: "happy", icon: UIImage(named: "happy")!, emoji: "😄")
-//var sad = Feeling(text: "sad", icon: UIImage(named: "sad")!, emoji: "😔")
-//var angry = Feeling(text: "angry", icon: UIImage(named: "angry")!, emoji: "😠")
-//var shocked = Feeling(text: "shocked", icon: UIImage(named: "shocked")!, emoji: "😮")
-//var scared = Feeling(text: "scared", icon: UIImage(named: "crying")!, emoji: "😧")
-//var excited =  Feeling(text: "excited", icon: UIImage(named: "embarrassed")!, emoji: "😆")
-//var disgusted = Feeling(text: "disgusted", icon: UIImage(named: "digust")!, emoji: "🤮")
-//var worried = Feeling(text: "worried", icon: UIImage(named: "anxious")!, emoji: "😟")
-//var embarrassed = Feeling(text: "embarrassed", icon: UIImage(named: "embarrassed")!, emoji: "😳")
-//var annoyed = Feeling(text: "annoyed", icon: UIImage(named: "embarrassed")!, emoji: "😒")
-//
-//var feelingList = [happy, sad, angry, shocked, scared, excited, disgusted, worried, embarrassed, annoyed]
- 
-//func createFeelingsInstanceList() -> [Feeling]{
-//    var result: [Feeling] = []
-//    
-//    var count: Int = 0
-//    for _ in [...10] {
-//        let instance = Feeling(text: feelingItems[count].text, icon: feelingItems[count].icon!, emoji: feelingItems[count].emoji)
-//        count += 1
-//        result.append(instance)
-//    }
-//    return result
-//}

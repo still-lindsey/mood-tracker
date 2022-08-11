@@ -135,6 +135,7 @@ struct ActivitiesList: View {
                             .font(.body)
                 }
                 }
+                .frame(maxWidth: 1, maxHeight: 1, alignment: .center)
             }
             .onDisappear{
                 for item in activityItems {

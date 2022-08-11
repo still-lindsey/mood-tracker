@@ -10,7 +10,7 @@ import SwiftUI
 
 class GetDayManager {
     func getDay(dayId: Int)async throws -> GetDayResponseBody{
-        guard let url = URL(string: "http://127.0.0.1:5000/days/\(dayId)") else {fatalError("Missing URL.")}
+        guard let url = URL(string: "https://bloom-app-server.herokuapp.com/days/\(dayId)") else {fatalError("Missing URL.")}
         let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {fatalError("Error getting day.")}
@@ -29,6 +29,7 @@ struct GetDayResponseBody: Decodable {
     var quote: String
     var quote_author: String
     var status: String
+    var month_id: Int
     
     struct EntryResponse: Decodable {
         var activities: [String]

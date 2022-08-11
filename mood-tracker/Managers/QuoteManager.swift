@@ -7,14 +7,25 @@
 
 import SwiftUI
 
-struct QuoteManager: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+import Foundation
+import SwiftUI
+
+class GetRandomQuoteManager {
+    func getRandomQuote()async throws -> GetRandomQuoteResponseBody{
+        guard let url = URL(string: "https://bloom-app-server.herokuapp.com/quotes") else {fatalError("Missing URL.")}
+        let urlRequest = URLRequest(url: url)
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {fatalError("Error getting random quote.")}
+        
+        let decodedData = try JSONDecoder().decode(GetRandomQuoteResponseBody.self, from: data)
+        return decodedData
     }
 }
 
-struct QuoteManager_Previews: PreviewProvider {
-    static var previews: some View {
-        QuoteManager()
-    }
+struct GetRandomQuoteResponseBody: Codable {
+    var q: String
+    var a: String
+    var h: String
+
 }
+

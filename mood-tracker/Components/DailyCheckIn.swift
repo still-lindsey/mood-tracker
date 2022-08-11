@@ -8,30 +8,38 @@
 import SwiftUI
 
 struct DailyCheckIn: View {
+    @Binding var selectedTab: MenuTabs
     var body: some View {
-        ZStack() {
-            VStack {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("DAILY CHECK-IN")
-                        .bold().font(.title2).frame(maxWidth: .infinity, alignment: .center)
-                    Spacer()
-                        .frame(height: 2)
-                    Text("How are you feeling today?")
-                        .frame(maxWidth: .infinity, alignment: .center)
-                }
-                .frame(maxWidth: .infinity, alignment: .center)
+        ZStack {
+            VStack(alignment: .leading, spacing: 5) {
+                Text("DAILY CHECK-IN")
+                    .bold().font(.system(.title2, design: .rounded)).frame(maxWidth: .infinity, alignment: .center)
+                Spacer()
+                    .frame(height: 2)
+                Text("How are you feeling today?")
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .font(.system(.body, design: .rounded))
             }
-            .padding()
-            .frame(maxWidth: .infinity, minHeight: 200, alignment: .center)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
         }
-        .background(Color(.white.withAlphaComponent(0.8))).cornerRadius(20)
-        .frame(maxWidth: 350)
+        .frame(maxWidth: .infinity, minHeight: 200, alignment: .center)
+        .background(Color.white)
+        .cornerRadius(20)
+        .shadow(color: .black, radius: 10, x: 5, y: 5)
+        .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
+        .padding(.horizontal)
         .offset(y: -50)
+        .zIndex(1)
+        .onTapGesture {
+            selectedTab = .third
         }
+    }
 }
+
 
 struct DailyCheckIn_Previews: PreviewProvider {
     static var previews: some View {
-        DailyCheckIn()
+        DailyCheckIn(selectedTab: .constant(.first))
     }
 }

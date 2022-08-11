@@ -1,0 +1,47 @@
+[
+            {
+                "activities": [
+                    "work",
+                    "mindfulness"
+                ],
+                "emotions": [
+                    "excited"
+                ],
+                "entry_id": 87,
+                "memo": "Worked all day and got the navbar to change with my form. Also was able to implement a clean up function in by code using onAppear and onDisappear.",
+                "mood_score": 5.0,
+                "time_stamp": "Wed, 03 Aug 2022 21:50:42 GMT",
+                "title": "Coding Madness"
+            },
+            {
+                "activities": [],
+                "emotions": [],
+                "entry_id": 88,
+                "memo": "",
+                "mood_score": 5.0,
+                "time_stamp": "Wed, 03 Aug 2022 22:27:05 GMT",
+                "title": ""
+            },
+            {
+                "activities": [],
+                "emotions": [],
+                "entry_id": 89,
+                "memo": "",
+                "mood_score": 5.0,
+                "time_stamp": "Wed, 03 Aug 2022 22:35:47 GMT",
+                "title": ""
+            },
+            {
+                "activities": [
+                    "work"
+                ],
+                "emotions": [
+                    "embarrassed"
+                ],
+                "entry_id": 90,
+                "memo": "",
+                "mood_score": 7.235649824142456,
+                "time_stamp": "Wed, 03 Aug 2022 22:36:01 GMT",
+                "title": ""
+            }
+        ]

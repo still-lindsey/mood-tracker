@@ -243,7 +243,7 @@ func getAverageMoodPerDay(weeklyEntries: [Any]) -> [Double]{
     while count > 0 {
         if weeklyEntries.count != 0 {
             for entry in weeklyEntries {
-                avgMood += (entry as! AllDaysResponseBody.EntryResponse).mood_score
+                avgMood += (entry as! EntryResponse).mood_score
             }
             avgMood = avgMood / Double(weeklyEntries.count)
         }else{
@@ -276,7 +276,7 @@ func getDaysAverageMoodsNotNull(data:[Double]) -> [Double] {
 //    var result_indexes:[Int] = []
     var index = 0
     for score in data{
-        if score > 0{
+        if score >= 0{
             result_scores.append(score)
 //            result_indexes.append(index)
         }
@@ -290,10 +290,17 @@ func getIndexesAverageMoodsNotNull(data:[Double]) -> [Int] {
     var result_indexes:[Int] = []
     var index = 0
     for score in data{
-        if score > 0{
+        if score >= 0{
             result_indexes.append(index)
         }
         index += 1
     }
     return result_indexes
+}
+
+func sortDaysById(days: [AllDaysResponseBody]) -> [AllDaysResponseBody] {
+    let result = days.sorted {
+        $0.day_id > $1.day_id
+    }
+    return result
 }

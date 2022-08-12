@@ -53,18 +53,19 @@ struct AllDaysResponseBody: Codable, Sequence, IteratorProtocol, Equatable, Hash
         }
         return count
     }
-    struct EntryResponse: Codable, Hashable{
-        func hash(into hasher: inout Hasher) {
-                hasher.combine(entry_id)
-            }
+}
 
-        var activities: [String]
-        var emotions: [String]
-        var entry_id: Int
-        var memo: String
-        var title: String
-        var mood_score: Double
-        var time_stamp: String
-    }
+struct EntryResponse: Codable, Hashable{
+    func hash(into hasher: inout Hasher) {
+            hasher.combine(entry_id)
+        }
+
+    var activities: [String]
+    var emotions: [String]
+    var entry_id: Int
+    var memo: String
+    var title: String
+    var mood_score: Double
+    var time_stamp: String
 }
 

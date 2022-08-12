@@ -20,7 +20,7 @@ struct QuotesView: View {
             VStack{
                 VStack(alignment: .center){
                     Text("\(self.displayedQuote)")
-                        .font(.system(size: 30, design: .rounded))
+                        .font(.system(size: 25, design: .rounded))
                         .fontWeight(.bold)
                         .padding(.bottom, 20)
                         .opacity(0.9)

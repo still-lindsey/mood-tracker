@@ -50,6 +50,7 @@
 		2ACFCF8628A2B33F0030E78C /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 2ACFCF8528A2B33F0030E78C /* SwiftUICharts */; };
 		2ACFCF8828A3965E0030E78C /* AnalyticsMonthSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFCF8728A3965E0030E78C /* AnalyticsMonthSelector.swift */; };
 		2ACFCF8A28A3EBDF0030E78C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACFCF8928A3EBDF0030E78C /* Launch Screen.storyboard */; };
+		2ACFCF8C28A560190030E78C /* DeleteEntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFCF8B28A560180030E78C /* DeleteEntryManager.swift */; };
 		2AEF2DD7289BC3A1008E8ED1 /* DaysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEF2DD6289BC3A1008E8ED1 /* DaysList.swift */; };
 		2AEF2DE1289BC5FF008E8ED1 /* daysData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF2DE0289BC5FF008E8ED1 /* daysData.json */; };
 		2AEF2DE3289BF1F3008E8ED1 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEF2DE2289BF1F3008E8ED1 /* Day.swift */; };
@@ -118,6 +119,7 @@
 		2A8B4CEB2893BB56000E6598 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		2ACFCF8728A3965E0030E78C /* AnalyticsMonthSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsMonthSelector.swift; sourceTree = "<group>"; };
 		2ACFCF8928A3EBDF0030E78C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		2ACFCF8B28A560180030E78C /* DeleteEntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEntryManager.swift; sourceTree = "<group>"; };
 		2AEF2DD6289BC3A1008E8ED1 /* DaysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysList.swift; sourceTree = "<group>"; };
 		2AEF2DE0289BC5FF008E8ED1 /* daysData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = daysData.json; sourceTree = "<group>"; };
 		2AEF2DE2289BF1F3008E8ED1 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		2A8B4CB02893A7B2000E6598 /* mood-tracker */ = {
 			isa = PBXGroup;
 			children = (
+				2ACFCF8D28A5EE950030E78C /* Models */,
 				2A83C4732897C8FD00FFAF0D /* TabView */,
 				2A8B4CB32893A7B2000E6598 /* ContentView.swift */,
 				2A5EF0DD28940A420093AA2F /* Components */,
@@ -267,6 +270,7 @@
 				2A8B4CE92893BB43000E6598 /* QuoteManager.swift */,
 				2A8B4CEB2893BB56000E6598 /* AnalyticsManager.swift */,
 				2A83C47E2897CB0A00FFAF0D /* TabViewManager.swift */,
+				2ACFCF8B28A560180030E78C /* DeleteEntryManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -277,6 +281,13 @@
 				2A8B4CE32893B842000E6598 /* LoadingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2ACFCF8D28A5EE950030E78C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +442,7 @@
 				2A8B4CB42893A7B2000E6598 /* ContentView.swift in Sources */,
 				2ACFCF8828A3965E0030E78C /* AnalyticsMonthSelector.swift in Sources */,
 				2A8B4CB22893A7B2000E6598 /* mood_trackerApp.swift in Sources */,
+				2ACFCF8C28A560190030E78C /* DeleteEntryManager.swift in Sources */,
 				2A83C4672896813600FFAF0D /* AnalyticsView.swift in Sources */,
 				2A8B4CEA2893BB43000E6598 /* QuoteManager.swift in Sources */,
 				2A066E1A2898F5C90031ABF4 /* ContinueButton.swift in Sources */,

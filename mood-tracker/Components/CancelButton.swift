@@ -12,12 +12,17 @@ struct CancelButton: View {
     
     var body: some View {
         HStack{
-            Button("x", action: {
+            Button {
                 self.selectedTab = .first
-                })
+            }label : {
+                Image(systemName: "x.circle")
+                    .font(.title3)
+                    .frame(maxWidth: .infinity, maxHeight: 10, alignment: .trailing)
+            }
             .frame(maxWidth: .infinity, maxHeight: 10, alignment: .trailing)
             .font(.system(.title2, design: .rounded))
-            .padding(.trailing, 30)
+            .padding(.trailing, 20)
+            .padding(.top, 20)
             .foregroundColor(.white)
              .buttonStyle(PlainButtonStyle())
              

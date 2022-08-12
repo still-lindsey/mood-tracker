@@ -58,7 +58,7 @@ func loadDays<T: Decodable>(_ filename: String) -> T {
 }
 
 
-var previewEntries: [AllDaysResponseBody.EntryResponse] = loadDays("entriesdata.json")
+var previewEntries: [EntryResponse] = loadDays("entriesdata.json")
 
 func loadEntries<T: Decodable>(_ filename: String) -> T {
     let data: Data

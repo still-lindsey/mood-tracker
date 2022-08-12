@@ -44,20 +44,24 @@ struct Entry: View {
                 .frame(maxWidth: .infinity, maxHeight: 70, alignment: .leading)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding(.leading, 20).padding(.trailing, 20).padding(.top, 20)
-            VStack{
-                //add feature to only display certain preview of memo and click to expand page to see full memo
-                Text(memo)
-                    .padding(20)
-                    .foregroundColor(Color(hex: "383D47")?.opacity(0.8))
-                    .fixedSize(horizontal: false, vertical: true)
-                    .font(.system(.body, design: .rounded))
+            .padding(.leading, 20).padding(.trailing, 20).padding(.top, 15)
+            if memo != "" {
+                VStack{
+                    //add feature to only display certain preview of memo and click to expand page to see full memo
+                    Text(memo)
+                        .padding(.horizontal, 20).padding(.vertical, 10)
+                        .foregroundColor(Color(hex: "383D47")?.opacity(0.8))
+                        .fixedSize(horizontal: false, vertical: true)
+                        .font(.system(.body, design: .rounded))
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            }else{
+                Spacer(minLength: 10)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             
             
             TagCloudView(tags: activities + feelings)
-            Spacer()
+            Spacer(minLength: 10)
 
         }
         .background(Color.white)
@@ -65,7 +69,7 @@ struct Entry: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .shadow(color: .black, radius: 10, x: 5, y: 5)
         .mask(Rectangle().cornerRadius(20).padding(.bottom, -10))
-        .padding(.leading).padding(.trailing).padding(.bottom, 10)
+        .padding(.leading).padding(.trailing).padding(.bottom, 20)
     }
 }
 

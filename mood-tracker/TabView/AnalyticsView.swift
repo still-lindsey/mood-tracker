@@ -78,10 +78,17 @@ struct AnalyticsView: View {
                                     Text("\(self.monthlyAnalytics!.num_negative_days)")
                                         .font(.system(size: 45, design: .rounded))
                                         .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
-                                    Text("negative days")
-                                        .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
-                                        .padding(.bottom, 10)
-                                        .font(.system(.body, design: .rounded))
+                                    if monthlyAnalytics.num_negative_days == 1{
+                                        Text("negative day")
+                                            .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                                            .padding(.bottom, 10)
+                                            .font(.system(.body, design: .rounded))
+                                    }else{
+                                        Text("negative days")
+                                            .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                                            .padding(.bottom, 10)
+                                            .font(.system(.body, design: .rounded))
+                                    }
                                 }
                                 .frame(maxWidth: .infinity, maxHeight: 100, alignment: .center)
                                 .background(Color.white)
@@ -92,10 +99,18 @@ struct AnalyticsView: View {
                                     Text("\(self.monthlyAnalytics!.num_positive_days)")
                                         .font(.system(size: 45, design: .rounded))
                                         .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
-                                    Text("positive days")
-                                        .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
-                                        .padding(.bottom, 10)
-                                        .font(.system(.body, design: .rounded))
+                                    if monthlyAnalytics.num_positive_days == 1{
+                                        Text("positive day")
+                                            .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                                            .padding(.bottom, 10)
+                                            .font(.system(.body, design: .rounded))
+                                    }else{
+                                        Text("positive days")
+                                            .foregroundColor(Color(hex: "383D47")?.opacity(0.6))
+                                            .padding(.bottom, 10)
+                                            .font(.system(.body, design: .rounded))
+                                    }
+                                        
                                 }
                                 .frame(maxWidth: .infinity, maxHeight: 100, alignment: .center)
                                 .background(Color.white)

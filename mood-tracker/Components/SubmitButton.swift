@@ -13,15 +13,17 @@ struct SubmitButton: View {
     var moodScore: Double
     var selectedActivities: [String]
     var selectedFeelings: [String]
-    var title: String
+    @Binding var title: String
     var memo: String
     var dayId: Int
     @Binding var selectedTab: MenuTabs
     @ObservedObject var tabViewManager = TabViewManager()
     var body: some View {
-
             Button(action: {
                 Task {
+                    if title == ""{
+                        title = getMoodDescriptionandIcon(moodScore: moodScore).0
+                    }
                    try await self.entryManager.postNewEntry(dayId: dayId, moodScore: moodScore, selectedActivities: selectedActivities,selectedFeelings: selectedFeelings,title: title,memo: memo, timeStamp: "\(NSDate.now.formatted(date: .long, time: .shortened))")
                 }
                 Task {
@@ -46,6 +48,6 @@ struct SubmitButton: View {
 
 struct SubmitButton_Previews: PreviewProvider {
     static var previews: some View {
-        SubmitButton(moodScore: 5.0, selectedActivities: ["work", "exercise"], selectedFeelings: ["stressed"], title: "Work", memo: "Was so busy today!", dayId: 2, selectedTab: .constant(.first))
+        SubmitButton(moodScore: 5.0, selectedActivities: ["work", "exercise"], selectedFeelings: ["stressed"], title: .constant("Work"), memo: "Was so busy today!", dayId: 2, selectedTab: .constant(.first))
     }
 }

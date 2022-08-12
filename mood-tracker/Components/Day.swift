@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Day: View {
-    let entries: [AllDaysResponseBody.EntryResponse]
+    var entries: [EntryResponse]
     let month: String
     let id: Int
     let date: String
@@ -52,17 +52,19 @@ struct Day: View {
             .frame(maxWidth: .infinity, maxHeight: 100, alignment: .center)
             .padding(.leading)
             .padding(.trailing)
-            ForEach(entries.reversed(), id: \.self){entry in
-                Entry(moodScore: entry.mood_score, title: entry.title, memo: entry.memo, activities: entry.activities, feelings: entry.emotions, timeStamp: entry.time_stamp, entryId: entry.entry_id)
-            }
 
+            ForEach(entries.reversed(), id: \.self){entry in
+                Entry( moodScore: entry.mood_score, title: entry.title, memo: entry.memo, activities: entry.activities, feelings: entry.emotions, timeStamp: entry.time_stamp, entryId: entry.entry_id)
+            }
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
     }
 }
 
+
 struct Day_Previews: PreviewProvider {
     static var previews: some View {
-        Day(entries: previewEntries, month: "July", id: 6, date: "20220718", dayOfWeek: "Tuesday")
+        Day(entries: previewEntries, month: "hi", id: 6, date: "hi", dayOfWeek: "hi")
     }
 }

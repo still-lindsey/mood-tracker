@@ -200,9 +200,9 @@ struct AddEntryView: View {
                             Spacer()
                         }
                             .multilineTextAlignment(.center)
-                        SubmitButton(moodScore: moodScore, selectedActivities: selectedActivities, selectedFeelings: selectedFeelings, title: title, memo: memo, dayId: dayId, selectedTab: $selectedTab)
-                                .disabled(title == "" || memo == "")
-                                .overlay(Color.black.opacity(title == "" || memo == "" ? 0.4 : 0.0).cornerRadius(25))
+                        SubmitButton(moodScore: moodScore, selectedActivities: selectedActivities, selectedFeelings: selectedFeelings, title: $title, memo: memo, dayId: dayId, selectedTab: $selectedTab)
+//                                .disabled(title == "" || memo == "")
+//                                .overlay(Color.black.opacity(title == "" || memo == "" ? 0.4 : 0.0).cornerRadius(25))
                         Spacer()
                     }
                     .onDisappear{

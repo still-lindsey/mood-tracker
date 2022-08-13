@@ -9,11 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     var dayManager = DayManager()
-    @State var day: NewDayResponseBody?
+    @State var day: NewDayResponseBody
     @Binding var selectedTab: MenuTabs
-    @Binding var entryAdded: Bool
     var body: some View {
-            if let day = day {
                 let avgMood = getAverageMood(entries: day.entries)
                 ZStack () {
                     VStack{
@@ -59,25 +57,15 @@ struct HomeView: View {
                 .preferredColorScheme(.light)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                 .onAppear{
-                    entryAdded = false
+                  
 
                 }
-            }else {
-                LoadingView()
-                    .task {
-                        do {
-                            day = try await dayManager.postNewDay()
-                        }catch {
-                            print("Error getting today's data: \(error)")
-                    }
-                }
-            }
     }
 }
 
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(day: previewDay, selectedTab: .constant(.first), entryAdded: .constant(true))
+        HomeView(day: previewDay, selectedTab: .constant(.first))
     }
 }

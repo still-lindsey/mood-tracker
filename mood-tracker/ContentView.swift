@@ -10,49 +10,61 @@ enum MenuTabs: Int {
 }
 
 struct ContentView: View {
-    @State var entryAdded: Bool = false
+    var dayManager = DayManager()
+    @State var day: NewDayResponseBody?
     @State var selectedTab = MenuTabs.first
     var body: some View {
-        VStack(spacing: 0) {
-            ZStack {
+        if let day = day {
+            VStack(spacing: 0) {
                 ZStack {
-                    if selectedTab == .first {
-                        HomeView(selectedTab: $selectedTab, entryAdded: $entryAdded)
-                            .transition(.scale)
-                    }
-                    else if selectedTab == .second {
-                        
-                            VStack(spacing: 0) {
-                                QuotesView(entryAdded: $entryAdded)
-                                    .transition(.scale)
-                            }
-                        
-                    }
-                    else if selectedTab == .third {
-                  
-                            VStack(spacing: 0) {
-                                AddEntryView(selectedTab: $selectedTab)
-                                    .transition(.scale)
-                            }
-                        
-                    }else if selectedTab == .fourth {
-                      
-                            VStack(spacing: 0) {
-                                AnalyticsView(entryAdded: $entryAdded)
-                                    .transition(.scale)
-                       
+                    ZStack {
+                        if selectedTab == .first {
+                            HomeView(day: day, selectedTab: $selectedTab)
+                                .transition(.scale)
                         }
-                    }else if selectedTab == .fifth {
+                        else if selectedTab == .second {
+                            
+                                VStack(spacing: 0) {
+                                    QuotesView(day: day)
+                                        .transition(.scale)
+                                }
+                            
+                        }
+                        else if selectedTab == .third {
+                      
+                                VStack(spacing: 0) {
+                                    AddEntryView(day: day, selectedTab: $selectedTab)
+                                        .transition(.scale)
+                                }
+                            
+                        }else if selectedTab == .fourth {
+                          
+                                VStack(spacing: 0) {
+                                    AnalyticsView(today: day)
+                                        .transition(.scale)
+                           
+                            }
+                        }else if selectedTab == .fifth {
 
-                            VStack(spacing: 0) {
-                                AllDaysView(entryAdded: $entryAdded)
-                                    .transition(.scale)
+                                VStack(spacing: 0) {
+                                    AllDaysView()
+                                        .transition(.scale)
+                            }
                         }
                     }
                 }
+                if selectedTab != .third {
+                    tabBarView
+                }
             }
-            if selectedTab != .third {
-                tabBarView
+        }else{
+            LoadingView()
+                .task {
+                    do {
+                        day = try await dayManager.postNewDay()
+                    }catch {
+                        print("Error getting today's data: \(error)")
+                }
             }
         }
     }
@@ -70,7 +82,6 @@ struct ContentView: View {
             }
             .padding(.top, 8)
         }
-        .zIndex(entryAdded == false ? 0 : 2)
         .frame(height: 50)
         .background(Color.white.edgesIgnoringSafeArea(.all))
         .padding(.leading)
@@ -103,7 +114,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
+            ContentView(day: previewDay)
         }
     }
 }

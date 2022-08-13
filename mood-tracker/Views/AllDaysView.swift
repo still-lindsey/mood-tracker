@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AllDaysView: View {
-    @Binding var entryAdded: Bool
     var allDaysManager = AllDaysManager()
     @State var days: [AllDaysResponseBody] = []
     var body: some View {
@@ -91,6 +90,6 @@ struct AllDaysView: View {
 
 struct AllDaysView_Previews: PreviewProvider {
     static var previews: some View {
-        AllDaysView(entryAdded: .constant(true), days: previewDays)
+        AllDaysView(days: previewDays)
     }
 }

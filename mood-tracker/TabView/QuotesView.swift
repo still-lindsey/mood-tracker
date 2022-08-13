@@ -9,14 +9,13 @@ import SwiftUI
 
 struct QuotesView: View {
     var dayManager = DayManager()
-    @State var day: NewDayResponseBody?
+    @State var day: NewDayResponseBody
     var randomQuoteManager = GetRandomQuoteManager()
     @State var randomQuote: GetRandomQuoteResponseBody?
     @State var displayedQuote: String = ""
     @State var displayedAuthor: String = ""
-    @Binding var entryAdded: Bool
     var body: some View {
-        if let day = day {
+//        if let day = day {
             VStack{
                 VStack(alignment: .center){
                     Text("\(self.displayedQuote)")
@@ -54,21 +53,21 @@ struct QuotesView: View {
                     }
                 }
             }
-    }else {
-        LoadingView()
-            .task {
-                do {
-                    day = try await dayManager.postNewDay()
-                }catch {
-                    print("Error getting today's data: \(error)")
-            }
-        }
-    }
+//    }else {
+//        LoadingView()
+//            .task {
+//                do {
+//                    day = try await dayManager.postNewDay()
+//                }catch {
+//                    print("Error getting today's data: \(error)")
+//            }
+//        }
+//    }
     }
 }
 
 struct QuotesView_Previews: PreviewProvider {
     static var previews: some View {
-        QuotesView(entryAdded: .constant(true))
+        QuotesView(day: previewDay)
     }
 }

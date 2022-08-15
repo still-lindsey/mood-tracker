@@ -65,10 +65,9 @@ struct AnalyticsView: View {
                             .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/4)
                             .background(Color.clear)
                             .foregroundColor(.clear)
-                        
                             
 
-                        AnalyticsMonthSelector(selectedMonth: $selectedMonth, selectedMonthName: $selectedMonthName)
+                        AnalyticsMonthSelector(currentMonth: today.month_id, currentYear: String(today.date.prefix(4)),selectedMonth: $selectedMonth, selectedMonthName: $selectedMonthName)
 
                         HStack{
                             VStack{

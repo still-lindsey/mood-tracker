@@ -1,9 +1,9 @@
 {
     "days": [
         {
-            "date": "20220803",
+            "date": "",
             "day_id": 7,
-            "day_of_week": "Wednesday",
+            "day_of_week": "",
             "entries": [
                 {
                     "activities": [
@@ -321,9 +321,9 @@
                     "title": "taikichan"
                 }
             ],
-            "month": "August",
-            "quote": "Greatest success comes just one step beyond the point at which defeat overtakes you.",
-            "quote_author": "Unknown"
+            "month": "",
+            "quote": "",
+            "quote_author": ""
         }
     ]
 }

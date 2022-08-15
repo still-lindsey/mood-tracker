@@ -11,15 +11,14 @@ enum MenuTabs: Int {
 
 struct ContentView: View {
     var dayManager = DayManager()
-    @State var day: NewDayResponseBody?
+    @State var day: NewDayResponseBody = previewDay
     @State var selectedTab = MenuTabs.first
     var body: some View {
-        if let day = day {
             VStack(spacing: 0) {
                 ZStack {
                     ZStack {
                         if selectedTab == .first {
-                            HomeView(day: day, selectedTab: $selectedTab)
+                            HomeView(day: $day, selectedTab: $selectedTab)
                                 .transition(.scale)
                         }
                         else if selectedTab == .second {
@@ -57,16 +56,6 @@ struct ContentView: View {
                     tabBarView
                 }
             }
-        }else{
-            LoadingView()
-                .task {
-                    do {
-                        day = try await dayManager.postNewDay()
-                    }catch {
-                        print("Error getting today's data: \(error)")
-                }
-            }
-        }
     }
     
     var tabBarView: some View {

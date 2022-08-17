@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var scale = 1.0
     var dayManager = DayManager()
     @Binding var day: NewDayResponseBody
     @Binding var selectedTab: MenuTabs
@@ -23,6 +24,7 @@ struct HomeView: View {
                                 .edgesIgnoringSafeArea(.top)
                             Spacer()
                         }
+                        if day.date != "20220731"{
                         ScrollView{
                             VStack{
                                 VStack (spacing: 10){
@@ -45,18 +47,21 @@ struct HomeView: View {
                                 .padding(.top)
                                 .padding(.bottom)
                                 .padding(.leading)
-            
                                 DayMood(avgMood: avgMood)
                                 DailyCheckIn(selectedTab: $selectedTab)
                                 Spacer(minLength: 40)
                                 QuoteOfTheDay(selectedTab: $selectedTab, quoteAuthor: day.quote_author, quote: day.quote)
                             }
                         }
+                        }
                     }
                     .onAppear{
                         Task {
                             do {
-                                day = try await dayManager.postNewDay()
+                                let result = try await dayManager.postNewDay()
+                                withAnimation(.easeIn(duration: 1)){
+                                    day = result
+                                }
                             }catch {
                                 print("Error getting today's data: \(error)")
                         }

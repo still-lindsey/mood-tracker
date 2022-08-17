@@ -16,6 +16,7 @@ struct AllDaysView: View {
         ScrollView(.vertical, showsIndicators: false) {
             ZStack{
                 VStack {
+                    
                     Text("Your Entries")
                         .fontWeight(.bold)
                         .padding(.top, 50)
@@ -80,7 +81,10 @@ struct AllDaysView: View {
     func getAllDaysData(){
         Task{
             do {
-                days = try await allDaysManager.getAllDays()
+                let result = try await allDaysManager.getAllDays()
+                withAnimation(.easeIn(duration: 1)){
+                    days = result
+                }
             }catch {
                 print("Error getting all days' data: \(error)")
         }

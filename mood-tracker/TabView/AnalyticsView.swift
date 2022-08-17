@@ -15,6 +15,7 @@ struct AnalyticsView: View {
     @State var monthlyAnalytics: AnalyticsResponse?
     @State var selectedMonth: Int = 0
     @State var selectedMonthName: String = "August"
+    @State var selectedYear: String = "2022"
     var body: some View {
         let monthId = today.month_id
         if let monthlyAnalytics = monthlyAnalytics {
@@ -65,10 +66,9 @@ struct AnalyticsView: View {
                             .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/4)
                             .background(Color.clear)
                             .foregroundColor(.clear)
-                        
                             
 
-                        AnalyticsMonthSelector(selectedMonth: $selectedMonth, selectedMonthName: $selectedMonthName)
+                        AnalyticsMonthSelector(currentMonth: today.month_id, currentYear: String(today.date.prefix(4)),selectedMonth: $selectedMonth, selectedMonthName: $selectedMonthName, selectedYear: $selectedYear)
 
                         HStack{
                             VStack{
@@ -410,6 +410,8 @@ struct AnalyticsView: View {
             Task{
                 do{
                     self.monthlyAnalytics = try await analyticsManager.getAnalytics(monthId: self.selectedMonth)
+                    self.selectedMonthName = numMonthToName[self.monthlyAnalytics!.month_name]!
+                    self.selectedYear = self.monthlyAnalytics!.year
                 }catch{
                     
                     print("Error getting analytics: \(error)")

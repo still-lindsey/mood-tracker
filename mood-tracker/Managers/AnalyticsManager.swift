@@ -21,6 +21,8 @@ class AnalyticsManager {
 }
 
 struct AnalyticsResponse: Codable {
+    var month_name: String
+    var year: String
     var days_average_moods: [Double]
     var month_average_mood: Double
     var negative_activities: [String]

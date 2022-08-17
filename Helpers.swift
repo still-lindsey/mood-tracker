@@ -259,6 +259,7 @@ func getAverageMoodPerDay(weeklyEntries: [Any]) -> [Double]{
 let daysInMonth = [1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31]
 let numChartedDays = ["Monday": 1, "Tuesday": 2, "Wednesday": 3, "Thursday": 4, "Friday": 5, "Saturday": 6, "Sunday": 7]
 let daysCountDown = [1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday", 6: "Saturday", 7: "Sunday"]
+let numMonthToName = ["01": "January", "02": "February", "03": "March", "04": "April", "05": "May", "06": "June", "07": "July", "08": "August", "09": "September", "10": "Octorber", "11": "November", "12": "December"]
 
 
 func getLineChartData(daysAverageMood: [Double]) -> [Double]{
@@ -304,3 +305,4 @@ func sortDaysById(days: [AllDaysResponseBody]) -> [AllDaysResponseBody] {
     }
     return result
 }
+

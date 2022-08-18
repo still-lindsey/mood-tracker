@@ -40,19 +40,19 @@ func getMoodDescriptionandIcon(moodScore: Double) -> (String, UIImage?) {
     var resultIcon: UIImage?
     if moodScore < 2 {
         resultDes = "Really Terrible"
-        resultIcon = UIImage(named: "crying")
+        resultIcon = UIImage(named: "18")
     }else if moodScore >= 2 && moodScore < 4{
         resultDes = "Somewhat Bad"
-        resultIcon = UIImage(named: "sad")
+        resultIcon = UIImage(named: "3")
     }else if moodScore >= 4 && moodScore < 6 {
         resultDes = "Completely Okay"
-        resultIcon = UIImage(named: "neutral")
+        resultIcon = UIImage(named: "26")
     }else if moodScore >= 6 && moodScore < 8{
         resultDes = "Pretty Good"
-        resultIcon = UIImage(named: "smile")
+        resultIcon = UIImage(named: "4")
     }else{
         resultDes = "Super Awesome"
-        resultIcon = UIImage(named: "happy")
+        resultIcon = UIImage(named: "1")
     }
     return (resultDes, resultIcon)
 }

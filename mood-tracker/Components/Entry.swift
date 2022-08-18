@@ -21,7 +21,7 @@ struct Entry: View {
                 VStack{
                     Image(uiImage: getMoodDescriptionandIcon(moodScore:moodScore).1!)
                         .resizable()
-                        .frame(width: 50.0, height: 50.0)
+                        .frame(width: 120.0, height: 120.0)
                     
                 }
                 .frame(width: 70.0, height: 70.0)

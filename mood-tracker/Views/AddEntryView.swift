@@ -36,13 +36,17 @@ struct AddEntryView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                     Spacer()
+                    ZStack{
                     Image(uiImage: getMoodDescriptionandIcon(moodScore:moodScore).1!)
                         .resizable()
-                        .frame(width: 100.0, height: 100.0)
+                        .frame(width: 250.0, height: 250.0)
+                        .offset(x: 0, y: -20)
                     Text(getMoodDescriptionandIcon(moodScore:moodScore).0)
                         .textCase(.uppercase)
                         .font(.system(.title2, design: .rounded))
                         .foregroundColor(.white)
+                        .offset(x: 0, y: 60)
+                    }
                     MoodScoreSlider(moodScore: $moodScore, moodScoreDidChange: $moodScoreDidChange)
                     ContinueButton(pageNum: $pageNum)
                         .disabled(!moodScoreDidChange)
@@ -200,8 +204,6 @@ struct AddEntryView: View {
                     }
                         .multilineTextAlignment(.center)
                     SubmitButton(moodScore: moodScore, selectedActivities: selectedActivities, selectedFeelings: selectedFeelings, title: $title, memo: memo, dayId: dayId, selectedTab: $selectedTab)
-//                                .disabled(title == "" || memo == "")
-//                                .overlay(Color.black.opacity(title == "" || memo == "" ? 0.4 : 0.0).cornerRadius(25))
                     Spacer()
                 }
                 .onDisappear{

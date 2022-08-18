@@ -31,12 +31,18 @@ struct FeelingsList: View {
                             }
                         }label: {
                             VStack(spacing: 0){
-                                Text(item.emoji)
-                                    .font(.title)
-                                .foregroundColor(.gray)
+                                ZStack{
+                                Image(uiImage: item.icon!)
+                                    .resizable()
+                                    .frame(width: 60.0, height: 60.0)
+                                    .offset(x: 0, y: -15)
+                                  
+                                   
                                 Text(item.text)
                                     .font(.body)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                    .offset(x: 0, y: 10)
+                                }
                             }
                             .frame(minWidth: 90, maxWidth: .infinity, maxHeight: 50, alignment: .top)
                             .padding(.top)
@@ -68,13 +74,18 @@ struct FeelingsList: View {
                             }
                         }label: {
                             VStack(spacing: 0){
-//
-                                Text(item.emoji)
-                                    .font(.title)
-                                .foregroundColor(.gray)
+                                ZStack{
+                                Image(uiImage: item.icon!)
+                                    .resizable()
+                                    .frame(width: 60.0, height: 60.0)
+                                    .offset(x: 0, y: -15)
+                                  
+                                   
                                 Text(item.text)
                                     .font(.body)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                    .offset(x: 0, y: 10)
+                                }
                             }
                             .frame(minWidth: 90, maxWidth: .infinity, maxHeight: 50, alignment: .top)
                             .padding(.top)
@@ -105,13 +116,18 @@ struct FeelingsList: View {
                             }
                         }label: {
                             VStack(spacing: 0){
-//
-                                Text(item.emoji)
-                                    .font(.title)
-                                .foregroundColor(.gray)
+                                ZStack{
+                                Image(uiImage: item.icon!)
+                                    .resizable()
+                                    .frame(width: 60.0, height: 60.0)
+                                    .offset(x: 0, y: -15)
+                                  
+                                   
                                 Text(item.text)
                                     .font(.body)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                    .offset(x: 0, y: 10)
+                                }
                             }
                             .frame(minWidth: 90, maxWidth: .infinity, maxHeight: 50, alignment: .top)
                             .padding(.top)

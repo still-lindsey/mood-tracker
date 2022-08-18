@@ -282,9 +282,11 @@ struct TagCloudView: View {
     private func item(for text: String) -> some View {
         HStack{
             if feelingIconDict[text] != nil {
-            Text(feelingIconDict[text]!)
-                    .font(.system(.title2, design: .rounded))
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                Image(uiImage: UIImage(named: feelingIconDict[text]!)!)
+                    .resizable()
+                    .frame(width: 50.0, height: 50.0)
+                    .offset(x: -5, y: 0)
+
             Text(text)
                 .font(.system(size: 15, design: .rounded))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)

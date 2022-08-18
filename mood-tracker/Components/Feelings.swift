@@ -20,39 +20,39 @@ struct FeelingItem: Identifiable, Equatable {
 }
 
 var feelingItems = [
-    FeelingItem(text: "happy", icon: UIImage(named: "happy"), emoji: "😄", isSelected: false),
-    FeelingItem(text: "sad", icon: UIImage(named: "sad"), emoji: "😔", isSelected: false),
-    FeelingItem(text: "angry", icon: UIImage(named: "angry"), emoji: "😠", isSelected: false),
-    FeelingItem(text: "shocked", icon: UIImage(named: "shocked"), emoji: "😮", isSelected: false),
-    FeelingItem(text: "bored", icon: UIImage(named: "shocked"), emoji: "😐", isSelected: false),
-    FeelingItem(text: "confused", icon: UIImage(named: "shocked"), emoji: "😣", isSelected: false),
-    FeelingItem(text: "scared", icon: UIImage(named: "crying"), emoji: "😧", isSelected: false),
-    FeelingItem(text: "drained", icon: UIImage(named: "crying"), emoji: "😓", isSelected: false),
-    FeelingItem(text: "excited", icon: UIImage(named: "embarrassed"), emoji: "😆", isSelected: false),
-    FeelingItem(text: "disgusted", icon: UIImage(named: "digust"), emoji: "🤮", isSelected: false),
-    FeelingItem(text: "loved", icon: UIImage(named: "digust"), emoji: "🥰", isSelected: false),
-    FeelingItem(text: "worried", icon: UIImage(named: "anxious"), emoji: "😟", isSelected: false),
-    FeelingItem(text: "embarrassed", icon: UIImage(named: "embarrassed"), emoji: "😳", isSelected: false),
-    FeelingItem(text: "suspicious", icon: UIImage(named: "embarrassed"), emoji: "🤨", isSelected: false),
-    FeelingItem(text: "irritated", icon: UIImage(named: "embarrassed"), emoji: "😒", isSelected: false)
+    FeelingItem(text: "happy", icon: UIImage(named: "1"), emoji: "😄", isSelected: false),
+    FeelingItem(text: "sad", icon: UIImage(named: "5"), emoji: "😔", isSelected: false),
+    FeelingItem(text: "angry", icon: UIImage(named: "8"), emoji: "😠", isSelected: false),
+    FeelingItem(text: "shocked", icon: UIImage(named: "34"), emoji: "😮", isSelected: false),
+    FeelingItem(text: "bored", icon: UIImage(named: "23"), emoji: "😐", isSelected: false),
+    FeelingItem(text: "confused", icon: UIImage(named: "10"), emoji: "😣", isSelected: false),
+    FeelingItem(text: "scared", icon: UIImage(named: "31"), emoji: "😧", isSelected: false),
+    FeelingItem(text: "drained", icon: UIImage(named: "27"), emoji: "😓", isSelected: false),
+    FeelingItem(text: "excited", icon: UIImage(named: "16"), emoji: "😆", isSelected: false),
+    FeelingItem(text: "disgusted", icon: UIImage(named: "2"), emoji: "🤮", isSelected: false),
+    FeelingItem(text: "loved", icon: UIImage(named: "7"), emoji: "🥰", isSelected: false),
+    FeelingItem(text: "worried", icon: UIImage(named: "33"), emoji: "😟", isSelected: false),
+    FeelingItem(text: "ashamed", icon: UIImage(named: "30"), emoji: "😳", isSelected: false),
+    FeelingItem(text: "suspicious", icon: UIImage(named: "32"), emoji: "🤨", isSelected: false),
+    FeelingItem(text: "irritated", icon: UIImage(named: "36"), emoji: "😒", isSelected: false)
 ]
 
 var feelingIconDict = [
-    "happy": "😄",
-    "sad": "😔",
-    "angry": "😠",
-    "shocked": "😮",
-    "bored": "😐",
-    "confused": "😣",
-    "scared": "😧",
-    "drained": "😓",
-    "excited": "😆",
-    "disgusted": "🤮",
-    "loved": "🥰",
-    "worried": "😟",
-    "embarrassed": "😳",
-    "suspicious": "🤨",
-    "irritated": "😒"
+    "happy": "1-1",
+    "sad": "5-1",
+    "angry": "8-1",
+    "shocked": "34-1",
+    "bored": "23-1",
+    "confused": "10-1",
+    "scared": "31-1",
+    "drained": "27-1",
+    "excited": "16-1",
+    "disgusted": "2-1",
+    "loved": "7-1",
+    "worried": "33-1",
+    "ashamed": "30-1",
+    "suspicious": "32-1",
+    "irritated": "36-1" 
 ]
 
 class Feeling {

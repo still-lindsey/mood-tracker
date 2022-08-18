@@ -15,10 +15,10 @@ struct DayMood: View {
             VStack {
                 Image(uiImage: getMoodDescriptionandIcon(moodScore:avgMood).1!)
                     .resizable()
-                    .frame(width: 70.0, height: 70.0)
+                    .frame(width: 120.0, height: 120.0)
             }
         }
-        .frame(minWidth: 75, maxHeight: 75, alignment: .center)
+        .frame(width: 75, height: 75, alignment: .center)
         .background(Color(hex: "7e7b8c"))
         .zIndex(5)
         .cornerRadius(10)

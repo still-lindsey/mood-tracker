@@ -14,7 +14,7 @@ An iOS App that allows you to submit and view journal entries, view random quote
 
 ## Usage
 
-To use this app, download directly from this local machine. Clone the mood-tracker to your local machine, open mood-tracker in XCode, plug in the iPhone you want to download to, select that device when it appears in XCode, and build the app to your device.
+To use this app, clone the mood-tracker to your local machine, open mood-tracker in XCode, plug in the iPhone you want to download to, select that device when it appears in XCode, and build the app to your device.
 You may need to give the computer permission to build applications directly to your phone. You can allow these permissions in your iPhone's general settings.
 
 In the future, app will be avaliable for download directly from the App store. Release date TBA.

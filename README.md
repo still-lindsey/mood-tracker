@@ -1,7 +1,6 @@
 # Bloom 
 ## Journal and Mood Tracker 
 
-A Flutter geolocation plugin which provides easy access to platform specific location services ([FusedLocationProviderClient](https://developers.google.com/android/reference/com/google/android/gms/location/FusedLocationProviderClient) or if not available the [LocationManager](https://developer.android.com/reference/android/location/LocationManager) on Android and [CLLocationManager](https://developer.apple.com/documentation/corelocation/cllocationmanager) on iOS).
 An iOS App that allows you to submit and view journal entries, view random quotes, and track your mood over days and months.
 ## Features
 

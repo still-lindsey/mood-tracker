@@ -148,13 +148,18 @@ struct AddEntryView: View {
                                     HStack(spacing: 10){
                                     ForEach(selectedFeelings, id: \.self){item in
                                         HStack {
-                                            Text(feelingIconDict[item]!)
-                                                .font(.system(.title2, design: .rounded))
-                                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                            ZStack{
+                                            Image(uiImage: UIImage(named: feelingIconDict[item]!)!)
+                                                .resizable()
+                                                .frame(width: 60.0, height: 60.0)
+                                                .offset(x: -10, y: 0)
                                             Text(item)
                                                 .font(.system(size: 15, design: .rounded))
-                                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                                .frame(maxWidth: 60, maxHeight: 30, alignment: .leading)
                                                 .foregroundColor(Color(hex: "FF9999")!)
+                                                .offset(x: 40, y: 0)
+                                            }
+                                            .frame(minWidth: 100, maxWidth: 100, minHeight: 30, maxHeight: 30, alignment: .leading)
                                         }
                                         .frame(minWidth: 100, maxWidth: 100, minHeight: 30, maxHeight: 30, alignment: .leading)
                                         .background(

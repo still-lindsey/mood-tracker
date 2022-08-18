@@ -15,7 +15,6 @@ struct QuotesView: View {
     @State var displayedQuote: String = ""
     @State var displayedAuthor: String = ""
     var body: some View {
-//        if let day = day {
             VStack{
                 VStack(alignment: .center){
                     Text("\(self.displayedQuote)")
@@ -53,16 +52,6 @@ struct QuotesView: View {
                     }
                 }
             }
-//    }else {
-//        LoadingView()
-//            .task {
-//                do {
-//                    day = try await dayManager.postNewDay()
-//                }catch {
-//                    print("Error getting today's data: \(error)")
-//            }
-//        }
-//    }
     }
 }
 

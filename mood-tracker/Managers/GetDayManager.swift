@@ -10,7 +10,7 @@ import SwiftUI
 
 class GetDayManager {
     func getDay(dayId: Int)async throws -> GetDayResponseBody{
-        guard let url = URL(string: "https://bloom-app-server.herokuapp.com/days/\(dayId)") else {fatalError("Missing URL.")}
+        guard let url = URL(string: "https://web-production-787a.up.railway.app/days/\(dayId)") else {fatalError("Missing URL.")}
         let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {fatalError("Error getting day.")}

@@ -11,7 +11,7 @@ import Foundation
 class DeleteEntryManager {
     
     func deleteEntry (entryId: Int) async throws -> DeleteEntryResponseBody {
-        guard let url = URL(string: "https://bloom-app-server.herokuapp.com/entries/\(entryId)") else {
+        guard let url = URL(string: "https://web-production-787a.up.railway.app/entries/\(entryId)") else {
             fatalError("Missing URL.")}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "DELETE"

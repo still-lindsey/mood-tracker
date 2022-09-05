@@ -89,7 +89,7 @@ func getDateObjectFromDbDateString(date: String, dayOfWeek: String, month: Strin
     dateComponents.year = Int(date.prefix(4))
     dateComponents.month = Int(date.suffix(4).prefix(2))
     dateComponents.day = Int(date.suffix(2))
-    dateComponents.timeZone = TimeZone(abbreviation: "JST") // Japan Standard Time
+    dateComponents.timeZone = TimeZone(abbreviation: "CST") // Japan Standard Time
     dateComponents.hour = 00
     dateComponents.minute = 00
 

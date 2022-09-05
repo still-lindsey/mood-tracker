@@ -12,7 +12,7 @@ import SwiftUI
 
 class GetRandomQuoteManager {
     func getRandomQuote()async throws -> GetRandomQuoteResponseBody{
-        guard let url = URL(string: "https://bloom-app-server.herokuapp.com/quotes") else {fatalError("Missing URL.")}
+        guard let url = URL(string: "https://web-production-787a.up.railway.app/quotes") else {fatalError("Missing URL.")}
         let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {fatalError("Error getting random quote.")}

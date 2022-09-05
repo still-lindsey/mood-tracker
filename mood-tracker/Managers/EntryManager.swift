@@ -22,7 +22,7 @@ class EntryManager {
             ]
         let jsonData = try? JSONSerialization.data(withJSONObject: body)
         
-        guard let url = URL(string: "https://bloom-app-server.herokuapp.com/days/\(dayId)/entries") else {
+        guard let url = URL(string: "https://web-production-787a.up.railway.app/days/\(dayId)/entries") else {
             fatalError("Missing URL.")}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"

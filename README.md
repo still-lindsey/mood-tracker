@@ -12,6 +12,12 @@ An iOS App that allows you to submit and view journal entries, view random quote
 * Calculate your most frequent feelings and activities within a month;
 * Get mood analytics from past months;
 
+## Application Demo Video:
+
+[![Bloom Demo Video](https://img.youtube.com/vi/9zQIex20xu4/0.jpg)](https://www.youtube.com/watch?v=9zQIex20xu4)
+
+## Application UI 
+
 <p align="left">
 <img width="338" alt="Screen Shot 2022-11-05 at 3 06 47 PM" src="https://user-images.githubusercontent.com/75597057/200139236-b1d77879-4166-4263-9c6e-9a722477916b.png">
 <img width="334" alt="Screen Shot 2022-11-05 at 3 04 32 PM" src="https://user-images.githubusercontent.com/75597057/200139067-ac7cc341-0afc-4f42-99bd-9132418b9149.png">
